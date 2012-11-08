@@ -4,20 +4,36 @@ package OdenSchedule::Model::User;
 use strict;
 use warnings;
 
-use OdenSchedule::Model::DB::User;
+use Data::Model;
 
 sub new {
-	my ($class, $userId) = @_;
+	my ($class, $db, %hash) = @_;
 	my $self = bless({}, $class);
 	
-	if(defined($userId)){
-		OdenSchedule::Model::DB::User->new();
-		
-	}else{
-		OdenSchedule::Model::DB::User->new();
+	$self->{db}	=	$$db;# データベースインスタンス
+	
+	unless (!%hash){
+		find(%hash);
 	}
-	 
+	
 	return $self;
+}
+
+sub find {
+	my $self = $_;
+	my %hash = $_;
+	my $key = "";
+	my $value = "";
+	foreach my $k(keys(%hash)){
+		$key = $k;
+		$value = $hash{$k};
+	}
+	my $itemRow = $self->{db}->lookup( $key => $value );
+	my %h = $itemRow->{column_values};
+	foreach my $k(keys(%h)){
+		$self->{$k} = $h{$k};
+	}
+	return $itemRow;
 }
 
 1;

@@ -34,6 +34,14 @@
 			.form-signin .form-signin-heading, .form-signin .checkbox {
 				margin-bottom: 10px;
 			}
+			dt {
+				margin-top: 5px !important;
+				margin-bottom: 5px !important;
+			}
+			dl {
+				margin-top: 5px !important;
+				margin-bottom: 10px !important;
+			}
 
 		</style>
 		<%= stylesheet '/css/bootstrap-responsive.min.css' %>
@@ -62,30 +70,26 @@
 					<br>
 					OECUメールのアカウントを利用します。
 				</p>
-				<% if($message ne ""){ %>
-					<div class="alert">
-						<button type="button" class="close" data-dismiss="alert">×</button>
-						<%= $message %>
-					</div>
-				<% } %>
-				<div class="input-prepend">
-					<span class="add-on">学籍番号</span>
-					<input type="text" id="prependedInput" class="span2" name="id" placeholder="(例: ht12a000)">
-				</div>
-				<div class="input-prepend">
-					<span class="add-on">パスワード</span>
-					<input type="password" id="prependedInput" class="span2" name="pw" placeholder="(OECUメールと同じ)">
-				</div>
-				<label class="checkbox">
-					<input type="checkbox" value="remember-me">
-					Remember me </label>
+				<p>
+					<%= link_to '/session/oauth_google_redirect' => class => "btn btn-large btn-primary" => begin %>ログイン<% end %>
+					<br style="clear:both;">
+				</p>
+				<p class="">
+					このボタンをクリックすると、Googleのログイン画面が表示されます。<br>
+					<dl style="margin-left: 10px;">
+						<dt>メール</dt>
+						<dl>学籍番号@oecu.jp (例: ht12a000@oecu.jp )</dl>
+						<dt>パスワード</dt>
+						<dl>OECUメールのパスワード</dl>
+					</dl>
+					&nbsp;を入力してログインし、<br>
+					<b>続いて</b>[ログインについて]をクリックします。<br>
+					<%= image '/img/howto_login0.png' %>
+				</p>
+				<hr>
 				<p>
 					<i class=" icon-lock"></i> サーバとの通信はSSLで暗号化されます。
 				</p>
-				<button class="btn btn-large btn-primary pull-right" type="submit">
-					ログイン
-				</button>
-				<br style="clear:both;">
 				<%= link_to '/' => begin %>トップへ戻る<% end %>
 
 			</form>

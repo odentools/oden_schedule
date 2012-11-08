@@ -3190,3 +3190,653 @@ Global symbol "$message" requires explicit package name at template "layouts/log
 [Thu Nov  8 20:56:41 2012] [debug] Rendering cached template "includes/ee_comment.html.ep".
 [Thu Nov  8 20:56:41 2012] [debug] Rendering cached template "includes/footer.html.ep".
 [Thu Nov  8 20:56:41 2012] [debug] 200 OK (0.010095s, 99.059/s).
+[Thu Nov  8 21:35:28 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:35:28 2012] [info] Listening at "http://*:3000".
+[Thu Nov  8 21:35:31 2012] [debug] Bad signed cookie "mojolicious", possible hacking attempt.
+[Thu Nov  8 21:35:31 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:35:31 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:35:31 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:35:31 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:35:31 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:35:31 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:35:31 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:35:31 2012] [debug] 200 OK (0.029694s, 33.677/s).
+[Thu Nov  8 21:36:03 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:36:06 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:36:06 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:36:06 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:36:06 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:36:06 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:36:06 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:36:06 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:36:06 2012] [debug] 200 OK (0.028597s, 34.969/s).
+[Thu Nov  8 21:36:16 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:36:17 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:36:17 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:36:17 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:36:17 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:36:17 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:36:17 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:36:17 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:36:17 2012] [debug] 200 OK (0.028064s, 35.633/s).
+[Thu Nov  8 21:36:24 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:36:25 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:36:25 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:36:25 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:36:25 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:36:25 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:36:25 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:36:25 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:36:25 2012] [debug] 200 OK (0.026981s, 37.063/s).
+[Thu Nov  8 21:36:32 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:36:33 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:36:33 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:36:33 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:36:33 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:36:33 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:36:33 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:36:33 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:36:33 2012] [debug] 200 OK (0.031296s, 31.953/s).
+[Thu Nov  8 21:36:37 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:36:39 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:36:39 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:36:39 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:36:39 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:36:39 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:36:39 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:36:39 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:36:39 2012] [debug] 200 OK (0.028182s, 35.484/s).
+[Thu Nov  8 21:38:28 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:38:29 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:38:29 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:38:29 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:38:29 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:38:29 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:38:29 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:38:29 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:38:29 2012] [debug] 200 OK (0.033334s, 29.999/s).
+[Thu Nov  8 21:38:53 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:38:54 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:38:54 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:38:54 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:38:54 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:38:54 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:38:54 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:38:54 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:38:54 2012] [debug] 200 OK (0.030424s, 32.869/s).
+[Thu Nov  8 21:38:55 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:38:55 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:38:55 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:38:55 2012] [debug] Rendering cached template "session/login.html.ep".
+[Thu Nov  8 21:38:55 2012] [debug] Rendering cached template "layouts/login.html.ep".
+[Thu Nov  8 21:38:55 2012] [debug] Rendering cached template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:38:55 2012] [debug] Rendering cached template "includes/footer.html.ep".
+[Thu Nov  8 21:38:55 2012] [debug] 200 OK (0.011454s, 87.306/s).
+[Thu Nov  8 21:39:06 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:39:07 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:39:07 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:39:07 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:39:07 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:39:07 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:39:07 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:39:07 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:39:07 2012] [debug] 200 OK (0.031334s, 31.914/s).
+[Thu Nov  8 21:39:15 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:39:16 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:39:16 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:39:16 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:39:16 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:39:16 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:39:16 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:39:16 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:39:16 2012] [debug] 200 OK (0.034278s, 29.173/s).
+[Thu Nov  8 21:41:15 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:41:18 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:41:20 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:41:20 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:41:20 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:41:20 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:41:20 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:41:20 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:41:20 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:41:20 2012] [debug] 200 OK (0.033905s, 29.494/s).
+[Thu Nov  8 21:42:06 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:42:08 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:42:12 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:42:12 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:42:12 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:42:12 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:42:12 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:42:12 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:42:12 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:42:12 2012] [debug] 200 OK (0.030013s, 33.319/s).
+[Thu Nov  8 21:43:12 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:43:13 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:43:13 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:43:13 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:43:13 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:43:13 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:43:13 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:43:13 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:43:13 2012] [debug] 200 OK (0.031780s, 31.466/s).
+[Thu Nov  8 21:43:15 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:43:15 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:43:15 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:43:15 2012] [debug] Rendering cached template "session/login.html.ep".
+[Thu Nov  8 21:43:15 2012] [debug] Rendering cached template "layouts/login.html.ep".
+[Thu Nov  8 21:43:15 2012] [debug] Rendering cached template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:43:15 2012] [debug] Rendering cached template "includes/footer.html.ep".
+[Thu Nov  8 21:43:15 2012] [debug] 200 OK (0.014257s, 70.141/s).
+[Thu Nov  8 21:43:30 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:43:31 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:43:31 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:43:31 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:43:31 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:43:31 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:43:31 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:43:31 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:43:31 2012] [debug] 200 OK (0.033868s, 29.526/s).
+[Thu Nov  8 21:43:41 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:43:43 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:43:43 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:43:43 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:43:43 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:43:43 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:43:43 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:43:43 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:43:43 2012] [debug] 200 OK (0.035836s, 27.905/s).
+[Thu Nov  8 21:44:14 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:44:14 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:44:14 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:44:14 2012] [debug] Rendering cached template "session/login.html.ep".
+[Thu Nov  8 21:44:14 2012] [debug] Rendering cached template "layouts/login.html.ep".
+[Thu Nov  8 21:44:14 2012] [debug] Rendering cached template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:44:14 2012] [debug] Rendering cached template "includes/footer.html.ep".
+[Thu Nov  8 21:44:14 2012] [debug] 200 OK (0.004812s, 207.814/s).
+[Thu Nov  8 21:44:14 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:44:15 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:44:15 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:44:15 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:44:15 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:44:15 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:44:15 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:44:15 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:44:15 2012] [debug] 200 OK (0.032150s, 31.104/s).
+[Thu Nov  8 21:44:22 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:44:23 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:44:23 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:44:23 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:44:23 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:44:23 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:44:23 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:44:23 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:44:23 2012] [debug] 200 OK (0.033543s, 29.812/s).
+[Thu Nov  8 21:44:24 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:44:24 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:44:24 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:44:24 2012] [debug] Rendering cached template "session/login.html.ep".
+[Thu Nov  8 21:44:24 2012] [debug] Rendering cached template "layouts/login.html.ep".
+[Thu Nov  8 21:44:24 2012] [debug] Rendering cached template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:44:24 2012] [debug] Rendering cached template "includes/footer.html.ep".
+[Thu Nov  8 21:44:24 2012] [debug] 200 OK (0.014045s, 71.200/s).
+[Thu Nov  8 21:44:41 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:44:46 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:44:48 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:44:50 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:44:50 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:44:50 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:44:50 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:44:50 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:44:50 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:44:50 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:44:50 2012] [debug] 200 OK (0.031888s, 31.360/s).
+[Thu Nov  8 21:45:06 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 21:45:07 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 21:45:07 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 21:45:07 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 21:45:07 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 21:45:07 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 21:45:07 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 21:45:07 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 21:45:07 2012] [debug] 200 OK (0.032054s, 31.197/s).
+[Thu Nov  8 22:18:32 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:18:32 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:18:32 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 22:18:32 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 22:18:32 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 22:18:32 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 22:18:33 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 22:18:33 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 22:18:33 2012] [debug] 200 OK (0.030459s, 32.831/s).
+[Thu Nov  8 22:18:33 2012] [debug] GET /session/img/howto_login0.png (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:18:33 2012] [debug] Template "not_found.development.html.ep" not found.
+[Thu Nov  8 22:18:33 2012] [debug] Template "not_found.html.ep" not found.
+[Thu Nov  8 22:18:33 2012] [debug] Rendering inline template.
+[Thu Nov  8 22:18:33 2012] [debug] Rendering inline template.
+[Thu Nov  8 22:18:33 2012] [debug] 404 Not Found (0.018618s, 53.711/s).
+[Thu Nov  8 22:18:34 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:18:34 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 22:18:34 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 22:18:34 2012] [debug] Rendering cached template "session/login.html.ep".
+[Thu Nov  8 22:18:34 2012] [debug] Rendering cached template "layouts/login.html.ep".
+[Thu Nov  8 22:18:34 2012] [debug] Rendering cached template "includes/ee_comment.html.ep".
+[Thu Nov  8 22:18:34 2012] [debug] Rendering cached template "includes/footer.html.ep".
+[Thu Nov  8 22:18:34 2012] [debug] 200 OK (0.004138s, 241.663/s).
+[Thu Nov  8 22:18:34 2012] [debug] GET /session/img/howto_login0.png (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:18:34 2012] [debug] Template "not_found.development.html.ep" not found.
+[Thu Nov  8 22:18:34 2012] [debug] Template "not_found.html.ep" not found.
+[Thu Nov  8 22:18:34 2012] [debug] Rendering cached inline template.
+[Thu Nov  8 22:18:34 2012] [debug] Rendering cached inline template.
+[Thu Nov  8 22:18:34 2012] [debug] 404 Not Found (0.008713s, 114.771/s).
+[Thu Nov  8 22:18:36 2012] [debug] GET /session/img/howto_login0.png (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:18:36 2012] [debug] Template "not_found.development.html.ep" not found.
+[Thu Nov  8 22:18:36 2012] [debug] Template "not_found.html.ep" not found.
+[Thu Nov  8 22:18:36 2012] [debug] Rendering cached inline template.
+[Thu Nov  8 22:18:36 2012] [debug] Rendering cached inline template.
+[Thu Nov  8 22:18:36 2012] [debug] 404 Not Found (0.007731s, 129.349/s).
+[Thu Nov  8 22:18:44 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:18:45 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:18:45 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 22:18:45 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 22:18:45 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 22:18:45 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 22:18:45 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 22:18:45 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 22:18:45 2012] [debug] 200 OK (0.028937s, 34.558/s).
+[Thu Nov  8 22:19:10 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:19:12 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:19:12 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 22:19:12 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 22:19:12 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 22:19:12 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 22:19:12 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 22:19:12 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 22:19:12 2012] [debug] 200 OK (0.039705s, 25.186/s).
+[Thu Nov  8 22:19:38 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:19:39 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:19:39 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 22:19:39 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 22:19:39 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 22:19:39 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 22:19:39 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 22:19:39 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 22:19:39 2012] [debug] 200 OK (0.033368s, 29.969/s).
+[Thu Nov  8 22:19:46 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:19:47 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:19:47 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 22:19:47 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 22:19:47 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 22:19:47 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 22:19:47 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 22:19:47 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 22:19:47 2012] [debug] 200 OK (0.032411s, 30.854/s).
+[Thu Nov  8 22:20:11 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:20:12 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:20:12 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 22:20:12 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 22:20:12 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 22:20:12 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 22:20:12 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 22:20:12 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 22:20:12 2012] [debug] 200 OK (0.034377s, 29.089/s).
+[Thu Nov  8 22:20:23 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:20:24 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:20:24 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 22:20:24 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 22:20:24 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 22:20:24 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 22:20:24 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 22:20:24 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 22:20:24 2012] [debug] 200 OK (0.029518s, 33.878/s).
+[Thu Nov  8 22:22:11 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:22:12 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:22:12 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 22:22:12 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 22:22:12 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 22:22:12 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 22:22:12 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 22:22:12 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 22:22:12 2012] [debug] 200 OK (0.032061s, 31.191/s).
+[Thu Nov  8 22:23:53 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:23:53 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:23:53 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 22:23:53 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 22:23:53 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 22:23:53 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 22:23:53 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 22:23:53 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 22:23:53 2012] [debug] 200 OK (0.033449s, 29.896/s).
+[Thu Nov  8 22:23:55 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:23:55 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 22:23:55 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 22:23:55 2012] [debug] Rendering cached template "session/login.html.ep".
+[Thu Nov  8 22:23:55 2012] [debug] Rendering cached template "layouts/login.html.ep".
+[Thu Nov  8 22:23:55 2012] [debug] Rendering cached template "includes/ee_comment.html.ep".
+[Thu Nov  8 22:23:55 2012] [debug] Rendering cached template "includes/footer.html.ep".
+[Thu Nov  8 22:23:55 2012] [debug] 200 OK (0.006864s, 145.688/s).
+[Thu Nov  8 22:24:15 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:24:18 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:24:18 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 22:24:18 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 22:24:18 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 22:24:18 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 22:24:18 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 22:24:18 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 22:24:18 2012] [debug] 200 OK (0.040056s, 24.965/s).
+[Thu Nov  8 22:24:20 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:24:20 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Thu Nov  8 22:24:20 2012] [error] Plugin "OdenSchedule::Helper::Login" missing, maybe you need to install it?
+
+[Thu Nov  8 22:24:20 2012] [debug] Template "exception.development.html.ep" not found.
+[Thu Nov  8 22:24:20 2012] [debug] Template "exception.html.ep" not found.
+[Thu Nov  8 22:24:20 2012] [debug] Rendering inline template.
+[Thu Nov  8 22:24:20 2012] [debug] Rendering inline template.
+[Thu Nov  8 22:24:20 2012] [debug] 500 Internal Server Error (0.027147s, 36.836/s).
+[Thu Nov  8 22:24:42 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:24:45 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:24:56 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:25:03 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:28:24 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:28:45 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:28:51 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:29:19 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:29:22 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:29:31 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:32:25 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:33:13 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:33:20 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:33:30 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:34:09 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:34:16 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:34:27 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:35:13 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:35:20 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:35:32 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:35:43 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:35:46 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:35:48 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:38:47 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:40:42 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:40:47 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:40:55 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:40:57 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:40:58 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:41:03 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:41:13 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:41:14 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:41:28 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:42:35 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:42:42 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:42:59 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:43:38 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:43:39 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:43:39 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Thu Nov  8 22:43:39 2012] [error] Can't locate object method "new" via package "Net::OAuth2::Client" (perhaps you forgot to load "Net::OAuth2::Client"?) at /home/masanori/aptana_workspace/oden_schedule/site/script/../lib/OdenSchedule/Helper/Login.pm line 14.
+
+[Thu Nov  8 22:43:39 2012] [debug] Template "exception.development.html.ep" not found.
+[Thu Nov  8 22:43:39 2012] [debug] Template "exception.html.ep" not found.
+[Thu Nov  8 22:43:39 2012] [debug] Rendering inline template.
+[Thu Nov  8 22:43:39 2012] [debug] Rendering inline template.
+[Thu Nov  8 22:43:39 2012] [debug] 500 Internal Server Error (0.024562s, 40.713/s).
+[Thu Nov  8 22:43:56 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 22:43:58 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:43:58 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Thu Nov  8 22:43:58 2012] [debug] 302 Found (0.011193s, 89.342/s).
+[Thu Nov  8 22:44:03 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 22:44:03 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Thu Nov  8 22:44:03 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Thu Nov  8 22:44:03 2012] [debug] 302 Found (0.002651s, 377.216/s).
+[Thu Nov  8 23:02:51 2012] [debug] GET /mypage/list (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:02:51 2012] [debug] Template "not_found.development.html.ep" not found.
+[Thu Nov  8 23:02:51 2012] [debug] Template "not_found.html.ep" not found.
+[Thu Nov  8 23:02:51 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:02:51 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:02:51 2012] [debug] 404 Not Found (0.026824s, 37.280/s).
+[Thu Nov  8 23:02:56 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:02:56 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 23:02:56 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Thu Nov  8 23:02:56 2012] [debug] Rendering template "top/top.html.ep".
+[Thu Nov  8 23:02:56 2012] [debug] Rendering template "layouts/default.html.ep".
+[Thu Nov  8 23:02:56 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 23:02:56 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 23:02:56 2012] [debug] 200 OK (0.038878s, 25.721/s).
+[Thu Nov  8 23:02:57 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:02:57 2012] [debug] Template "not_found.development.html.ep" not found.
+[Thu Nov  8 23:02:57 2012] [debug] Template "not_found.html.ep" not found.
+[Thu Nov  8 23:02:57 2012] [debug] Rendering cached inline template.
+[Thu Nov  8 23:02:57 2012] [debug] Rendering cached inline template.
+[Thu Nov  8 23:02:57 2012] [debug] 404 Not Found (0.006439s, 155.304/s).
+[Thu Nov  8 23:02:59 2012] [debug] GET /login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:02:59 2012] [debug] Template "not_found.development.html.ep" not found.
+[Thu Nov  8 23:02:59 2012] [debug] Template "not_found.html.ep" not found.
+[Thu Nov  8 23:02:59 2012] [debug] Rendering cached inline template.
+[Thu Nov  8 23:02:59 2012] [debug] Rendering cached inline template.
+[Thu Nov  8 23:02:59 2012] [debug] 404 Not Found (0.011436s, 87.443/s).
+[Thu Nov  8 23:03:24 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 23:03:24 2012] [debug] GET /login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:03:24 2012] [debug] Template "not_found.development.html.ep" not found.
+[Thu Nov  8 23:03:24 2012] [debug] Template "not_found.html.ep" not found.
+[Thu Nov  8 23:03:24 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:03:24 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:03:24 2012] [debug] 404 Not Found (0.020149s, 49.630/s).
+[Thu Nov  8 23:03:26 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:03:26 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 23:03:26 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Thu Nov  8 23:03:26 2012] [debug] Rendering template "top/top.html.ep".
+[Thu Nov  8 23:03:26 2012] [debug] Rendering template "layouts/default.html.ep".
+[Thu Nov  8 23:03:26 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 23:03:26 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 23:03:26 2012] [debug] 200 OK (0.035446s, 28.212/s).
+[Thu Nov  8 23:03:26 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:03:26 2012] [debug] Template "not_found.development.html.ep" not found.
+[Thu Nov  8 23:03:26 2012] [debug] Template "not_found.html.ep" not found.
+[Thu Nov  8 23:03:26 2012] [debug] Rendering cached inline template.
+[Thu Nov  8 23:03:26 2012] [debug] Rendering cached inline template.
+[Thu Nov  8 23:03:26 2012] [debug] 404 Not Found (0.007329s, 136.444/s).
+[Thu Nov  8 23:03:27 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:03:27 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 23:03:27 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 23:03:27 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 23:03:27 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 23:03:27 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 23:03:27 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 23:03:27 2012] [debug] 200 OK (0.016865s, 59.294/s).
+[Thu Nov  8 23:03:28 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:03:28 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Thu Nov  8 23:03:28 2012] [debug] 302 Found (0.012935s, 77.310/s).
+[Thu Nov  8 23:05:18 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 23:05:28 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:05:28 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 23:05:28 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 23:05:28 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 23:05:28 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 23:05:28 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 23:05:28 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 23:05:28 2012] [debug] 200 OK (0.038275s, 26.127/s).
+[Thu Nov  8 23:05:29 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:05:29 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Thu Nov  8 23:05:29 2012] [debug] 302 Found (0.009044s, 110.571/s).
+[Thu Nov  8 23:05:58 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 23:06:04 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:06:04 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 23:06:04 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 23:06:04 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 23:06:04 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 23:06:04 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 23:06:04 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 23:06:04 2012] [debug] 200 OK (0.035098s, 28.492/s).
+[Thu Nov  8 23:06:05 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:06:05 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Thu Nov  8 23:06:05 2012] [debug] 302 Found (0.009582s, 104.362/s).
+[Thu Nov  8 23:06:32 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:06:32 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Thu Nov  8 23:06:32 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Thu Nov  8 23:06:33 2012] [error] Can't locate object method "new" via package "OdenSchedule::Model::User" (perhaps you forgot to load "OdenSchedule::Model::User"?) at /home/masanori/aptana_workspace/oden_schedule/site/script/../lib/OdenSchedule.pm line 46.
+
+[Thu Nov  8 23:06:33 2012] [debug] Template "exception.development.html.ep" not found.
+[Thu Nov  8 23:06:33 2012] [debug] Template "exception.html.ep" not found.
+[Thu Nov  8 23:06:33 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:06:33 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:06:33 2012] [debug] 500 Internal Server Error (1.677550s, 0.596/s).
+[Thu Nov  8 23:07:06 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 23:07:06 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:07:06 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Thu Nov  8 23:07:07 2012] [debug] 302 Found (0.397855s, 2.513/s).
+[Thu Nov  8 23:07:07 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:07:07 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 23:07:07 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Thu Nov  8 23:07:07 2012] [debug] Rendering template "top/top.html.ep".
+[Thu Nov  8 23:07:07 2012] [debug] Rendering template "layouts/default.html.ep".
+[Thu Nov  8 23:07:07 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 23:07:07 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 23:07:07 2012] [debug] 200 OK (0.032849s, 30.442/s).
+[Thu Nov  8 23:07:07 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:07:07 2012] [debug] Template "not_found.development.html.ep" not found.
+[Thu Nov  8 23:07:07 2012] [debug] Template "not_found.html.ep" not found.
+[Thu Nov  8 23:07:07 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:07:07 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:07:07 2012] [debug] 404 Not Found (0.020299s, 49.264/s).
+[Thu Nov  8 23:07:53 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:07:53 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 23:07:53 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 23:07:53 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 23:07:53 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 23:07:53 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 23:07:53 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 23:07:53 2012] [debug] 200 OK (0.022020s, 45.413/s).
+[Thu Nov  8 23:07:55 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:07:55 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Thu Nov  8 23:07:55 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Thu Nov  8 23:07:55 2012] [debug] 302 Found (0.006543s, 152.835/s).
+[Thu Nov  8 23:08:05 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:08:05 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Thu Nov  8 23:08:05 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Thu Nov  8 23:08:06 2012] [error] Not a SCALAR reference at /home/masanori/aptana_workspace/oden_schedule/site/script/../lib/OdenSchedule/Model/User.pm line 11.
+
+[Thu Nov  8 23:08:06 2012] [debug] Template "exception.development.html.ep" not found.
+[Thu Nov  8 23:08:06 2012] [debug] Template "exception.html.ep" not found.
+[Thu Nov  8 23:08:06 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:08:06 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:08:06 2012] [debug] 500 Internal Server Error (1.151429s, 0.868/s).
+[Thu Nov  8 23:08:24 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 23:08:26 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:08:26 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Thu Nov  8 23:08:26 2012] [debug] 302 Found (0.412101s, 2.427/s).
+[Thu Nov  8 23:08:26 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:08:26 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 23:08:26 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Thu Nov  8 23:08:26 2012] [debug] Rendering template "top/top.html.ep".
+[Thu Nov  8 23:08:26 2012] [debug] Rendering template "layouts/default.html.ep".
+[Thu Nov  8 23:08:26 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 23:08:26 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 23:08:26 2012] [debug] 200 OK (0.040145s, 24.910/s).
+[Thu Nov  8 23:08:26 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:08:26 2012] [debug] Template "not_found.development.html.ep" not found.
+[Thu Nov  8 23:08:26 2012] [debug] Template "not_found.html.ep" not found.
+[Thu Nov  8 23:08:26 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:08:26 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:08:26 2012] [debug] 404 Not Found (0.020375s, 49.080/s).
+[Thu Nov  8 23:08:28 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:08:28 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 23:08:28 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 23:08:28 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 23:08:28 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 23:08:28 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 23:08:28 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 23:08:28 2012] [debug] 200 OK (0.020829s, 48.010/s).
+[Thu Nov  8 23:08:29 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:08:29 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Thu Nov  8 23:08:29 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Thu Nov  8 23:08:29 2012] [debug] 302 Found (0.003017s, 331.455/s).
+[Thu Nov  8 23:08:38 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:08:38 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Thu Nov  8 23:08:38 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Thu Nov  8 23:08:39 2012] [error] Can't call method "lockup" on an undefined value at /home/masanori/aptana_workspace/oden_schedule/site/script/../lib/OdenSchedule/Model/User.pm line 29.
+
+[Thu Nov  8 23:08:39 2012] [debug] Template "exception.development.html.ep" not found.
+[Thu Nov  8 23:08:39 2012] [debug] Template "exception.html.ep" not found.
+[Thu Nov  8 23:08:39 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:08:39 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:08:39 2012] [debug] 500 Internal Server Error (1.345060s, 0.743/s).
+[Thu Nov  8 23:11:28 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 23:11:29 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:11:29 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Thu Nov  8 23:11:30 2012] [debug] 302 Found (0.412230s, 2.426/s).
+[Thu Nov  8 23:11:30 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:11:30 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 23:11:30 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Thu Nov  8 23:11:30 2012] [debug] Rendering template "top/top.html.ep".
+[Thu Nov  8 23:11:30 2012] [debug] Rendering template "layouts/default.html.ep".
+[Thu Nov  8 23:11:30 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 23:11:30 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 23:11:30 2012] [debug] 200 OK (0.039656s, 25.217/s).
+[Thu Nov  8 23:11:30 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:11:30 2012] [debug] Template "not_found.development.html.ep" not found.
+[Thu Nov  8 23:11:30 2012] [debug] Template "not_found.html.ep" not found.
+[Thu Nov  8 23:11:30 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:11:30 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:11:30 2012] [debug] 404 Not Found (0.016971s, 58.924/s).
+[Thu Nov  8 23:11:31 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:11:31 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 23:11:31 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 23:11:31 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 23:11:31 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 23:11:31 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 23:11:31 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 23:11:31 2012] [debug] 200 OK (0.019319s, 51.763/s).
+[Thu Nov  8 23:11:32 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:11:32 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Thu Nov  8 23:11:32 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Thu Nov  8 23:11:32 2012] [debug] 302 Found (0.003227s, 309.885/s).
+[Thu Nov  8 23:11:44 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:11:44 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Thu Nov  8 23:11:44 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Thu Nov  8 23:11:45 2012] [error] Can't call method "lookup" on an undefined value at /home/masanori/aptana_workspace/oden_schedule/site/script/../lib/OdenSchedule/Model/User.pm line 29.
+
+[Thu Nov  8 23:11:45 2012] [debug] Template "exception.development.html.ep" not found.
+[Thu Nov  8 23:11:45 2012] [debug] Template "exception.html.ep" not found.
+[Thu Nov  8 23:11:45 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:11:45 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:11:45 2012] [debug] 500 Internal Server Error (1.256575s, 0.796/s).
+[Thu Nov  8 23:12:18 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 23:12:29 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Thu Nov  8 23:12:29 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:12:29 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Thu Nov  8 23:12:30 2012] [debug] 302 Found (0.410560s, 2.436/s).
+[Thu Nov  8 23:12:30 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:12:30 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 23:12:30 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Thu Nov  8 23:12:30 2012] [debug] Rendering template "top/top.html.ep".
+[Thu Nov  8 23:12:30 2012] [debug] Rendering template "layouts/default.html.ep".
+[Thu Nov  8 23:12:30 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 23:12:30 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 23:12:30 2012] [debug] 200 OK (0.037402s, 26.737/s).
+[Thu Nov  8 23:12:30 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:12:30 2012] [debug] Template "not_found.development.html.ep" not found.
+[Thu Nov  8 23:12:30 2012] [debug] Template "not_found.html.ep" not found.
+[Thu Nov  8 23:12:30 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:12:30 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:12:30 2012] [debug] 404 Not Found (0.017097s, 58.490/s).
+[Thu Nov  8 23:12:33 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:12:33 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Thu Nov  8 23:12:33 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Thu Nov  8 23:12:33 2012] [debug] Rendering template "session/login.html.ep".
+[Thu Nov  8 23:12:33 2012] [debug] Rendering template "layouts/login.html.ep".
+[Thu Nov  8 23:12:33 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Thu Nov  8 23:12:33 2012] [debug] Rendering template "includes/footer.html.ep".
+[Thu Nov  8 23:12:33 2012] [debug] 200 OK (0.017507s, 57.120/s).
+[Thu Nov  8 23:12:34 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:12:34 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Thu Nov  8 23:12:34 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Thu Nov  8 23:12:34 2012] [debug] 302 Found (0.005497s, 181.917/s).
+[Thu Nov  8 23:12:42 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4).
+[Thu Nov  8 23:12:42 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Thu Nov  8 23:12:42 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Thu Nov  8 23:12:43 2012] [error] Can't call method "lookup" on an undefined value at /home/masanori/aptana_workspace/oden_schedule/site/script/../lib/OdenSchedule/Model/User.pm line 29.
+
+[Thu Nov  8 23:12:43 2012] [debug] Template "exception.development.html.ep" not found.
+[Thu Nov  8 23:12:43 2012] [debug] Template "exception.html.ep" not found.
+[Thu Nov  8 23:12:43 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:12:43 2012] [debug] Rendering inline template.
+[Thu Nov  8 23:12:43 2012] [debug] 500 Internal Server Error (1.201437s, 0.832/s).
+[Thu Nov  8 23:13:48 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".

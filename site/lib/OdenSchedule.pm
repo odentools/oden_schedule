@@ -6,8 +6,10 @@ use Data::Model;
 use Data::Model::Driver::MongoDB;
 
 use Net::OECUMail;
+use Net::OAuth2::Client;
 
 use OdenSchedule::DBSchema;
+use OdenSchedule::Model::User;
 
 # This method will run once at server start
 sub startup {
@@ -42,11 +44,15 @@ sub startup {
 	$self->helper('db' => sub { shift->app->db });
 	
 	# データベースモデルのセット
+	$self->helper('getUser' => sub {my %hash = $_; return OdenSchedule::Model::User->new(\{$self->app->db},%hash);});
 	
 	# ユーザ情報ヘルパーのセット
 	$self->helper('ownUserId' => sub { return undef });
 	$self->helper('ownUser' => sub { return undef });
 	$self->stash(logined => 0);
+	
+	$r->route('/session/oauth_google_redirect')->to('session#oauth_google_redirect',);
+	$r->route('/session/oauth_google_callback')->to('session#oauth_google_callback',);
 	
 	# 前処理を行うブリッジ (認証セッションチェックなど)
 	$r = $r->bridge->to('bridge#login_check');
@@ -55,8 +61,8 @@ sub startup {
 	$r->route('')->to('top#top',);
 	$r->route('/docs/about')->to('docs#about',);
 	$r->route('/user/edit')->to('user#edit',);
-	$r->route('/login')->to('session#login');
-	$r->route('/logout')->to('session#logout');
+	$r->route('/session/login')->to('session#login');
+	$r->route('/session/logout')->to('session#logout');
 }
 
 1;
