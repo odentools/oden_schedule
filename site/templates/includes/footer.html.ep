@@ -1,0 +1,5 @@
+
+<footer class="pull-right" style="text-align: right;">
+	<p>&copy; <a href="https://sites.google.com/site/odentools/home">OdenTools Project</a> - 2012.<br>
+	Powered by <%= link_to 'http://www.perl.org/' => begin %>perl<% end %> &amp; <%= link_to 'http://mojolicio.us/' => begin %>Mojolicious<% end %> (Perl real-time web framework) </p>
+</footer>
