@@ -43,7 +43,8 @@ sub oauth_google_callback {
 		my $user_id = $profile->{email};
 		my $token = $access_token->{access_token};
 		
-		my $user = $self->getUser('google_token' => $user_id);
+		# ユーザを検索
+		my $user = $self->getUserObj('google_token' => $user_id, ) || undef;
 		if(defined($user)){# 既存ユーザであれば...
 			$user->google_id($user_id);
 			$user->google_token($token);
@@ -54,7 +55,7 @@ sub oauth_google_callback {
 				google_id				=> $user_id,
 				google_token			=> $token
 			};
-			$self->user->addUser($user);
+			$self->getUserObj($user);
 		}
 		# セッションを保存してリダイレクト
 		$self->session('google_token', $token);

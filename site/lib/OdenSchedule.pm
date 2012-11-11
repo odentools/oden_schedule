@@ -44,13 +44,25 @@ sub startup {
 	$self->helper('db' => sub { shift->app->db });
 	
 	# データベースモデルのセット
-	$self->helper('getUser' => sub {my %hash = $_; return OdenSchedule::Model::User->new(\{$self->app->db},%hash);});
+	$self->helper('getUserObj' => sub {
+		my $self = shift;
+		my %hash = shift;
+		return OdenSchedule::Model::User->new(
+			\($self->app->db),
+			\($self->app->log),
+			%hash
+		);
+	});
 	
 	# ユーザ情報ヘルパーのセット
 	$self->helper('ownUserId' => sub { return undef });
 	$self->helper('ownUser' => sub { return undef });
 	$self->stash(logined => 0);
 	
+	# ログヘルパーのセット
+	$self->helper('log' => sub { shift->app-> log });
+	
+	# 認証用のルート
 	$r->route('/session/oauth_google_redirect')->to('session#oauth_google_redirect',);
 	$r->route('/session/oauth_google_callback')->to('session#oauth_google_callback',);
 	

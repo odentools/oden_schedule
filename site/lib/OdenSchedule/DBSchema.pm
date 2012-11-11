@@ -6,7 +6,7 @@ use Data::Model::Schema;
  
 install_model user => schema {
 	key 'id';
-	columns qw/ id name student_no type google_id google_pw /;
+	columns qw/ id name student_no type google_id google_token /;
 };
 
 1;
