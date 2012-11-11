@@ -44,18 +44,17 @@ sub oauth_google_callback {
 		my $token = $access_token->{access_token};
 		
 		# ユーザを検索
-		my $user = $self->getUserObj('google_token' => $user_id, ) || undef;
-		if(defined($user)){# 既存ユーザであれば...
+		my $user = $self->getUserObj(\{'google_token' => $user_id});
+		if($user->{isFound}){# 既存ユーザであれば...
 			$user->google_id($user_id);
 			$user->google_token($token);
 			$user->update();
 		} else {# 新規ユーザであれば...
-			my $user = {
-				name					=> $user_id,
-				google_id				=> $user_id,
-				google_token			=> $token
-			};
-			$self->getUserObj($user);
+			$user->set(
+				name => $user_id,
+				google_id => $user_id,
+				google_token => $token
+			);
 		}
 		# セッションを保存してリダイレクト
 		$self->session('google_token', $token);
