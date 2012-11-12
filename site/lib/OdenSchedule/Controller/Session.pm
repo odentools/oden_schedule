@@ -48,12 +48,14 @@ sub oauth_google_callback {
 		if($user->{isFound}){# 既存ユーザであれば...
 			$user->google_id($user_id);
 			$user->google_token($token);
+			$user->latest_auth_time(time());
 			$user->update();
 		} else {# 新規ユーザであれば...
 			$user->set(
 				name => $user_id,
 				google_id => $user_id,
-				google_token => $token
+				google_token => $token,
+				latest_auth_time => time()
 			);
 		}
 		# セッションを保存してリダイレクト
@@ -72,6 +74,16 @@ sub login {
 		$message = $self->flash("message_error");
 	}
 	$self->render( message => $message );
+}
+
+sub logout {
+	my $self = shift;
+	
+	# セッションをクリア
+	$self->session(expires => 1);
+	
+	# リダイレクト
+	$self->redirect_to('/');
 }
 
 1;

@@ -73,9 +73,25 @@
 							</li>-->
 						</ul>
 						<!-- 右上 ログインリンク -->
-						<div class="navbar-text pull-right">
-							<%= link_to '/session/login' => class => "navbar-link" => begin %>ログイン<% end %>
-						</div>
+						<% if ($logined){ %>
+							<div class="navbar-text pull-right">
+								<%= link_to '/session/logout' => class => "navbar-link" => begin %>ログアウト<% end %>
+							</div>
+							<!--<ul class="nav pull-right">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">User <b class="caret"></b></a>
+									<ul class="dropdown-menu">
+										<li><%= link_to '/user/edit' => begin %>マイページ<% end %></li>
+										<li class="divider"></li>
+										<li><%= link_to '/session/logout' => begin %>ログアウト<% end %></li>
+									</ul>
+								</li>
+							</ul>-->
+						<% } else { %>
+							<div class="navbar-text pull-right">
+								<%= link_to '/session/login' => class => "navbar-link" => begin %>ログイン<% end %>
+							</div>
+						<% } %>
 						<!--<ul class="nav pull-right">
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">User <b class="caret"></b></a>
@@ -100,6 +116,6 @@
 			<%= include 'includes/footer' %>
 		</div>
 		<!-- /container -->
-		<%= javascript '/js/bootstrap.min.js' %>
+		<%= javascript '/js/bootstrap.js' %>
 	</body>
 </html>

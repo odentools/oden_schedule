@@ -14,9 +14,18 @@ sub login_check {
 	$self->session(expires => time + 604800); # 604800 = 7day * 24hour * 60min * 60sec
 	
 	# ユーザ情報ヘルパーをリセット (非ログイン状態をセット)
-	#$self->app->helper('ownUserId' => sub { return undef });
-	#$self->app->helper('ownUser' => sub { return undef });
+	$self->app->helper('ownUserId' => sub { return undef });
+	$self->app->helper('ownUser' => sub { return undef });
 	$self->stash(logined => 0);
+	
+	if($self->session('google_token')){ # セッションがあれば...
+		my $user = $self->getUserObj('google_token' => $self->session('google_token'));
+		if($user->{isFound}){
+			$self->app->helper('ownUserId' => sub { return $user->{id} });
+			$self->app->helper('ownUser' => sub { return $user });
+			$self->stash(logined => 1);
+		}
+	}
 	
 	return 1; # continue after process (そのまま出力を続行)
 }

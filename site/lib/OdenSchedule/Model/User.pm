@@ -44,11 +44,13 @@ sub find {
 	my $itemRow = $iter->next;
 	if(($itemRow)){
 		$self->{log}->debug(" * found user: ".$itemRow->id);
+		$self->{itemRow} = $itemRow;
 		$self->{isFound} = 1;
 		$self->applyObject($itemRow->{column_values});
 		return $itemRow;
 	}else{
 		$self->{log}->debug(" * user not found");
+		$self->{itemRow} = undef;
 		$self->{isFound} = undef;
 		return undef;
 	}
@@ -65,13 +67,29 @@ sub set {
 }
 
 sub update {
-	my ($self, $key, $value) = @_;
+	my ($self) = shift;
 	$self->{log}->debug("Model::User - update(...)");
+	my $itemRow = $self->{itemRow};
+	my $hash = $itemRow->{column_values};
 	
-	my $hash = $self->{itemRow}->{column_values};
-	my $itemRow = $self->{db}->update(
-		user => $self->{id} => undef => $hash
+	$self->{log}->debug(Mojo::JSON->encode($hash));
+	
+	$self->{db}->update(
+		user => $hash->{id} => undef => $hash
 	);
+	
+	#$self->{itemRow} = $itemRow;
+	$self->applyObject($itemRow->{column_values});
+}
+
+sub column_update {
+	my ($self, $key, $value) = @_;
+	$self->{log}->debug("Model::User - column_update(...)");
+	$self->{log}->debug(" * $key => $value");
+	my $itemRow = $self->{itemRow};
+	my $hash = $itemRow->{column_values};
+	$hash->{$key} = $value;
+	$self->{itemRow} = $itemRow;
 	$self->applyObject($itemRow->{column_values});
 }
 
@@ -97,7 +115,7 @@ sub applyObject {
 		$self->{$k} = $val;
 		# メンバ関数として登録
 		no strict 'refs';
-		*{$k} = sub { my $self=shift; my $val=shift; $self->update($self->{$k}, $val);}; 
+		*{$k} = sub { my $self=shift; my $val=shift; $self->column_update($k, $val);}; 
 	}
 }
 
