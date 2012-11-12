@@ -7370,3 +7370,725 @@ Global symbol "$message" requires explicit package name at template "layouts/log
 [Sun Nov 11 23:21:19 2012] [debug] Rendering inline template.
 [Sun Nov 11 23:21:20 2012] [debug] Rendering inline template.
 [Sun Nov 11 23:21:20 2012] [debug] 500 Internal Server Error (1.155523s, 0.865/s).
+[Mon Nov 12 20:12:15 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 20:12:15 2012] [info] Listening at "http://*:3000".
+[Mon Nov 12 20:52:55 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 20:52:55 2012] [info] Listening at "http://*:3000".
+[Mon Nov 12 20:52:57 2012] [debug] Bad signed cookie "mojolicious", possible hacking attempt.
+[Mon Nov 12 20:52:57 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:52:57 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 20:52:57 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 20:52:57 2012] [debug] Rendering template "top/top.html.ep".
+[Mon Nov 12 20:52:57 2012] [debug] Rendering template "layouts/default.html.ep".
+[Mon Nov 12 20:52:57 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 20:52:57 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 20:52:57 2012] [debug] 200 OK (0.261093s, 3.830/s).
+[Mon Nov 12 20:52:58 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:52:58 2012] [debug] Template "not_found.development.html.ep" not found.
+[Mon Nov 12 20:52:58 2012] [debug] Template "not_found.html.ep" not found.
+[Mon Nov 12 20:52:58 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:52:58 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:52:58 2012] [debug] 404 Not Found (0.017638s, 56.696/s).
+[Mon Nov 12 20:52:59 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:52:59 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 20:52:59 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Mon Nov 12 20:52:59 2012] [debug] Rendering template "session/login.html.ep".
+[Mon Nov 12 20:52:59 2012] [debug] Rendering template "layouts/login.html.ep".
+[Mon Nov 12 20:52:59 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 20:52:59 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 20:52:59 2012] [debug] 200 OK (0.057485s, 17.396/s).
+[Mon Nov 12 20:53:00 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:53:00 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Mon Nov 12 20:53:00 2012] [debug] 302 Found (0.010417s, 95.997/s).
+[Mon Nov 12 20:53:05 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:53:05 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 20:53:05 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 20:53:07 2012] [debug] Model::User - new(...)
+[Mon Nov 12 20:53:07 2012] [debug] Model::User - specified hash
+[Mon Nov 12 20:53:07 2012] [debug] Model::User - find(...)
+[Mon Nov 12 20:53:07 2012] [error] Can't use string ("REF(0x2c8c488)") as a HASH ref while "strict refs" in use at /home/masanori/aptana_workspace/oden_schedule/site/script/../lib/OdenSchedule/Model/User.pm line 38.
+
+[Mon Nov 12 20:53:07 2012] [debug] Template "exception.development.html.ep" not found.
+[Mon Nov 12 20:53:07 2012] [debug] Template "exception.html.ep" not found.
+[Mon Nov 12 20:53:07 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:53:07 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:53:07 2012] [debug] 500 Internal Server Error (1.596812s, 0.626/s).
+[Mon Nov 12 20:55:55 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 20:55:57 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:55:57 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 20:55:57 2012] [debug] 302 Found (0.404742s, 2.471/s).
+[Mon Nov 12 20:55:57 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:55:57 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 20:55:57 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 20:55:57 2012] [debug] Rendering template "top/top.html.ep".
+[Mon Nov 12 20:55:57 2012] [debug] Rendering template "layouts/default.html.ep".
+[Mon Nov 12 20:55:57 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 20:55:57 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 20:55:57 2012] [debug] 200 OK (0.036817s, 27.161/s).
+[Mon Nov 12 20:55:57 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:55:57 2012] [debug] Template "not_found.development.html.ep" not found.
+[Mon Nov 12 20:55:57 2012] [debug] Template "not_found.html.ep" not found.
+[Mon Nov 12 20:55:57 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:55:58 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:55:58 2012] [debug] 404 Not Found (0.017190s, 58.173/s).
+[Mon Nov 12 20:55:58 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:55:58 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 20:55:58 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Mon Nov 12 20:55:58 2012] [debug] Rendering template "session/login.html.ep".
+[Mon Nov 12 20:55:58 2012] [debug] Rendering template "layouts/login.html.ep".
+[Mon Nov 12 20:55:58 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 20:55:58 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 20:55:58 2012] [debug] 200 OK (0.016631s, 60.129/s).
+[Mon Nov 12 20:55:59 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:55:59 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Mon Nov 12 20:55:59 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 20:55:59 2012] [debug] 302 Found (0.005710s, 175.131/s).
+[Mon Nov 12 20:56:02 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:56:02 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 20:56:02 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 20:56:04 2012] [debug] Model::User - new(...)
+[Mon Nov 12 20:56:04 2012] [debug] Model::User - specified hash
+[Mon Nov 12 20:56:04 2012] [debug] Model::User - find(...)
+[Mon Nov 12 20:56:04 2012] [error] Can't use string ("REF(0x244a518)") as a HASH ref while "strict refs" in use at /home/masanori/aptana_workspace/oden_schedule/site/script/../lib/OdenSchedule/Model/User.pm line 38.
+
+[Mon Nov 12 20:56:04 2012] [debug] Template "exception.development.html.ep" not found.
+[Mon Nov 12 20:56:04 2012] [debug] Template "exception.html.ep" not found.
+[Mon Nov 12 20:56:04 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:56:04 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:56:04 2012] [debug] 500 Internal Server Error (1.452853s, 0.688/s).
+[Mon Nov 12 20:56:15 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 20:56:15 2012] [info] Listening at "http://*:3000".
+[Mon Nov 12 20:56:17 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:56:17 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 20:56:17 2012] [debug] 302 Found (0.404736s, 2.471/s).
+[Mon Nov 12 20:56:17 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:56:17 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 20:56:17 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 20:56:17 2012] [debug] Rendering template "top/top.html.ep".
+[Mon Nov 12 20:56:17 2012] [debug] Rendering template "layouts/default.html.ep".
+[Mon Nov 12 20:56:17 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 20:56:17 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 20:56:17 2012] [debug] 200 OK (0.032227s, 31.030/s).
+[Mon Nov 12 20:56:17 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:56:17 2012] [debug] Template "not_found.development.html.ep" not found.
+[Mon Nov 12 20:56:17 2012] [debug] Template "not_found.html.ep" not found.
+[Mon Nov 12 20:56:17 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:56:17 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:56:17 2012] [debug] 404 Not Found (0.018539s, 53.940/s).
+[Mon Nov 12 20:56:18 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:56:18 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 20:56:18 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Mon Nov 12 20:56:18 2012] [debug] Rendering template "session/login.html.ep".
+[Mon Nov 12 20:56:18 2012] [debug] Rendering template "layouts/login.html.ep".
+[Mon Nov 12 20:56:18 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 20:56:18 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 20:56:18 2012] [debug] 200 OK (0.019476s, 51.345/s).
+[Mon Nov 12 20:56:20 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:56:20 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Mon Nov 12 20:56:20 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 20:56:20 2012] [debug] 302 Found (0.002730s, 366.300/s).
+[Mon Nov 12 20:56:22 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:56:22 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 20:56:22 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 20:56:23 2012] [debug] Model::User - new(...)
+[Mon Nov 12 20:56:23 2012] [debug] Model::User - specified hash
+[Mon Nov 12 20:56:23 2012] [debug] Model::User - find(...)
+[Mon Nov 12 20:56:23 2012] [error] Can't use string ("REF(0x3045328)") as a HASH ref while "strict refs" in use at /home/masanori/aptana_workspace/oden_schedule/site/script/../lib/OdenSchedule/Model/User.pm line 38.
+
+[Mon Nov 12 20:56:23 2012] [debug] Template "exception.development.html.ep" not found.
+[Mon Nov 12 20:56:23 2012] [debug] Template "exception.html.ep" not found.
+[Mon Nov 12 20:56:23 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:56:24 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:56:24 2012] [debug] 500 Internal Server Error (1.438466s, 0.695/s).
+[Mon Nov 12 20:56:45 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 20:56:58 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 20:57:00 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:57:00 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 20:57:01 2012] [debug] 302 Found (0.412121s, 2.426/s).
+[Mon Nov 12 20:57:01 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:57:01 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 20:57:01 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 20:57:01 2012] [debug] Rendering template "top/top.html.ep".
+[Mon Nov 12 20:57:01 2012] [debug] Rendering template "layouts/default.html.ep".
+[Mon Nov 12 20:57:01 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 20:57:01 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 20:57:01 2012] [debug] 200 OK (0.031503s, 31.743/s).
+[Mon Nov 12 20:57:01 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:57:01 2012] [debug] Template "not_found.development.html.ep" not found.
+[Mon Nov 12 20:57:01 2012] [debug] Template "not_found.html.ep" not found.
+[Mon Nov 12 20:57:01 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:57:01 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:57:01 2012] [debug] 404 Not Found (0.018751s, 53.330/s).
+[Mon Nov 12 20:57:02 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:57:02 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 20:57:02 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Mon Nov 12 20:57:02 2012] [debug] Rendering template "session/login.html.ep".
+[Mon Nov 12 20:57:02 2012] [debug] Rendering template "layouts/login.html.ep".
+[Mon Nov 12 20:57:02 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 20:57:02 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 20:57:02 2012] [debug] 200 OK (0.020849s, 47.964/s).
+[Mon Nov 12 20:57:03 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:57:03 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Mon Nov 12 20:57:03 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 20:57:03 2012] [debug] 302 Found (0.002294s, 435.920/s).
+[Mon Nov 12 20:57:06 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:57:06 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 20:57:06 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 20:57:07 2012] [debug] Model::User - new(...)
+[Mon Nov 12 20:57:07 2012] [debug] Model::User - specified hash
+[Mon Nov 12 20:57:07 2012] [debug] Model::User - find(...)
+[Mon Nov 12 20:57:07 2012] [debug]  * found user: 509fab55ea2c0eed6f000000
+[Mon Nov 12 20:57:07 2012] [debug] Model::User - applyObject(...)
+[Mon Nov 12 20:57:07 2012] [debug] {"_id":{"$oid":"509fab55ea2c0eed6f000000"},"id":"509fab55ea2c0eed6f000000"}
+[Mon Nov 12 20:57:07 2012] [error] Can't locate object method "google_id" via package "OdenSchedule::Model::User" at /home/masanori/aptana_workspace/oden_schedule/site/script/../lib/OdenSchedule/Controller/Session.pm line 49.
+
+[Mon Nov 12 20:57:07 2012] [debug] Template "exception.development.html.ep" not found.
+[Mon Nov 12 20:57:07 2012] [debug] Template "exception.html.ep" not found.
+[Mon Nov 12 20:57:07 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:57:07 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:57:07 2012] [debug] 500 Internal Server Error (1.255945s, 0.796/s).
+[Mon Nov 12 20:59:46 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 20:59:47 2012] [info] Listening at "http://*:3000".
+[Mon Nov 12 20:59:47 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:59:47 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 20:59:48 2012] [debug] 302 Found (0.398196s, 2.511/s).
+[Mon Nov 12 20:59:48 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:59:48 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 20:59:48 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 20:59:48 2012] [debug] Rendering template "top/top.html.ep".
+[Mon Nov 12 20:59:48 2012] [debug] Rendering template "layouts/default.html.ep".
+[Mon Nov 12 20:59:48 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 20:59:48 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 20:59:48 2012] [debug] 200 OK (0.035130s, 28.466/s).
+[Mon Nov 12 20:59:48 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:59:48 2012] [debug] Template "not_found.development.html.ep" not found.
+[Mon Nov 12 20:59:48 2012] [debug] Template "not_found.html.ep" not found.
+[Mon Nov 12 20:59:48 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:59:48 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:59:48 2012] [debug] 404 Not Found (0.018642s, 53.642/s).
+[Mon Nov 12 20:59:50 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:59:50 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 20:59:50 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Mon Nov 12 20:59:50 2012] [debug] Rendering template "session/login.html.ep".
+[Mon Nov 12 20:59:50 2012] [debug] Rendering template "layouts/login.html.ep".
+[Mon Nov 12 20:59:50 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 20:59:50 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 20:59:50 2012] [debug] 200 OK (0.020784s, 48.114/s).
+[Mon Nov 12 20:59:51 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:59:51 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Mon Nov 12 20:59:51 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 20:59:51 2012] [debug] 302 Found (0.003901s, 256.345/s).
+[Mon Nov 12 20:59:54 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 20:59:54 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 20:59:54 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 20:59:55 2012] [debug] Model::User - new(...)
+[Mon Nov 12 20:59:55 2012] [debug] Model::User - specified hash
+[Mon Nov 12 20:59:55 2012] [debug] Model::User - find(...)
+[Mon Nov 12 20:59:55 2012] [debug]  * found user: 509fab55ea2c0eed6f000000
+[Mon Nov 12 20:59:55 2012] [debug] Model::User - applyObject(...)
+[Mon Nov 12 20:59:55 2012] [debug] {"_id":{"$oid":"509fab55ea2c0eed6f000000"},"id":"509fab55ea2c0eed6f000000"}
+[Mon Nov 12 20:59:55 2012] [error] Can't locate object method "google_id" via package "OdenSchedule::Model::User" at /home/masanori/aptana_workspace/oden_schedule/site/script/../lib/OdenSchedule/Controller/Session.pm line 49.
+
+[Mon Nov 12 20:59:55 2012] [debug] Template "exception.development.html.ep" not found.
+[Mon Nov 12 20:59:55 2012] [debug] Template "exception.html.ep" not found.
+[Mon Nov 12 20:59:55 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:59:55 2012] [debug] Rendering inline template.
+[Mon Nov 12 20:59:55 2012] [debug] 500 Internal Server Error (1.153805s, 0.867/s).
+[Mon Nov 12 21:04:51 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 21:04:56 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:04:56 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 21:04:57 2012] [debug] 302 Found (0.700945s, 1.427/s).
+[Mon Nov 12 21:04:57 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:04:57 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:04:57 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 21:04:57 2012] [debug] Rendering template "top/top.html.ep".
+[Mon Nov 12 21:04:57 2012] [debug] Rendering template "layouts/default.html.ep".
+[Mon Nov 12 21:04:57 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:04:57 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:04:57 2012] [debug] 200 OK (0.037963s, 26.341/s).
+[Mon Nov 12 21:04:58 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:04:58 2012] [debug] Template "not_found.development.html.ep" not found.
+[Mon Nov 12 21:04:58 2012] [debug] Template "not_found.html.ep" not found.
+[Mon Nov 12 21:04:58 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:04:58 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:04:58 2012] [debug] 404 Not Found (0.020269s, 49.336/s).
+[Mon Nov 12 21:05:08 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 21:05:08 2012] [info] Listening at "http://*:3000".
+[Mon Nov 12 21:05:10 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:05:10 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:05:10 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 21:05:10 2012] [debug] Rendering template "top/top.html.ep".
+[Mon Nov 12 21:05:10 2012] [debug] Rendering template "layouts/default.html.ep".
+[Mon Nov 12 21:05:10 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:05:10 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:05:10 2012] [debug] 200 OK (0.047451s, 21.074/s).
+[Mon Nov 12 21:05:11 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:05:11 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:05:11 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 21:05:11 2012] [debug] Rendering cached template "top/top.html.ep".
+[Mon Nov 12 21:05:11 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Mon Nov 12 21:05:11 2012] [debug] Rendering cached template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:05:11 2012] [debug] Rendering cached template "includes/footer.html.ep".
+[Mon Nov 12 21:05:11 2012] [debug] 200 OK (0.005606s, 178.380/s).
+[Mon Nov 12 21:05:13 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:05:13 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:05:13 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Mon Nov 12 21:05:13 2012] [debug] Rendering template "session/login.html.ep".
+[Mon Nov 12 21:05:13 2012] [debug] Rendering template "layouts/login.html.ep".
+[Mon Nov 12 21:05:13 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:05:13 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:05:13 2012] [debug] 200 OK (0.019374s, 51.616/s).
+[Mon Nov 12 21:05:15 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:05:15 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Mon Nov 12 21:05:15 2012] [debug] 302 Found (0.007864s, 127.162/s).
+[Mon Nov 12 21:05:18 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:05:18 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 21:05:18 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 21:05:19 2012] [debug] Model::User - new(...)
+[Mon Nov 12 21:05:19 2012] [debug] Model::User - specified hash
+[Mon Nov 12 21:05:19 2012] [debug] Model::User - find(...)
+[Mon Nov 12 21:05:19 2012] [debug]  * REF(0x418b5f0) = 
+[Mon Nov 12 21:05:19 2012] [debug]  * found user: 509fab55ea2c0eed6f000000
+[Mon Nov 12 21:05:19 2012] [debug] Model::User - applyObject(...)
+[Mon Nov 12 21:05:19 2012] [debug] {"_id":{"$oid":"509fab55ea2c0eed6f000000"},"id":"509fab55ea2c0eed6f000000"}
+[Mon Nov 12 21:05:19 2012] [error] Can't locate object method "google_id" via package "OdenSchedule::Model::User" at /home/masanori/aptana_workspace/oden_schedule/site/script/../lib/OdenSchedule/Controller/Session.pm line 49.
+
+[Mon Nov 12 21:05:19 2012] [debug] Template "exception.development.html.ep" not found.
+[Mon Nov 12 21:05:19 2012] [debug] Template "exception.html.ep" not found.
+[Mon Nov 12 21:05:19 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:05:19 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:05:19 2012] [debug] 500 Internal Server Error (1.402106s, 0.713/s).
+[Mon Nov 12 21:07:40 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 21:07:40 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:07:40 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 21:07:41 2012] [debug] 302 Found (0.387953s, 2.578/s).
+[Mon Nov 12 21:07:41 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:07:41 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:07:41 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 21:07:41 2012] [debug] Rendering template "top/top.html.ep".
+[Mon Nov 12 21:07:41 2012] [debug] Rendering template "layouts/default.html.ep".
+[Mon Nov 12 21:07:41 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:07:41 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:07:41 2012] [debug] 200 OK (0.039977s, 25.014/s).
+[Mon Nov 12 21:07:41 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:07:41 2012] [debug] Template "not_found.development.html.ep" not found.
+[Mon Nov 12 21:07:41 2012] [debug] Template "not_found.html.ep" not found.
+[Mon Nov 12 21:07:41 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:07:41 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:07:41 2012] [debug] 404 Not Found (0.022895s, 43.678/s).
+[Mon Nov 12 21:07:43 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:07:43 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:07:43 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Mon Nov 12 21:07:43 2012] [debug] Rendering template "session/login.html.ep".
+[Mon Nov 12 21:07:43 2012] [debug] Rendering template "layouts/login.html.ep".
+[Mon Nov 12 21:07:43 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:07:43 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:07:43 2012] [debug] 200 OK (0.024441s, 40.915/s).
+[Mon Nov 12 21:07:44 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:07:44 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Mon Nov 12 21:07:44 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 21:07:44 2012] [debug] 302 Found (0.005469s, 182.849/s).
+[Mon Nov 12 21:07:46 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:07:46 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 21:07:46 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 21:07:48 2012] [debug] Model::User - new(...)
+[Mon Nov 12 21:07:48 2012] [debug] Model::User - specified hash
+[Mon Nov 12 21:07:48 2012] [debug] Model::User - find(...)
+[Mon Nov 12 21:07:48 2012] [debug]  * google_token = 
+[Mon Nov 12 21:07:48 2012] [debug]  * found user: 509fab55ea2c0eed6f000000
+[Mon Nov 12 21:07:48 2012] [debug] Model::User - applyObject(...)
+[Mon Nov 12 21:07:48 2012] [debug] {"_id":{"$oid":"509fab55ea2c0eed6f000000"},"id":"509fab55ea2c0eed6f000000"}
+[Mon Nov 12 21:07:48 2012] [error] Can't locate object method "google_id" via package "OdenSchedule::Model::User" at /home/masanori/aptana_workspace/oden_schedule/site/script/../lib/OdenSchedule/Controller/Session.pm line 49.
+
+[Mon Nov 12 21:07:48 2012] [debug] Template "exception.development.html.ep" not found.
+[Mon Nov 12 21:07:48 2012] [debug] Template "exception.html.ep" not found.
+[Mon Nov 12 21:07:48 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:07:48 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:07:48 2012] [debug] 500 Internal Server Error (1.169774s, 0.855/s).
+[Mon Nov 12 21:08:20 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 21:10:06 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 21:10:38 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 21:10:46 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:10:46 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 21:10:49 2012] [debug] Model::User - new(...)
+[Mon Nov 12 21:10:49 2012] [debug] Model::User - specified hash
+[Mon Nov 12 21:10:49 2012] [debug] Model::User - find(...)
+[Mon Nov 12 21:10:49 2012] [debug]  * google_id = 
+[Mon Nov 12 21:10:49 2012] [debug]  * found user: 509fab55ea2c0eed6f000000
+[Mon Nov 12 21:10:49 2012] [debug] Model::User - applyObject(...)
+[Mon Nov 12 21:10:49 2012] [debug] {"_id":{"$oid":"509fab55ea2c0eed6f000000"},"id":"509fab55ea2c0eed6f000000"}
+[Mon Nov 12 21:10:49 2012] [error] Can't locate object method "google_id" via package "OdenSchedule::Model::User" at /home/masanori/aptana_workspace/oden_schedule/site/script/../lib/OdenSchedule/Controller/Session.pm line 49.
+
+[Mon Nov 12 21:10:49 2012] [debug] Template "exception.development.html.ep" not found.
+[Mon Nov 12 21:10:49 2012] [debug] Template "exception.html.ep" not found.
+[Mon Nov 12 21:10:49 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:10:49 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:10:49 2012] [debug] 500 Internal Server Error (2.408217s, 0.415/s).
+[Mon Nov 12 21:10:59 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:10:59 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:10:59 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 21:10:59 2012] [debug] Rendering template "top/top.html.ep".
+[Mon Nov 12 21:10:59 2012] [debug] Rendering template "layouts/default.html.ep".
+[Mon Nov 12 21:10:59 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:10:59 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:10:59 2012] [debug] 200 OK (0.032402s, 30.862/s).
+[Mon Nov 12 21:11:00 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:11:00 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:11:00 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Mon Nov 12 21:11:00 2012] [debug] Rendering template "session/login.html.ep".
+[Mon Nov 12 21:11:00 2012] [debug] Rendering template "layouts/login.html.ep".
+[Mon Nov 12 21:11:00 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:11:00 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:11:00 2012] [debug] 200 OK (0.027387s, 36.514/s).
+[Mon Nov 12 21:11:01 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:11:01 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Mon Nov 12 21:11:01 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 21:11:01 2012] [debug] 302 Found (0.005396s, 185.322/s).
+[Mon Nov 12 21:11:04 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:11:04 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 21:11:04 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 21:11:05 2012] [debug] Model::User - new(...)
+[Mon Nov 12 21:11:05 2012] [debug] Model::User - specified hash
+[Mon Nov 12 21:11:05 2012] [debug] Model::User - find(...)
+[Mon Nov 12 21:11:05 2012] [debug]  * google_id = 
+[Mon Nov 12 21:11:05 2012] [debug]  * found user: 509fab55ea2c0eed6f000000
+[Mon Nov 12 21:11:05 2012] [debug] Model::User - applyObject(...)
+[Mon Nov 12 21:11:05 2012] [debug] {"_id":{"$oid":"509fab55ea2c0eed6f000000"},"id":"509fab55ea2c0eed6f000000"}
+[Mon Nov 12 21:11:05 2012] [error] Can't locate object method "google_id" via package "OdenSchedule::Model::User" at /home/masanori/aptana_workspace/oden_schedule/site/script/../lib/OdenSchedule/Controller/Session.pm line 49.
+
+[Mon Nov 12 21:11:05 2012] [debug] Template "exception.development.html.ep" not found.
+[Mon Nov 12 21:11:05 2012] [debug] Template "exception.html.ep" not found.
+[Mon Nov 12 21:11:05 2012] [debug] Rendering cached inline template.
+[Mon Nov 12 21:11:05 2012] [debug] Rendering cached inline template.
+[Mon Nov 12 21:11:05 2012] [debug] 500 Internal Server Error (1.353903s, 0.739/s).
+[Mon Nov 12 21:15:25 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 21:15:32 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:15:32 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 21:15:32 2012] [debug] 302 Found (0.400763s, 2.495/s).
+[Mon Nov 12 21:15:32 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:15:32 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:15:32 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 21:15:32 2012] [debug] Rendering template "top/top.html.ep".
+[Mon Nov 12 21:15:32 2012] [debug] Rendering template "layouts/default.html.ep".
+[Mon Nov 12 21:15:32 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:15:32 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:15:32 2012] [debug] 200 OK (0.037838s, 26.428/s).
+[Mon Nov 12 21:15:33 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:15:33 2012] [debug] Template "not_found.development.html.ep" not found.
+[Mon Nov 12 21:15:33 2012] [debug] Template "not_found.html.ep" not found.
+[Mon Nov 12 21:15:33 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:15:33 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:15:33 2012] [debug] 404 Not Found (0.016892s, 59.200/s).
+[Mon Nov 12 21:15:34 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:15:34 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:15:34 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Mon Nov 12 21:15:34 2012] [debug] Rendering template "session/login.html.ep".
+[Mon Nov 12 21:15:34 2012] [debug] Rendering template "layouts/login.html.ep".
+[Mon Nov 12 21:15:34 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:15:34 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:15:34 2012] [debug] 200 OK (0.025344s, 39.457/s).
+[Mon Nov 12 21:15:35 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:15:35 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Mon Nov 12 21:15:35 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 21:15:35 2012] [debug] 302 Found (0.004383s, 228.154/s).
+[Mon Nov 12 21:15:38 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:15:38 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 21:15:38 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 21:15:39 2012] [debug] Model::User - new(...)
+[Mon Nov 12 21:15:39 2012] [debug] Model::User - specified hash
+[Mon Nov 12 21:15:39 2012] [debug] Model::User - find(...)
+[Mon Nov 12 21:15:39 2012] [error] Not a SCALAR reference at /home/masanori/aptana_workspace/oden_schedule/site/script/../lib/OdenSchedule/Model/User.pm line 40.
+
+[Mon Nov 12 21:15:39 2012] [debug] Template "exception.development.html.ep" not found.
+[Mon Nov 12 21:15:39 2012] [debug] Template "exception.html.ep" not found.
+[Mon Nov 12 21:15:39 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:15:39 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:15:39 2012] [debug] 500 Internal Server Error (1.334632s, 0.749/s).
+[Mon Nov 12 21:16:21 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 21:16:56 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 21:20:35 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 21:20:49 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 21:20:56 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:20:56 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 21:20:57 2012] [debug] 302 Found (0.507199s, 1.972/s).
+[Mon Nov 12 21:20:57 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:20:57 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:20:57 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 21:20:57 2012] [debug] Rendering template "top/top.html.ep".
+[Mon Nov 12 21:20:57 2012] [debug] Rendering template "layouts/default.html.ep".
+[Mon Nov 12 21:20:57 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:20:57 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:20:57 2012] [debug] 200 OK (0.040430s, 24.734/s).
+[Mon Nov 12 21:20:57 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:20:57 2012] [debug] Template "not_found.development.html.ep" not found.
+[Mon Nov 12 21:20:57 2012] [debug] Template "not_found.html.ep" not found.
+[Mon Nov 12 21:20:57 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:20:57 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:20:57 2012] [debug] 404 Not Found (0.018581s, 53.818/s).
+[Mon Nov 12 21:20:59 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:20:59 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:20:59 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Mon Nov 12 21:20:59 2012] [debug] Rendering template "session/login.html.ep".
+[Mon Nov 12 21:20:59 2012] [debug] Rendering template "layouts/login.html.ep".
+[Mon Nov 12 21:20:59 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:20:59 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:20:59 2012] [debug] 200 OK (0.024590s, 40.667/s).
+[Mon Nov 12 21:21:00 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:21:00 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Mon Nov 12 21:21:00 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 21:21:00 2012] [debug] 302 Found (0.002173s, 460.193/s).
+[Mon Nov 12 21:21:02 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:21:02 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 21:21:02 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 21:21:04 2012] [debug] Model::User - new(...)
+[Mon Nov 12 21:21:04 2012] [debug] Model::User - specified hash
+[Mon Nov 12 21:21:04 2012] [debug] Model::User - find(...)
+[Mon Nov 12 21:21:04 2012] [debug]  * google_id = 
+[Mon Nov 12 21:21:04 2012] [debug]  * found user: 509fab55ea2c0eed6f000000
+[Mon Nov 12 21:21:04 2012] [debug] Model::User - applyObject(...)
+[Mon Nov 12 21:21:04 2012] [debug] {"_id":{"$oid":"509fab55ea2c0eed6f000000"},"id":"509fab55ea2c0eed6f000000"}
+[Mon Nov 12 21:21:04 2012] [error] Can't locate object method "google_id" via package "OdenSchedule::Model::User" at /home/masanori/aptana_workspace/oden_schedule/site/script/../lib/OdenSchedule/Controller/Session.pm line 49.
+
+[Mon Nov 12 21:21:04 2012] [debug] Template "exception.development.html.ep" not found.
+[Mon Nov 12 21:21:04 2012] [debug] Template "exception.html.ep" not found.
+[Mon Nov 12 21:21:04 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:21:04 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:21:04 2012] [debug] 500 Internal Server Error (1.165390s, 0.858/s).
+[Mon Nov 12 21:22:32 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 21:22:34 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:22:34 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 21:22:34 2012] [debug] 302 Found (0.400163s, 2.499/s).
+[Mon Nov 12 21:22:34 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:22:34 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:22:34 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 21:22:34 2012] [debug] Rendering template "top/top.html.ep".
+[Mon Nov 12 21:22:34 2012] [debug] Rendering template "layouts/default.html.ep".
+[Mon Nov 12 21:22:34 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:22:34 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:22:34 2012] [debug] 200 OK (0.032017s, 31.233/s).
+[Mon Nov 12 21:22:35 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:22:35 2012] [debug] Template "not_found.development.html.ep" not found.
+[Mon Nov 12 21:22:35 2012] [debug] Template "not_found.html.ep" not found.
+[Mon Nov 12 21:22:35 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:22:35 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:22:35 2012] [debug] 404 Not Found (0.019065s, 52.452/s).
+[Mon Nov 12 21:22:35 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:22:35 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:22:35 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Mon Nov 12 21:22:35 2012] [debug] Rendering template "session/login.html.ep".
+[Mon Nov 12 21:22:35 2012] [debug] Rendering template "layouts/login.html.ep".
+[Mon Nov 12 21:22:35 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:22:35 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:22:35 2012] [debug] 200 OK (0.024896s, 40.167/s).
+[Mon Nov 12 21:22:37 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:22:37 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Mon Nov 12 21:22:37 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 21:22:37 2012] [debug] 302 Found (0.002565s, 389.864/s).
+[Mon Nov 12 21:22:39 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:22:39 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 21:22:39 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 21:22:41 2012] [debug] Model::User - new(...)
+[Mon Nov 12 21:22:41 2012] [debug] Model::User - specified hash
+[Mon Nov 12 21:22:41 2012] [debug] Model::User - find(...)
+[Mon Nov 12 21:22:41 2012] [debug] "google_id"
+[Mon Nov 12 21:22:41 2012] [debug]  * google_id = 
+[Mon Nov 12 21:22:41 2012] [debug]  * found user: 509fab55ea2c0eed6f000000
+[Mon Nov 12 21:22:41 2012] [debug] Model::User - applyObject(...)
+[Mon Nov 12 21:22:41 2012] [debug] {"_id":{"$oid":"509fab55ea2c0eed6f000000"},"id":"509fab55ea2c0eed6f000000"}
+[Mon Nov 12 21:22:41 2012] [error] Can't locate object method "google_id" via package "OdenSchedule::Model::User" at /home/masanori/aptana_workspace/oden_schedule/site/script/../lib/OdenSchedule/Controller/Session.pm line 49.
+
+[Mon Nov 12 21:22:41 2012] [debug] Template "exception.development.html.ep" not found.
+[Mon Nov 12 21:22:41 2012] [debug] Template "exception.html.ep" not found.
+[Mon Nov 12 21:22:41 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:22:41 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:22:41 2012] [debug] 500 Internal Server Error (1.261205s, 0.793/s).
+[Mon Nov 12 21:24:07 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 21:24:12 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:24:12 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 21:24:13 2012] [debug] 302 Found (0.408927s, 2.445/s).
+[Mon Nov 12 21:24:13 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:24:13 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:24:13 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 21:24:13 2012] [debug] Rendering template "top/top.html.ep".
+[Mon Nov 12 21:24:13 2012] [debug] Rendering template "layouts/default.html.ep".
+[Mon Nov 12 21:24:13 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:24:13 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:24:13 2012] [debug] 200 OK (0.034419s, 29.054/s).
+[Mon Nov 12 21:24:13 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:24:13 2012] [debug] Template "not_found.development.html.ep" not found.
+[Mon Nov 12 21:24:13 2012] [debug] Template "not_found.html.ep" not found.
+[Mon Nov 12 21:24:13 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:24:13 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:24:13 2012] [debug] 404 Not Found (0.017785s, 56.227/s).
+[Mon Nov 12 21:24:15 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:24:15 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:24:15 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Mon Nov 12 21:24:15 2012] [debug] Rendering template "session/login.html.ep".
+[Mon Nov 12 21:24:15 2012] [debug] Rendering template "layouts/login.html.ep".
+[Mon Nov 12 21:24:15 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:24:15 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:24:15 2012] [debug] 200 OK (0.030052s, 33.276/s).
+[Mon Nov 12 21:24:18 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:24:18 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Mon Nov 12 21:24:18 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 21:24:18 2012] [debug] 302 Found (0.005167s, 193.536/s).
+[Mon Nov 12 21:24:20 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:24:20 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 21:24:20 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 21:24:22 2012] [debug] Model::User - new(...)
+[Mon Nov 12 21:24:22 2012] [debug] Model::User - specified hash
+[Mon Nov 12 21:24:22 2012] [debug] Model::User - find(...)
+[Mon Nov 12 21:24:22 2012] [debug] "google_id"
+[Mon Nov 12 21:24:22 2012] [debug]  * google_id = ht11a018@oecu.jp
+[Mon Nov 12 21:24:22 2012] [debug]  * user not found
+[Mon Nov 12 21:24:22 2012] [debug] Model::User - set(...)
+[Mon Nov 12 21:24:22 2012] [debug] Model::User - applyObject(...)
+[Mon Nov 12 21:24:22 2012] [debug] {"_id":{"$oid":"50a0ea766dc494c748000000"},"id":"50a0ea766dc494c748000000"}
+[Mon Nov 12 21:24:22 2012] [debug] 302 Found (1.140274s, 0.877/s).
+[Mon Nov 12 21:24:22 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:24:22 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:24:22 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 21:24:22 2012] [debug] Rendering cached template "top/top.html.ep".
+[Mon Nov 12 21:24:22 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Mon Nov 12 21:24:22 2012] [debug] Rendering cached template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:24:22 2012] [debug] Rendering cached template "includes/footer.html.ep".
+[Mon Nov 12 21:24:22 2012] [debug] 200 OK (0.008506s, 117.564/s).
+[Mon Nov 12 21:24:22 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:24:22 2012] [debug] Template "not_found.development.html.ep" not found.
+[Mon Nov 12 21:24:22 2012] [debug] Template "not_found.html.ep" not found.
+[Mon Nov 12 21:24:22 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:24:22 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:24:22 2012] [debug] 404 Not Found (0.016114s, 62.058/s).
+[Mon Nov 12 21:25:28 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:25:28 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:25:28 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Mon Nov 12 21:25:28 2012] [debug] Rendering cached template "session/login.html.ep".
+[Mon Nov 12 21:25:28 2012] [debug] Rendering cached template "layouts/login.html.ep".
+[Mon Nov 12 21:25:28 2012] [debug] Rendering cached template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:25:28 2012] [debug] Rendering cached template "includes/footer.html.ep".
+[Mon Nov 12 21:25:28 2012] [debug] 200 OK (0.006174s, 161.970/s).
+[Mon Nov 12 21:27:29 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 21:27:32 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:27:32 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Mon Nov 12 21:27:32 2012] [debug] 302 Found (0.012350s, 80.972/s).
+[Mon Nov 12 21:27:35 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:27:35 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 21:27:35 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 21:27:36 2012] [debug] Model::User - new(...)
+[Mon Nov 12 21:27:36 2012] [debug] Model::User - specified hash
+[Mon Nov 12 21:27:36 2012] [debug] Model::User - find(...)
+[Mon Nov 12 21:27:36 2012] [debug]  * google_id = ht11a018@oecu.jp
+[Mon Nov 12 21:27:36 2012] [debug]  * user not found
+[Mon Nov 12 21:27:36 2012] [debug] Model::User - set(...)
+[Mon Nov 12 21:27:36 2012] [debug] "google_token"
+[Mon Nov 12 21:27:36 2012] [debug] Model::User - applyObject(...)
+[Mon Nov 12 21:27:36 2012] [debug] {"_id":{"$oid":"50a0eb386dc4946a49000000"},"id":"50a0eb386dc4946a49000000"}
+[Mon Nov 12 21:27:36 2012] [debug] 302 Found (1.153231s, 0.867/s).
+[Mon Nov 12 21:27:36 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:27:36 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:27:36 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 21:27:36 2012] [debug] Rendering template "top/top.html.ep".
+[Mon Nov 12 21:27:36 2012] [debug] Rendering template "layouts/default.html.ep".
+[Mon Nov 12 21:27:36 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:27:36 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:27:36 2012] [debug] 200 OK (0.028604s, 34.960/s).
+[Mon Nov 12 21:27:37 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:27:37 2012] [debug] Template "not_found.development.html.ep" not found.
+[Mon Nov 12 21:27:37 2012] [debug] Template "not_found.html.ep" not found.
+[Mon Nov 12 21:27:37 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:27:37 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:27:37 2012] [debug] 404 Not Found (0.022749s, 43.958/s).
+[Mon Nov 12 21:28:16 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 21:29:02 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 21:29:36 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 21:29:37 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:29:37 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:29:37 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Mon Nov 12 21:29:37 2012] [debug] Rendering template "session/login.html.ep".
+[Mon Nov 12 21:29:37 2012] [debug] Rendering template "layouts/login.html.ep".
+[Mon Nov 12 21:29:37 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:29:37 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:29:37 2012] [debug] 200 OK (0.038711s, 25.832/s).
+[Mon Nov 12 21:29:38 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:29:38 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Mon Nov 12 21:29:38 2012] [debug] 302 Found (0.009360s, 106.838/s).
+[Mon Nov 12 21:29:41 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:29:41 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 21:29:41 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 21:29:42 2012] [debug] Model::User - new(...)
+[Mon Nov 12 21:29:42 2012] [debug] Model::User - specified hash
+[Mon Nov 12 21:29:42 2012] [debug] Model::User - find(...)
+[Mon Nov 12 21:29:42 2012] [debug]  * google_id = ht11a018@oecu.jp
+[Mon Nov 12 21:29:42 2012] [debug]  * user not found
+[Mon Nov 12 21:29:42 2012] [debug] Model::User - set(...)
+[Mon Nov 12 21:29:42 2012] [debug] {"google_token":"ya29.AHES6ZTGHiPlooUF6hQPPa04tyT_tNAWTeDBRVOZPFZ9x4Mijgx4UGw","google_id":"ht11a018@oecu.jp","name":"ht11a018@oecu.jp"}
+[Mon Nov 12 21:29:42 2012] [debug] Model::User - applyObject(...)
+[Mon Nov 12 21:29:42 2012] [debug] {"_id":{"$oid":"50a0ebb66dc494e749000000"},"id":"50a0ebb66dc494e749000000"}
+[Mon Nov 12 21:29:42 2012] [debug] 302 Found (1.265780s, 0.790/s).
+[Mon Nov 12 21:29:42 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:29:42 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:29:42 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 21:29:42 2012] [debug] Rendering template "top/top.html.ep".
+[Mon Nov 12 21:29:42 2012] [debug] Rendering template "layouts/default.html.ep".
+[Mon Nov 12 21:29:42 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:29:42 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:29:42 2012] [debug] 200 OK (0.017313s, 57.760/s).
+[Mon Nov 12 21:29:42 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:29:42 2012] [debug] Template "not_found.development.html.ep" not found.
+[Mon Nov 12 21:29:42 2012] [debug] Template "not_found.html.ep" not found.
+[Mon Nov 12 21:29:42 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:29:42 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:29:42 2012] [debug] 404 Not Found (0.019545s, 51.164/s).
+[Mon Nov 12 21:30:11 2012] [debug] Reading config file "/home/masanori/aptana_workspace/oden_schedule/site/config/config.conf".
+[Mon Nov 12 21:30:13 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:30:13 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:30:13 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 21:30:13 2012] [debug] Rendering template "top/top.html.ep".
+[Mon Nov 12 21:30:13 2012] [debug] Rendering template "layouts/default.html.ep".
+[Mon Nov 12 21:30:13 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:30:13 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:30:13 2012] [debug] 200 OK (0.034617s, 28.888/s).
+[Mon Nov 12 21:30:13 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:30:13 2012] [debug] Template "not_found.development.html.ep" not found.
+[Mon Nov 12 21:30:13 2012] [debug] Template "not_found.html.ep" not found.
+[Mon Nov 12 21:30:13 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:30:13 2012] [debug] Rendering inline template.
+[Mon Nov 12 21:30:13 2012] [debug] 404 Not Found (0.016444s, 60.812/s).
+[Mon Nov 12 21:30:14 2012] [debug] GET /session/login (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:30:14 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:30:14 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "login".
+[Mon Nov 12 21:30:14 2012] [debug] Rendering template "session/login.html.ep".
+[Mon Nov 12 21:30:14 2012] [debug] Rendering template "layouts/login.html.ep".
+[Mon Nov 12 21:30:14 2012] [debug] Rendering template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:30:14 2012] [debug] Rendering template "includes/footer.html.ep".
+[Mon Nov 12 21:30:14 2012] [debug] 200 OK (0.016313s, 61.301/s).
+[Mon Nov 12 21:30:15 2012] [debug] GET /session/oauth_google_redirect (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:30:15 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_redirect".
+[Mon Nov 12 21:30:15 2012] [debug] 302 Found (0.007877s, 126.952/s).
+[Mon Nov 12 21:30:18 2012] [debug] GET /session/oauth_google_callback (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:30:18 2012] [debug] Routing to controller "OdenSchedule::Controller::Session" and action "oauth_google_callback".
+[Mon Nov 12 21:30:18 2012] [debug] Helper "oauth_client_google" already exists, replacing.
+[Mon Nov 12 21:30:19 2012] [debug] Model::User - new(...)
+[Mon Nov 12 21:30:19 2012] [debug] Model::User - specified hash
+[Mon Nov 12 21:30:19 2012] [debug] Model::User - find(...)
+[Mon Nov 12 21:30:19 2012] [debug]  * google_id = ht11a018@oecu.jp
+[Mon Nov 12 21:30:19 2012] [debug]  * user not found
+[Mon Nov 12 21:30:19 2012] [debug] Model::User - set(...)
+[Mon Nov 12 21:30:19 2012] [debug] {"google_token":"ya29.AHES6ZRUJlmcNOeeWTLdLp6uoicCvPU67VMcDhVTz8P3EXL7cJ2YALQ","google_id":"ht11a018@oecu.jp","name":"ht11a018@oecu.jp"}
+[Mon Nov 12 21:30:19 2012] [debug] Model::User - applyObject(...)
+[Mon Nov 12 21:30:19 2012] [debug] {"google_token":"ya29.AHES6ZRUJlmcNOeeWTLdLp6uoicCvPU67VMcDhVTz8P3EXL7cJ2YALQ","_id":{"$oid":"50a0ebdb6dc494154a000000"},"google_id":"ht11a018@oecu.jp","name":"ht11a018@oecu.jp","id":"50a0ebdb6dc494154a000000"}
+[Mon Nov 12 21:30:19 2012] [debug] 302 Found (1.161334s, 0.861/s).
+[Mon Nov 12 21:30:19 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:30:19 2012] [debug] Routing to controller "OdenSchedule::Controller::Bridge" and action "login_check".
+[Mon Nov 12 21:30:19 2012] [debug] Routing to controller "OdenSchedule::Controller::Top" and action "top".
+[Mon Nov 12 21:30:19 2012] [debug] Rendering cached template "top/top.html.ep".
+[Mon Nov 12 21:30:19 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Mon Nov 12 21:30:19 2012] [debug] Rendering cached template "includes/ee_comment.html.ep".
+[Mon Nov 12 21:30:19 2012] [debug] Rendering cached template "includes/footer.html.ep".
+[Mon Nov 12 21:30:19 2012] [debug] 200 OK (0.005121s, 195.274/s).
+[Mon Nov 12 21:30:19 2012] [debug] GET /assets/ico/favicon.ico (Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11).
+[Mon Nov 12 21:30:19 2012] [debug] Template "not_found.development.html.ep" not found.
+[Mon Nov 12 21:30:19 2012] [debug] Template "not_found.html.ep" not found.
+[Mon Nov 12 21:30:19 2012] [debug] Rendering cached inline template.
+[Mon Nov 12 21:30:19 2012] [debug] Rendering cached inline template.
+[Mon Nov 12 21:30:19 2012] [debug] 404 Not Found (0.006411s, 155.982/s).

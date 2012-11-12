@@ -9,7 +9,7 @@ use Mojo::JSON;
 use Data::Model;
 
 sub new {
-	my ($class, $db, $log, %hash) = @_;
+	my ($class, $db, $log, $hash) = @_;
 	my $self = bless({}, $class);
 	
 	$$log->debug("Model::User - new(...)");
@@ -22,9 +22,9 @@ sub new {
 	
 	$self->{isFound} = undef;
 	
-	unless (!%hash){ # 検索条件ハッシュが指定されていれば...ユーザ検索
+	unless (!$hash){ # 検索条件ハッシュが指定されていれば...ユーザ検索
 		$$log->debug("Model::User - specified hash");
-		$self->find(%hash);
+		$self->find($hash);
 	}
 	
 	return $self;
@@ -35,10 +35,11 @@ sub find {
 	$self->{log}->debug("Model::User - find(...)");
 	my $key = "";
 	my $value = "";
-	foreach my $k(keys(%$hash)){
+	foreach my $k(keys %$hash){
 		$key = $k;
 		$value = $hash->{$k};
 	}
+	$self->{log}->debug(" * $key = $value");
 	my $iter = $self->{db}->get(user => {where => [$key => $value]});
 	my $itemRow = $iter->next;
 	if(($itemRow)){
@@ -56,8 +57,9 @@ sub find {
 sub set {
 	my ($self, %hash) = @_;
 	$self->{log}->debug("Model::User - set(...)");
+	$self->{log}->debug(Mojo::JSON->encode(\%hash));
 	
-	my $itemRow = $self->{db}->set(user => %hash);
+	my $itemRow = $self->{db}->set(user => \%hash);
 	$self->applyObject($itemRow->{column_values});
 	return $itemRow;
 }
@@ -86,7 +88,7 @@ sub applyObject {
 	my ($self, $h) = @_;
 	$self->{log}->debug("Model::User - applyObject(...)");
 	$self->{log}->debug(Mojo::JSON->encode($h));
-	foreach my $k(keys(%$h)){
+	foreach my $k(keys %$h){
 		my $val = $h->{$k};
 		if($k eq "_id"){
 			next;

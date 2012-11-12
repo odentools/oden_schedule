@@ -45,12 +45,11 @@ sub startup {
 	
 	# データベースモデルのセット
 	$self->helper('getUserObj' => sub {
-		my $self = shift;
-		my %hash = shift;
+		my ($self, %hash) = @_;
 		return OdenSchedule::Model::User->new(
 			\($self->app->db),
 			\($self->app->log),
-			%hash
+			\%hash
 		);
 	});
 	

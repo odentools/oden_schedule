@@ -44,7 +44,7 @@ sub oauth_google_callback {
 		my $token = $access_token->{access_token};
 		
 		# ユーザを検索
-		my $user = $self->getUserObj(\{'google_token' => $user_id});
+		my $user = $self->getUserObj('google_id' => $user_id);
 		if($user->{isFound}){# 既存ユーザであれば...
 			$user->google_id($user_id);
 			$user->google_token($token);
