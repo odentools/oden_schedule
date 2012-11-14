@@ -1,0 +1,22 @@
+% layout 'default';
+% title 'ユーザページ';
+<div class="hero-unit">
+	<h2>ユーザページ</h2>
+	<h4>連携: Googleカレンダー</h4>
+	<% if ($isUser_google) { %>		
+		<p>Connected :)</p>
+		<fieldset>
+			<label>講義予定を自動登録するカレンダー:</label>
+			<select name="calendar_name">
+				<option value="●●のカレンダー">●●のカレンダー</option>
+			</select>
+		</fieldset> 
+	<% } else { %>
+		<p>Not connected X</p>
+	<% } %>
+	
+	<h4>フィルタ設定</h4>
+	
+	<h4>ログ</h4>
+	
+</div>

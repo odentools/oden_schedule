@@ -88,7 +88,7 @@
 				</p>
 				<hr>
 				<p>
-					<i class=" icon-lock"></i> サーバとの通信はSSLで暗号化されます。
+					<s><i class=" icon-lock"></i> サーバとの通信はSSLで暗号化されます。</s>
 				</p>
 				<%= link_to '/' => begin %>トップへ戻る<% end %>
 

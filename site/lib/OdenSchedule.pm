@@ -69,9 +69,9 @@ sub startup {
 	$r = $r->bridge->to('bridge#login_check');
 	
 	# 通常のルート
-	$r->route('')->to('top#top',);
+	$r->route('')->to('top#top_guest',);
+	$r->route('/top')->to('top#top_user',);
 	$r->route('/docs/about')->to('docs#about',);
-	$r->route('/user/edit')->to('user#edit',);
 	$r->route('/session/login')->to('session#login');
 	$r->route('/session/logout')->to('session#logout');
 }

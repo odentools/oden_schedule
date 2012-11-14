@@ -17,7 +17,7 @@ sub register {
 				site	=>	'https://accounts.google.com',
 				authorize_path	=>	'/o/oauth2/auth',
 				access_token_path=>	'/o/oauth2/token',
-				scope	=>	'https://www.googleapis.com/auth/userinfo.email'
+				scope	=>	'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/calendar'
 			)->web_server(redirect_uri => ($app->config()->{base_url}) .'session/oauth_google_callback');
 		}
 	);

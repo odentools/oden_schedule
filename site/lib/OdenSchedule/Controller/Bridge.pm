@@ -27,6 +27,12 @@ sub login_check {
 		}
 	}
 	
+	# ユーザが認証トークンを持っていなければ
+	if($self->current_route eq "top_user"){
+		$self->redirect_to('/session/login');
+		return 0;
+	}
+	
 	return 1; # continue after process (そのまま出力を続行)
 }
 
