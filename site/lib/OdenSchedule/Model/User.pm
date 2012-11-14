@@ -30,6 +30,17 @@ sub new {
 	return $self;
 }
 
+sub AUTOLOAD{
+	our $AUTOLOAD;
+	my ($self, $value) = @_;
+	$self->{log}->debug("Model::User - AUTOLOAD(...)");
+	if($AUTOLOAD eq 'OdenSchedule::Model::User::DESTROY'){	return; }
+	
+	my $key = $AUTOLOAD;
+	$key =~ s/OdenSchedule::Model::User:://;
+	$self->column_update($key, $value);
+}
+
 sub find {
 	my ($self, $hash) = @_;
 	$self->{log}->debug("Model::User - find(...)");
@@ -74,9 +85,13 @@ sub update {
 	
 	$self->{log}->debug(Mojo::JSON->encode($hash));
 	
-	$self->{db}->update(
-		user => $hash->{id} => undef => $hash
-	);
+	# TODO update_directは実装されていないようなので不使用とする。
+	#$self->{db}->update(
+	#	user => $hash->{id} => undef => $hash
+	#);
+	
+	#	代わりに、itemRowに対して直接update()メソッドを呼ぶ。
+	$itemRow->update();
 	
 	#$self->{itemRow} = $itemRow;
 	$self->applyObject($itemRow->{column_values});
@@ -89,6 +104,7 @@ sub column_update {
 	my $itemRow = $self->{itemRow};
 	my $hash = $itemRow->{column_values};
 	$hash->{$key} = $value;
+	eval("\$itemRow->$key(\$value)");
 	$self->{itemRow} = $itemRow;
 	$self->applyObject($itemRow->{column_values});
 }
