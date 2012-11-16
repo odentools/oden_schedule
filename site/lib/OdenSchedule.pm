@@ -6,6 +6,7 @@ use Data::Model;
 use Data::Model::Driver::MongoDB;
 
 use Net::OECUMail;
+use Net::OAuth2;
 use Net::OAuth2::Client;
 
 use OdenSchedule::DBSchema;

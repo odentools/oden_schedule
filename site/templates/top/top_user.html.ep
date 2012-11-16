@@ -15,6 +15,10 @@
 		<p>Not connected X</p>
 	<% } %>
 	
+	<h4>OECUメールとの接続状態</h4>
+	<p><%= $folders %></p>
+	(<a href="https://www.google.com/a/oecu.jp/UnlockCaptcha">エラー時のブロック解除</a>)
+	
 	<h4>フィルタ設定</h4>
 	
 	<h4>ログ</h4>

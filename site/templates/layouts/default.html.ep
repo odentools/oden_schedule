@@ -75,6 +75,7 @@
 						<!-- 右上 ログインリンク -->
 						<% if ($logined){ %>
 							<div class="navbar-text pull-right">
+								<%= $self->ownUser()->{name} %> さん - 
 								<%= link_to '/session/logout' => class => "navbar-link" => begin %>ログアウト<% end %>
 							</div>
 							<!--<ul class="nav pull-right">
