@@ -21,7 +21,33 @@ sub new {
 sub crawl {
 	my $self = shift;
 	my @mail_bodies = $self->getMails_();
-	return @mail_bodies;
+	my @schedules = ();
+	foreach my $mail (@mail_bodies){
+		if($mail =~ /(\d+)月(\d+)日 (.+)曜 (\d+)時限 (.*)(\(.*\)) は休講です。/m){
+			my $hash = {
+				'type' => '休講',
+				'month' => $1,
+				'day' => $2,
+				'wday' => $3,
+				'period' => $4,
+				'subject' => $5,
+				'teacher' => $6,
+			};
+			push(@schedules, $hash);
+		}elsif($mail =~ /(\d+)月(\d+)日 (.+)曜 (\d+)時限 (.*)(\(.*\)) は補講です。/m){
+			my $hash = {
+				'type' => '休講',
+				'month' => $1,
+				'day' => $2,
+				'wday' => $3,
+				'period' => $4,
+				'subject' => $5,
+				'teacher' => $6,
+			};
+			push(@schedules, $hash);
+		}
+	}
+	return @schedules;
 }
 
 sub getMails_ {
@@ -34,7 +60,10 @@ sub getMails_ {
 	if(!$oecu->getIMAPObject()->select(Encode::encode('IMAP-UTF-7','[Gmail]/すべてのメール'))){
 		die("Can't select [Gmail]/すべてのメール");
 	}
-	my @msgs = $oecu->getIMAPObject()->search('FROM "dportsys@mc2.osakac.ac.jp"');
+	my @msgs = $oecu->getIMAPObject()->search(
+		'FROM "dportsys@mc2.osakac.ac.jp"',
+		'SENTSINCE '.$oecu->getIMAPObject()->Rfc3501_date(time() - (60 * 60 * 24 * 31 * 2)) #条件: 2ヶ月前以降のメール
+	);
 	
 	my @mail_bodies;
 	

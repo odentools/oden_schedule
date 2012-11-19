@@ -21,7 +21,7 @@ sub top_user {
 	my $crawler = OdenSchedule::Model::ScheduleCrawler->new('username' =>'ht11a018', 'oauth_accessToken' =>$self->ownUser->{google_token});
 	my @schedules = $crawler->crawl(); 
 	
-	$self->stash('folders',join("\n",@schedules));
+	$self->stash('schedules', \@schedules);
 	$self->stash( 'isUser_google', 1 );
 	$self->render();
 }
