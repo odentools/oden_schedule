@@ -13,7 +13,7 @@ sub oauth_google_redirect {
 	my $oauth = $self->oauth_client_google;
 	
 	# 認証ページへリダイレクト
-	$self->redirect_to($oauth->authorize_url);
+	$self->redirect_to($oauth->authorize_url(access_type => 'offline', approval_prompt => 'force'));
 }
 
 sub oauth_google_callback {
@@ -30,7 +30,6 @@ sub oauth_google_callback {
 	eval {
 		$access_token = $oauth->get_access_token($self->param('code'));
 	};
-	
 	if($@){
 		$self->redirect_to('/?token_invalid');
 		$self->app->log->debug("Login: token_invalid:".$@);
@@ -44,12 +43,12 @@ sub oauth_google_callback {
 		my $user_id = $profile->{email};
 		my $token = $access_token->{access_token};
 		my $ref_token = $access_token->{refresh_token};
-		
 		# ユーザを検索
 		my $user = $self->getUserObj('google_id' => $user_id);
 		if($user->{isFound}){# 既存ユーザであれば...
 			$user->google_id($user_id);
 			$user->google_token($token);
+			$user->google_reftoken($ref_token);
 			$user->latest_auth_time(time());
 			$user->update();
 		} else {# 新規ユーザであれば...
@@ -57,6 +56,7 @@ sub oauth_google_callback {
 				name => $user_id,
 				google_id => $user_id,
 				google_token => $token,
+				google_reftoken => $ref_token,
 				latest_auth_time => time()
 			);
 		}

@@ -15,7 +15,9 @@
 		<h3>休講・補講を自動登録するカレンダー</h2>
 		<p><small>新着の休講・補講情報は、ここで選択したカレンダーに自動登録されます。</small></p>
 		<select name="calendar_name">
-			<option value="●●のカレンダー">●●のカレンダー</option>
+			% foreach my $item (@$calendars) {
+				<option value="<%= $item->{id} %>"><%= $item->{summary} %></option>
+			% }
 		</select>
 	</div>
 </div>
