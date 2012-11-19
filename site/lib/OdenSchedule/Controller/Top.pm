@@ -19,7 +19,23 @@ sub top_user {
 	my $self = shift;
 	
 	my $crawler = OdenSchedule::Model::ScheduleCrawler->new('username' =>'ht11a018', 'oauth_accessToken' =>$self->ownUser->{google_token});
-	my @schedules = $crawler->crawl(); 
+	
+	my @schedules;
+	eval{
+		@schedules = $crawler->crawl();
+	}; 
+	if($@){
+		# トークンの有効期限切れならば...
+		$self->app->plugin('OdenSchedule::Helper::Login');
+		
+		my $user = $self->ownUser();
+		my $oauth = $self->oauth_client_google_refresh;
+		my $access_token = $oauth->get_access_token($user->{google_reftoken});
+		$user->google_token($access_token->{access_token});
+		$user->google_reftoken($access_token->{refresh_token});
+		
+		$self->redirect_to('/top');
+	}
 	
 	$self->stash('schedules', \@schedules);
 	$self->stash( 'isUser_google', 1 );

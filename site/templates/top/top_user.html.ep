@@ -17,8 +17,8 @@
 	
 	<h4>最近の休講・補講情報</h4>
 	<ul>
-		% foreach my $item (@schedules) {
-			<li>【<%= $item->{type} %>】 <%= $item->{month} %>/<%= $item{day}($item->{wday}) %> <%= $item->{subject} %> - (<%= $item->{teacher} %>)</li>
+		% foreach my $item (@$schedules) {
+			<li>【 <%= $item->{type} %> 】 <%= $item->{month} %>/<%= $item->{day} %>(<%= $item->{wday} %>) <%= $item->{subject} %> - (<%= $item->{teacher} %>)</li>
 		% }
 	</ul>
 	(<a href="https://www.google.com/a/oecu.jp/UnlockCaptcha">エラー時のブロック解除</a>)

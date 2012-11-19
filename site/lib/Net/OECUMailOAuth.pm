@@ -102,7 +102,7 @@ sub imapInit_ {
 			Port	=>	993,
 			Ssl		=> 1,
 			Uid		=> 1,
-		);
+		) || die('Can\'t connect to imap server.');
 		my $sign = $self->{oauth_sign};
 		$self->{imap}->authenticate('XOAUTH2', sub { return $sign }) or die "auth failed: ".$self->{imap}->LastError;
 	}
@@ -117,6 +117,8 @@ sub getFolders {
 
 sub getIMAPObject {
 	my $self = shift;
+	$self->oauthInit_();
+	$self->imapInit_();
 	return $self->{imap};
 }
 

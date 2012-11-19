@@ -43,6 +43,7 @@ sub oauth_google_callback {
 		my $profile = Mojo::JSON->decode($response->decoded_content());
 		my $user_id = $profile->{email};
 		my $token = $access_token->{access_token};
+		my $ref_token = $access_token->{refresh_token};
 		
 		# ユーザを検索
 		my $user = $self->getUserObj('google_id' => $user_id);

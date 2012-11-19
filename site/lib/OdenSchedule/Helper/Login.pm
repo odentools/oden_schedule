@@ -17,8 +17,29 @@ sub register {
 				site	=>	'https://accounts.google.com',
 				authorize_path	=>	'/o/oauth2/auth',
 				access_token_path=>	'/o/oauth2/token',
+				access_type => 'offline',
+				approval_prompt	=> 'auto',
 				scope	=>	'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/calendar https://mail.google.com/'
 			)->web_server(redirect_uri => ($app->config()->{base_url}) .'session/oauth_google_callback');
+		}
+	);
+	
+	# OAuth Refresh Client for Google
+	$app->helper( oauth_client_google_refresh =>
+		sub {
+			my $refresh_token = shift;
+			return Net::OAuth2::Client->new(
+				$app->config()->{social_google_key},
+				$app->config()->{social_google_secret},
+				refresh_token => $refresh_token,
+				grant_type => 'refresh_token',
+				site	=>	'https://accounts.google.com',
+				authorize_path	=>	'/o/oauth2/auth',
+				access_token_path=>	'/o/oauth2/token',
+				access_type => 'offline',
+				approval_prompt	=> 'auto',
+				scope	=>	'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/calendar https://mail.google.com/'
+			)->web_server();
 		}
 	);
 }

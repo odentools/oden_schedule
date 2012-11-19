@@ -61,8 +61,8 @@ sub getMails_ {
 		die("Can't select [Gmail]/すべてのメール");
 	}
 	my @msgs = $oecu->getIMAPObject()->search(
-		'FROM "dportsys@mc2.osakac.ac.jp"',
-		'SENTSINCE '.$oecu->getIMAPObject()->Rfc3501_date(time() - (60 * 60 * 24 * 31 * 2)) #条件: 2ヶ月前以降のメール
+		'FROM','dportsys@mc2.osakac.ac.jp',
+		'SENTSINCE',$oecu->getIMAPObject()->Rfc3501_date(time() - (60 * 60 * 24 * 31 * 2)) #条件: 2ヶ月前以降のメール
 	);
 	
 	my @mail_bodies;
