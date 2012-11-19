@@ -33,6 +33,7 @@ sub oauth_google_callback {
 	
 	if($@){
 		$self->redirect_to('/?token_invalid');
+		$self->app->log->debug("Login: token_invalid:".$@);
 		return;
 	}
 	
