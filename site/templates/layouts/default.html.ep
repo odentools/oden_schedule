@@ -117,6 +117,7 @@
 			<%= include 'includes/footer' %>
 		</div>
 		<!-- /container -->
-		<%= javascript '/js/bootstrap.js' %>
+		<%= javascript '/js/jquery.min.js' %>
+		<%= javascript '/js/bootstrap.min.js' %>
 	</body>
 </html>
