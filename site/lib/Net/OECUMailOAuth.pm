@@ -72,8 +72,17 @@ sub new {
 	$self->{imap} = undef;
 	$self->{oauth} = undef;
 	$self->{oauth_sign} = undef;
-	$self->{oauth_accessToken} = $hash{token} || undef;
+	$self->{oauth_accessToken} = $hash{oauth_accessToken} || undef;
 	return $self;
+}
+
+# DESTROY(...) デストラクタ
+sub DESTROY{
+	my $self = shift;
+	if(defined($self->{imap})){
+		$self->{imap}->logout;
+		$self->{imap} = undef;
+	}
 }
 
 sub oauthInit_ {
@@ -103,7 +112,12 @@ sub getFolders {
 	my $self = shift;
 	$self->oauthInit_();
 	$self->imapInit_();
-	return $self->{imap}->folders;
+	return $self->{imap}->folders or die("List folders error: ", $self->{imap}->LastError);
+}
+
+sub getIMAPObject {
+	my $self = shift;
+	return $self->{imap};
 }
 
 

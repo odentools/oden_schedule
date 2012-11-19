@@ -4,6 +4,7 @@ use Mojo::Base 'Mojolicious::Controller';
 use utf8;
 
 use Net::OECUMailOAuth;
+use OdenSchedule::Model::ScheduleCrawler;
 
 sub top_guest {
 	my $self = shift;
@@ -17,15 +18,10 @@ sub top_guest {
 sub top_user {
 	my $self = shift;
 	
-	my $oecu = Net::OECUMailOAuth->new( 'username' =>'ht11a018', 'token' =>$self->ownUser->{google_token} );
-	my $imap_folders;
-	eval{
-		$imap_folders = join("<br>",$oecu->getFolders());
-	};
-	if($@){
-		$imap_folders = $@;
-	}
-	$self->stash('folders',$imap_folders);
+	my $crawler = OdenSchedule::Model::ScheduleCrawler->new('username' =>'ht11a018', 'oauth_accessToken' =>$self->ownUser->{google_token});
+	my @schedules = $crawler->crawl(); 
+	
+	$self->stash('folders',join("\n",@schedules));
 	$self->stash( 'isUser_google', 1 );
 	$self->render();
 }
