@@ -1,3 +1,13 @@
  oden_schedule
 ====
 
+## Libraries
+
+* Mojolicious
+* Data::Model
+* Unicode::IMAPUtf7
+* Net::OAuth
+* URI::Escape
+* MIME::Base64
+* Mail::IMAPClient
+
