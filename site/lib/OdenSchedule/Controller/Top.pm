@@ -30,10 +30,17 @@ sub top_user {
 		
 		my $user = $self->ownUser();
 		my $oauth = $self->oauth_client_google_refresh;
-		my $access_token = $oauth->get_access_token($user->{google_reftoken});
-		$user->google_token($access_token->{access_token});
-		$user->google_reftoken($access_token->{refresh_token});
-		
+		my $access_token;
+		eval { 
+			$access_token = $oauth->get_access_token($user->{google_reftoken});
+			$user->google_token($access_token->{access_token});
+			$user->google_reftoken($access_token->{refresh_token});
+		};
+		if($@){
+			# リフレッシュトークンも無効ならば...
+			$self->redirect_to('/session/login');
+			return;	
+		}
 		$self->redirect_to('/top');
 	}
 	
