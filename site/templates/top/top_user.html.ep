@@ -24,7 +24,7 @@
 <div class="row-fluid">
 	<div class="span6">
 		<h3>最近の休講・補講情報</h3>
-		<p><small>OECUメールから取得した休講・補講情報です。</small></p>
+		<p><small>OECUメールから取得した休講・補講情報です。</small><%= link_to '/updater/oecu_schedule' => begin %>今すぐ更新<% end %></p>
 		<table class="table">
 		<thead>
 			<tr>

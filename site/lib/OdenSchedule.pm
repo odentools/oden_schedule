@@ -11,6 +11,7 @@ use Net::OAuth2::Client;
 
 use OdenSchedule::DBSchema;
 use OdenSchedule::Model::User;
+use OdenSchedule::Model::Schedule;
 
 # This method will run once at server start
 sub startup {
@@ -53,6 +54,14 @@ sub startup {
 			\%hash
 		);
 	});
+	$self->helper('getScheduleObj' => sub {
+		my ($self, %hash) = @_;
+		return OdenSchedule::Model::Schedule->new(
+			\($self->app->db),
+			\($self->app->log),
+			\%hash
+		);
+	});
 	
 	# ユーザ情報ヘルパーのセット
 	$self->helper('ownUserId' => sub { return undef });
@@ -72,6 +81,7 @@ sub startup {
 	# 通常のルート
 	$r->route('')->to('top#top_guest',);
 	$r->route('/top')->to('top#top_user',);
+	$r->route('/updater/oecu_schedule')->to('updater#oecu_schedule',);
 	$r->route('/docs/about')->to('docs#about',);
 	$r->route('/session/login')->to('session#login');
 	$r->route('/session/logout')->to('session#logout');

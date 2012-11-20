@@ -31,6 +31,9 @@ sub login_check {
 	if($self->current_route eq "top_user"){
 		$self->redirect_to('/session/login');
 		return 0;
+	}elsif($self->current_route eq "updater_oecu_schedule"){
+		$self->redirect_to('/session/login');
+		return 0;
 	}
 	
 	return 1; # continue after process (そのまま出力を続行)
