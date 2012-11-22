@@ -14,7 +14,7 @@
 	<div class="span6 well">
 		<h3>休講・補講を自動登録するカレンダー</h2>
 		<p><small>新着の休講・補講情報は、ここで選択したカレンダーに自動登録されます。</small></p>
-		<select name="calendar_name">
+		<select id="selectorCalendarName">
 			% foreach my $item (@$calendars) {
 				<option value="<%= $item->{id} %>"><%= $item->{summary} %></option>
 			% }
@@ -24,7 +24,8 @@
 <div class="row-fluid">
 	<div class="span6">
 		<h3>最近の休講・補講情報</h3>
-		<p><small>OECUメールから取得した休講・補講情報です。</small><%= link_to '/updater/oecu_schedule' => begin %>今すぐ更新<% end %></p>
+		<p><small>OECUメールから取得した休講・補講情報です。 <%= link_to '/updater/oecu_schedule' =>  begin %>今すぐ更新<% end %></small>
+		</p>
 		<table class="table">
 		<thead>
 			<tr>

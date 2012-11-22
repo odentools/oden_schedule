@@ -20,6 +20,13 @@ sub top_guest {
 sub top_user {
 	my $self = shift;
 	
+	if(defined($self->param('set_calendar_id'))){
+		$self->ownUser->calendar_id_gcal($self->param('set_calendar_id'));
+		$self->ownUser->update();
+		$self->render_json({status => 1, calendar_id => $self->param('set_calendar_id')});
+		return;
+	}
+	
 	# 休講・補講情報
 	my @schedules;
 	my $iter = $self->db->get(schedule => {where => ['user_id' => $self->ownUser->{id}]});
