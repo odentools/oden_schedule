@@ -1,4 +1,4 @@
- oden_schedule
+ oden_schedule (Odensuke)
 ====
 
 ## Libraries
@@ -6,26 +6,26 @@ Many thanks :)
 
 ### Mojolicious
 
-#### Data::Model
+### Data::Model
 
-#### Net::OAuth2
+### Net::OAuth2
 
 https://github.com/keeth/Net-OAuth2
 
 Copyright (C) 2010 Keith Grennan
 
->　"This program is free software; you can redistribute it and/or modify it
+> This program is free software; you can redistribute it and/or modify it
 under the terms of either: the GNU General Public License as published
-by the Free Software Foundation; or the Artistic License."
+by the Free Software Foundation; or the Artistic License.
 
-It was included modified a little from [original](https://github.com/keeth/Net-OAuth2) version.
+It was included, modified a little from [original](https://github.com/keeth/Net-OAuth2) version.
 
-#### Unicode::IMAPUtf7
+### Unicode::IMAPUtf7
 
-#### URI::Escape
+### URI::Escape
 
-#### MIME::Base64
+### MIME::Base64
 
-#### Mail::IMAPClient
+### Mail::IMAPClient
 
-#### etc...
+### etc...

@@ -2,3 +2,4 @@ site/log/
 .includepath
 .project
 
+site/config/config.conf
