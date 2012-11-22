@@ -38,9 +38,11 @@ sub top_user {
 		'consumer_secret' => $self->config()->{social_google_secret},
 	);
 	my @calendars;
+	$self->stash( 'message_error', "");
 	eval{
 		@calendars = $calorg->getCalendarList()->[0];
-	};
+	}; $self->stash('message_error', $@) if($@);
+	
 	$self->stash('calendars', \@calendars);
 	
 	$self->stash( 'isUser_google', 1 );
