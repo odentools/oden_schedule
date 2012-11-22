@@ -1,5 +1,6 @@
- oden_schedule (Odensuke)
-====
+# oden_schedule (Odensuke)
+
+based on: perl + Mojolicious + MongoDB + IMAP + Google Calendar API...
 
 ## Libraries
 Many thanks :)
