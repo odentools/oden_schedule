@@ -29,4 +29,22 @@ It was included, modified a little from [original](https://github.com/keeth/Net-
 
 ### Mail::IMAPClient
 
+### Twitter Bootstrap
+
+https://github.com/twitter/bootstrap
+
+Copyright 2012 Twitter, Inc.
+
+Apache License 2.0 https://github.com/twitter/bootstrap/blob/master/LICENSE
+
+### jQuery
+
+https://github.com/jquery/jquery
+
+Copyright 2012 jQuery Foundation and other contributors
+http://jquery.com/
+
+MIT License https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt
+
+
 ### etc...
