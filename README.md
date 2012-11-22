@@ -21,6 +21,10 @@ https://github.com/ytnobody/Data-Model-Driver-MongoDB/
 
 > This library is free software; you can redistribute it and/or modify it　under the same terms as Perl itself.
 
+### Digest::SHA1
+
+http://search.cpan.org/~gaas/Digest-SHA1/
+
 ### Net::OAuth2
 
 https://github.com/keeth/Net-OAuth2

@@ -48,6 +48,7 @@ sub oauth_google_callback {
 		if($user->{isFound}){# 既存ユーザであれば...
 			$user->google_id($user_id);
 			$user->google_token($token);
+			$user->session_token($token);
 			$user->google_reftoken($ref_token);
 			$user->latest_auth_time(time());
 			$user->update();
@@ -56,12 +57,13 @@ sub oauth_google_callback {
 				name => $user_id,
 				google_id => $user_id,
 				google_token => $token,
+				session_token => $token,
 				google_reftoken => $ref_token,
 				latest_auth_time => time()
 			);
 		}
 		# セッションを保存してリダイレクト
-		$self->session('google_token', $token);
+		$self->session('session_token', $token);
 		$self->redirect_to("/");	
 	} else {
 		$self->flash('message_error','認証に失敗しました。');
