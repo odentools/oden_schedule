@@ -37,6 +37,7 @@ sub top_user {
 	
 	# カレンダーリスト
 	my $calorg = OdenSchedule::Model::CalendarOrganizer->new(
+		'db' => \($self->app->db),
 		'username' =>'ht11a018',
 		'oauth_access_token' =>$self->ownUser->{google_token}, 
 		'oauth_refresh_token' =>$self->ownUser->{google_reftoken}, 

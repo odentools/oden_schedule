@@ -1,28 +1,88 @@
 package Net::Google::CalendarLite;
 ##################################################
-# Net::Google::CalendarLite - Googleカレンダーを扱う簡易モジュール
+# Net::Google::CalendarLite
+# minimal client module for Google Calendar API
 # (C)Masanori Ohgita. (http://ohgita.info/)
 ##################################################
 
-=head1 SCRIPT NAME
+=head1 NAME
 
 Net::Google::CalendarLite
 
 =head1 DESCRIPTION
 
-Googleカレンダーを扱う簡易モジュール
+Minimal client module for Google Calendar API
+
+=head1 SYNOPSIS
+
+=head1 CONSTRUCTOR METHODS
+
+=over
+
+=item Net::Google::CalendarLite->new(...)
+
+ my $ca = Net::Google::CalendarLite->new(
+ 	api_key => 'YOUR_API_KEY',
+ 	consumer_key => 'YOUR_OAUTH2_CONSUMER_KEY',
+ 	consumer_secret => 'YOUR_OAUTH2_CONSUMER_SECRET',
+ 	oauth_access_token => 'YOUR_OAUTH2_ACCESS_TOKEN',
+ 	oauth_refresh_token => 'YOUR_OAUTH2_REFRESH_TOKEN'
+ );
+
+=back
+
+=head1 REQUEST METHODS
+
+=over
+
+=item $calendar->getCalendarList()
+
+https://developers.google.com/google-apps/calendar/v3/reference/calendarList/list
+
+return: @calendarList
+
+  my @calendars = $ca->getCalendarList();
+  foreach (@calendars){
+  	print "$item->{id} \n";
+  }
+
+=item $calendar->insertEvent(%param)
+
+https://developers.google.com/google-apps/calendar/v3/reference/events/insert
+
+return: $eventId
+
+  $ca->insertEvent(
+  	calendarId => 'CALENDAR_ID',
+  	start => (
+  		dateTime => '2013-01-01T00:00:00'
+  	)
+  );
+
+=back
+
+=head1 AUTHOR
+
+Masanori Ohgita, http://ohgita.info/
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) Masanori Ohgita - 2012.
+
+This library is free software; you can redistribute it and/or
+ modify it under the same terms as Perl itself.
 
 =cut
 
 use strict;
 use warnings;
 use utf8;
-use Encode;
 
 our $VERSION = '1.0.0';
 
 use Carp;
 
+use Encode;
 use JSON;
 use LWP::UserAgent;
 use Net::OAuth2::Client;
@@ -35,15 +95,21 @@ sub new {
 	$self->{api_key}			= $hash{api_key} || die ('Not specified api_key.');
 	$self->{consumer_key} 		= $hash{consumer_key} || die ('Not specified consumer_key.');
 	$self->{consumer_secret}	= $hash{consumer_secret} || die ('Not specified consumer_secret.');
-	$self->{oauth_access_token}		= $hash{oauth_access_token} || die ('Not specified oauth_accessToken.');
-	$self->{oauth_refresh_token}		= $hash{oauth_refresh_token} || die ('Not specified oauth_refresh_token.');
-	$self->{ua}					= LWP::UserAgent->new;
+	$self->{oauth_access_token}	= $hash{oauth_access_token} || die ('Not specified oauth_accessToken.');
+	$self->{oauth_refresh_token}= $hash{oauth_refresh_token} || die ('Not specified oauth_refresh_token.');
+	
+	# Initialize user-agent
+	$self->{ua}	= LWP::UserAgent->new;
 	$self->{ua}->timeout(20);
-	$self->{json}				= JSON->new;
+	
+	# Initialize JSON parser
+	$self->{json} = JSON->new;
 	
 	return $self;
 }
 
+# Get Calendar list (return: @calendarList)
+# https://developers.google.com/google-apps/calendar/v3/reference/calendarList/list
 sub getCalendarList {
 	my $self = shift;
 	my $noRetry = shift || 0;
@@ -51,14 +117,29 @@ sub getCalendarList {
 	if($res->is_success){
 		return $self->{json}->decode(Encode::decode_utf8($res->content))->{items};
 	}elsif($noRetry ne 1){
-		$self->refreshTokens();
+		$self->refreshTokens_();
 		return $self->getCalendarList(1);
 	}else{
 		return undef;
 	}
 }
 
-sub refreshTokens {
+# Insert event (return: eventId)
+# https://developers.google.com/google-apps/calendar/v3/reference/events/insert
+sub insertEvent{
+	my ($self, %param, $noRetry) = @_;
+	my $res = $self->{ua}->post('https://www.googleapis.com/calendar/v3/calendars/calendarId/events&key='.$self->{api_key}, %param , Authorization => 'Bearer '. $self->{oauth_access_token});
+	if($res->is_success){
+		return $self->{json}->decode(Encode::decode_utf8($res->content))->{eventId};
+	}elsif($noRetry ne 1){
+		$self->refreshTokens_();
+		return $self->insertEvent(%param, 1);
+	}else{
+		return undef;
+	}
+}
+
+sub refreshTokens_ {
 	my $self = shift;
 	my $oauth = Net::OAuth2::Client->new(
 		$self->{consumer_key},
@@ -73,3 +154,4 @@ sub refreshTokens {
 }
 
 1;
+

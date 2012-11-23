@@ -83,6 +83,7 @@ sub startup {
 	$r->route('')->to('top#top_guest',);
 	$r->route('/top')->to('top#top_user',);
 	$r->route('/updater/oecu_schedule')->to('updater#oecu_schedule',);
+	$r->route('/updater/calendar')->to('updater#calendar',);
 	$r->route('/docs/about')->to('docs#about',);
 	$r->route('/session/login')->to('session#login');
 	$r->route('/session/logout')->to('session#logout');

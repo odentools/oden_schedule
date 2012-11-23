@@ -10,6 +10,7 @@ use utf8;
 sub new {
 	my ($class, %hash) = @_;
 	my $self = bless({}, $class);
+	$self->{db}	= ${$hash{db}} || die ('Not specified db instance.');# データベースインスタンス
 	$self->{api_key} = $hash{api_key} || die ('Not specified api_key.');
 	$self->{consumer_key} = $hash{consumer_key} || die ('Not specified consumer_key.');
 	$self->{consumer_secret} = $hash{consumer_secret} || die ('Not specified consumer_secret.');
@@ -34,10 +35,16 @@ sub initGcal_{
 	}
 }
 
-sub getCalendarList{
+sub getCalendarList {
 	my $self = shift;
 	$self->initGcal_();
 	return $self->{gcal}->getCalendarList();
+}
+
+sub eventFindOrInsert {
+	my ($self, %param) = @_;
+	$self->initGcal_();
+	$self->insertEvent(%param);
 }
 
 1;

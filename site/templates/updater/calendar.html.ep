@@ -1,0 +1,27 @@
+% layout 'default';
+% title 'しばらくお待ちください';
+<!--Modal-->
+<div id="modalUpdater" class="modal fade" data-backdrop="static" data-backdrop="keyboard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <h3 id="myModalLabel">カレンダーを更新中...</h3>
+  </div>
+  <div class="modal-body">
+    <p>Googleカレンダーに予定を登録しています。<br>
+        しばらくそのままお待ちください...<br><br>
+        <marquee width="80%" scrolldelay="50" direction="right" style="font-weight: bold;">（＞ω＜）♪</marquee>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <%= link_to '/top' => "class" => "btn" => "aria-hidden" => "true" => "data-dismiss" => "modal" => begin %>キャンセル<% end %>
+  </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $("#modalUpdater").modal({
+            keyboard: false,
+            show: true
+        });
+        location.href = "<%= url_for '/updater/calendar' %>";
+    });
+</script>
+<!--_Modal-->

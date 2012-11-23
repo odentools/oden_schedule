@@ -9,6 +9,7 @@ use OdenSchedule::Model::CalendarOrganizer;
 use Net::Google::CalendarLite;
 use Encode;
 
+# 休講・補講情報の取得
 sub oecu_schedule {
 	my $self = shift;
 
@@ -59,6 +60,18 @@ sub oecu_schedule {
 	}
 	$self->redirect_to('/top');
 
+}
+
+# カレンダーの登録＆更新
+sub calendar {
+	my $self = shift;
+	if(!defined($self->flash("dialog")) || $self->flash("dialog") ne "false"){
+		$self->flash("dialog", "false");
+		$self->render();
+		return 1;
+	}
+	
+	#$self->redirect_to('/top');
 }
 
 1;
