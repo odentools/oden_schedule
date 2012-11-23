@@ -30,12 +30,13 @@ sub crawl {
 			$campus_name = $1;
 			$self->log_("* mail\n   * campus_name = $campus_name");
 			if($mail =~ /(\d+)月(\d+)日 (.+)曜 (\d+)時限 (.*)\((.*)\) は休講です。/m){
+				my $period = $4; $period =~ tr/０-９/0-9/;
 				my $hash = {
 					'type' => '休講',
 					'month' => $1,
 					'day' => $2,
 					'wday' => $3,
-					'period' => $4,
+					'period' => $period,
 					'subject' => $5,
 					'teacher' => $6,
 					'campus' => $campus_name,
@@ -44,6 +45,7 @@ sub crawl {
 				$self->log_("    * 休講");
 				push(@schedules, $hash);
 			}elsif($mail =~ /以下の日程で (.*)\((.*)\) の補講を行います。(\r\n|\n\r|\n|\r)(\d+)月(\d+)日 (.+)曜 (\d+)時限 (\S+)/m){
+				my $period = $7; $period =~ tr/０-９/0-9/;
 				my $hash = {
 					'type' => '補講',
 					'subject' => $1,
@@ -51,7 +53,7 @@ sub crawl {
 					'month' => $4,
 					'day' => $5,
 					'wday' => $6,
-					'period' => $7,
+					'period' => $period,
 					'campus' => $campus_name,
 					'room' => $8,
 				};
