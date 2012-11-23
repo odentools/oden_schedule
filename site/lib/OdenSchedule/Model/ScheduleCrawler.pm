@@ -10,6 +10,25 @@ use utf8;
 use Net::OECUMailOAuth;
 use Encode::IMAPUTF7;
 
+our $PERIOD_TIME_TABLE_NEYAGAWA = {
+	'1' => "09:00",
+	'2' => "10:40",
+	'3' => "13:00",
+	'4' => "14:40",
+	'5' => "16:20",
+	'6' => "18:00",
+	'7' => "19:40",
+};
+our $PERIOD_TIME_TABLE_NAWATE = {
+	'1' => "09:30",
+	'2' => "11:10",
+	'3' => "13:30",
+	'4' => "15:10",
+	'5' => "16:50",
+	'6' => "18:30",
+	'7' => "20:10",
+};
+
 sub new {
 	my ($class, %hash) = @_;
 	my $self = bless({}, $class);
@@ -28,15 +47,26 @@ sub crawl {
 		my $campus_name;
 		if($mail =~ /発信元：大阪電気通信大学.*(四條畷|寝屋川).*/m){
 			$campus_name = $1;
+			
+			my $campus_timetable;
+			if($campus_name eq "寝屋川"){
+				$campus_timetable = $PERIOD_TIME_TABLE_NEYAGAWA;
+			}elsif($campus_name eq "四條畷"){
+				$campus_timetable = $PERIOD_TIME_TABLE_NAWATE;
+			}
+			
 			$self->log_("* mail\n   * campus_name = $campus_name");
+			
 			if($mail =~ /(\d+)月(\d+)日 (.+)曜 (\d+)時限 (.*)\((.*)\) は休講です。/m){
 				my $period = $4; $period =~ tr/０-９/0-9/;
+				my $time = $campus_timetable->{$period} || "";
 				my $hash = {
 					'type' => '休講',
 					'month' => $1,
 					'day' => $2,
 					'wday' => $3,
 					'period' => $period,
+					'time' => $time,
 					'subject' => $5,
 					'teacher' => $6,
 					'campus' => $campus_name,
@@ -46,6 +76,7 @@ sub crawl {
 				push(@schedules, $hash);
 			}elsif($mail =~ /以下の日程で (.*)\((.*)\) の補講を行います。(\r\n|\n\r|\n|\r)(\d+)月(\d+)日 (.+)曜 (\d+)時限 (\S+)/m){
 				my $period = $7; $period =~ tr/０-９/0-9/;
+				my $time = $campus_timetable->{$period} || "";
 				my $hash = {
 					'type' => '補講',
 					'subject' => $1,
@@ -54,6 +85,7 @@ sub crawl {
 					'day' => $5,
 					'wday' => $6,
 					'period' => $period,
+					'time' => $time,
 					'campus' => $campus_name,
 					'room' => $8,
 				};
