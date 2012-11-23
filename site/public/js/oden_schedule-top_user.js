@@ -1,5 +1,5 @@
 $(function() {
-	$("#selectorCalendarName").click(function() {
+	$('#selectorCalendarName').click(function() {
 		var $obj = $("#selectorCalendarName");
 		$.ajax({
 			type : "POST",

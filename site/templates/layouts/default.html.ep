@@ -35,6 +35,7 @@
         <% if($self->current_route eq "top"){ %>
             <%= javascript '/js/oden_schedule-top_user.js' %>
             <%= javascript '/js/bootstrap-tooltip.js' %>
+            <%= javascript '/js/bootstrap-modal.js' %>
         <% } %>
 	</head>
 

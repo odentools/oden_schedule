@@ -24,7 +24,8 @@
 <div class="row-fluid">
 	<div class="span6">
 		<h3>最近の休講・補講情報</h3>
-		<p><small>OECUメールから取得した休講・補講情報です。 <%= link_to '/updater/oecu_schedule' =>  begin %>今すぐ更新<% end %></small>
+		<p><small>OECUメールから取得した休講・補講情報です。
+		    <%= link_to '/updater/oecu_schedule' => begin %>今すぐ手動で更新<% end %></small>
 		</p>
 		<table class="table">
 		<thead>
@@ -48,6 +49,7 @@
 	</div>
 	<div class="span6">
 		<h3>フィルタ設定</h3>
+		<p><small>未実装...</small></p>
 	</div>
 </div>
 <div class="row-fluid">

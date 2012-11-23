@@ -11,6 +11,12 @@ use Encode;
 
 sub oecu_schedule {
 	my $self = shift;
+
+	if(!defined($self->flash("dialog")) || $self->flash("dialog") ne "false"){
+		$self->flash("dialog", "false");
+		$self->render();
+		return 1;
+	}
 	
 	my $user_id = $self->ownUserId();
 	
@@ -51,8 +57,8 @@ sub oecu_schedule {
 			$db_item->set(%$item);
 		}
 	}
-	
 	$self->redirect_to('/top');
+
 }
 
 1;
