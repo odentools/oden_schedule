@@ -47,10 +47,10 @@ sub top_user {
 	my @calendars;
 	$self->stash( 'message_error', "");
 	eval{
-		@calendars = $calorg->getCalendarList()->[0];
+		@calendars = $calorg->getCalendarList();
 	}; $self->stash('message_error', $@) if($@);
 	
-	$self->stash('calendars', \@calendars);
+	$self->stash('calendars', @calendars);
 	
 	$self->stash( 'isUser_google', 1 );
 	$self->render();
