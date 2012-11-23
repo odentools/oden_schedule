@@ -75,3 +75,22 @@ Copyright 2012 jQuery Foundation and other contributors. http://jquery.com/
 
 ### etc...
 
+## Environment configuration
+
+site/config/config.conf
+
+	{
+		secret					=>	'COOKIE_SECRET',
+		base_url				=>	'http://hoge.com/',
+		social_google_key		=>	'GOOGLE_OAUTH_CONSUMER_KEY',
+		social_google_secret	=>	'GOOGLE_OAUTH_CONSUMER_SECRET',
+		social_google_apikey	=>	'GOOGLE_API_KEY',
+		session_expires 		=>	604800
+		# 604800 = 7day * 24hour * 60min * 60sec
+	}
+
+## License and Copyright
+
+Copyright (C) 2012 OdenTools Project (https://sites.google.com/site/odentools/), Masanori Ohgita (http://ohgita.info/).
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License version 3 (GPL v3).
