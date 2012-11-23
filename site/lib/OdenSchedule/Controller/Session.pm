@@ -46,7 +46,6 @@ sub oauth_google_callback {
 		# ユーザを検索
 		my $user = $self->getUserObj('google_id' => $user_id);
 		if($user->{isFound}){# 既存ユーザであれば...
-			$user->google_id($user_id);
 			$user->google_token($token);
 			$user->session_token($token);
 			$user->google_reftoken($ref_token);
@@ -59,7 +58,8 @@ sub oauth_google_callback {
 				google_token => $token,
 				session_token => $token,
 				google_reftoken => $ref_token,
-				latest_auth_time => time()
+				latest_auth_time => time(),
+				student_no => substr($user_id, 0, rindex($user_id, '@'))
 			);
 		}
 		# セッションを保存してリダイレクト
