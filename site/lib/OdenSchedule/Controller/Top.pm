@@ -52,8 +52,13 @@ sub top_user {
 	eval{
 		@calendars = $calorg->getCalendarList();
 	}; $self->stash('message_error', $@) if($@);
-	
 	$self->stash('calendars', @calendars);
+	
+	if($self->ownUser->{calendar_id_gcal} eq ""){
+		$self->ownUser->calendar_id_gcal($calendars[0][0]->{id});
+		$self->ownUser->update();
+	}
+	$self->stash('selected_calendar_id', $self->ownUser->{calendar_id_gcal});
 	
 	$self->stash( 'isUser_google', 1 );
 	$self->render();

@@ -16,9 +16,14 @@
 		<p><small>新着の休講・補講情報は、ここで選択したカレンダーに自動登録されます。</small></p>
 		<select id="selectorCalendarName">
 		% foreach my $item (@$calendars) {
-			<option value="<%= $item->{id} %>"><%= $item->{summary} %></option>
+		    <% if($selected_calendar_id eq $item->{id}){ %>
+		        <option value="<%= $item->{id} %>" selected="true"><%= $item->{summary} %></option>
+		    <% }else{ %>
+    			<option value="<%= $item->{id} %>"><%= $item->{summary} %></option>
+    		<% } %>
 		% }
 		</select>
+        <p><small><%= link_to '/updater/calendar' => begin %>今すぐカレンダーに登録<% end %></small></p>
 	</div>
 </div>
 <div class="row-fluid">

@@ -69,23 +69,48 @@ sub oecu_schedule {
 
 # カレンダーの登録＆更新
 sub calendar {
-	my $self = shift;
+	my $self = shift;	
 	if(!defined($self->flash("dialog")) || $self->flash("dialog") ne "false"){
 		$self->flash("dialog", "false");
 		$self->render();
 		return 1;
 	}
 	
+	my $calorg = OdenSchedule::Model::CalendarOrganizer->new(
+		'db' => \($self->app->db),
+		'username' => $self->ownUser->{student_no},
+		'oauth_access_token' =>$self->ownUser->{google_token}, 
+		'oauth_refresh_token' =>$self->ownUser->{google_reftoken}, 
+		'api_key' => $self->config()->{social_google_apikey},
+		'consumer_key' => $self->config()->{social_google_key},
+		'consumer_secret' => $self->config()->{social_google_secret},
+	);
+	
 	my @schedules;
 	my $iter = $self->db->get(schedule => {where => ['user_id' => $self->ownUser->{id}]});
 	while(my $item = $iter->next){
 		push(@schedules, $item->{column_values});
 	}
+	
+	my $calendar_id = $self->ownUser->{calendar_id_gcal};
+	
 	foreach my $item(@schedules){
-		my $hash = {
-			start => ""
-		}; 
-		eventInsert();
+		my %hash = (
+			calendarId => $calendar_id,
+			summary => "test",#$item->{subject}." [".$item->{title}."]",
+			#location => "大阪電気通信大学 ".$item->{campus}." ".$item->{room},
+			#description => "$item->{subject}\n$item->{teacher}\n$item->{date} $item->{type}",			
+			start => {
+				dateTime => $item->{date}->datetime,
+				timeZone => 'Asia/Tokyo'
+			},
+			end => {
+				dateTime => $item->{date}->datetime,
+				timeZone => 'Asia/Tokyo'
+			}
+		); 
+		$calorg->insertEvent(%hash);
+		last;#TODO
 	}
 	
 	$self->redirect_to('/top');

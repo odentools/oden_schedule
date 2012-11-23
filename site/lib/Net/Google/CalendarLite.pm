@@ -128,12 +128,18 @@ sub getCalendarList {
 # https://developers.google.com/google-apps/calendar/v3/reference/events/insert
 sub insertEvent{
 	my ($self, %param, $noRetry) = @_;
-	my $res = $self->{ua}->post('https://www.googleapis.com/calendar/v3/calendars/calendarId/events&key='.$self->{api_key}, %param , Authorization => 'Bearer '. $self->{oauth_access_token});
+	my $calendarId = $param{calendarId};
+	delete($param{calendarId});
+	my $body = $self->{json}->encode(\%param);
+	my $res = $self->{ua}->post(
+		'https://www.googleapis.com/calendar/v3/calendars/ht11a018%40oecu.jp/events?key='.$self->{api_key},#'https://www.googleapis.com/calendar/v3/calendars/'.$param{calendarId}.'/events?key='.$self->{api_key},
+		'Content-Type' => 'application/json', Authorization => 'Bearer '. $self->{oauth_access_token}, Content => $body);
+	
 	if($res->is_success){
 		return $self->{json}->decode(Encode::decode_utf8($res->content))->{eventId};
 	}elsif($noRetry ne 1){
-		$self->refreshTokens_();
-		return $self->insertEvent(%param, 1);
+		#$self->refreshTokens_();
+		#return $self->insertEvent(%param, 1);
 	}else{
 		return undef;
 	}
