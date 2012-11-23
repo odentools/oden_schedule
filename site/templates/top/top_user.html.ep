@@ -34,19 +34,25 @@
 				<th>日付</th>
 				<th>科目</th>
 				<th>講師</th>
-                <th>教室</th>
-                <th>学舎</th>
+                <th>学舎/教室</th>
 			</tr>
 		</thead>
 		<tbody>
 		% foreach my $item (@$schedules) {
 			<tr>
-			<th><%= $item->{type} %></th>
-			<td><%= $item->{month} %>/<%= $item->{day} %>(<%= $item->{wday} %>) <%= $item->{period} %>限</td>
+			<th>
+			<% if($item->{type} eq "補講"){ %>
+			    <span class="label label-inverse">補講</span>
+			<% }elsif($item->{type} eq "休講"){ %>
+                <span class="label label-success">休講</span>
+			<% } %>
+			</th>
+			<td><span title="<%= $item->{date_str} %>">
+			    <%= $item->{month} %>/<%= $item->{day} %>(<%= $item->{wday} %>) <%= $item->{period} %>限
+			</span></td>
 			<td><%= $item->{subject} %></td>
 			<td><%= $item->{teacher} %></td>
-            <td><%= $item->{room} %></td>
-            <td><%= $item->{campus} %></td>
+            <td><%= $item->{campus} %> <%= $item->{room} %></td>
             </tr>
 		% }
 		</tbody>

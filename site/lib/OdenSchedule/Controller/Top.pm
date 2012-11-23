@@ -31,7 +31,9 @@ sub top_user {
 	my @schedules;
 	my $iter = $self->db->get(schedule => {where => ['user_id' => $self->ownUser->{id}]});
 	while(my $item = $iter->next){
-		push(@schedules, $item->{column_values});
+		my $hash = $item->{column_values};
+		$hash->{date_str} = $hash->{date};
+		push(@schedules, $hash);
 	}
 	$self->stash('schedules', \@schedules);
 	

@@ -151,7 +151,7 @@ sub paramToTimePiece_ {
 	}
 	
 	$self->log_("        * $year $month $day $time");
-	return Time::Piece->strptime($year.'-'.$month.'-'.$day.' '.$time, '%Y-%m-%d %H:%M');
+	return Time::Piece->strptime($year.'-'.$month.'-'.$day.' '.$time.':00+0900', '%Y-%m-%d %T%z');
 }
 
 sub log_ {
