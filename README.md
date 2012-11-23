@@ -57,6 +57,10 @@ https://github.com/mongodb/mongo-perl-driver
 
 http://search.cpan.org/dist/URI/URI/Escape.pm
 
+### Time::Piece
+
+http://search.cpan.org/~msergeant/Time-Piece/
+
 ### Twitter Bootstrap
 
 https://github.com/twitter/bootstrap

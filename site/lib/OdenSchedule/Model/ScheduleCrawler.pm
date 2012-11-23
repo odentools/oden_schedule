@@ -9,6 +9,7 @@ use utf8;
 
 use Net::OECUMailOAuth;
 use Encode::IMAPUTF7;
+use Time::Piece;
 
 our $PERIOD_TIME_TABLE_NEYAGAWA = {
 	'1' => "09:00",
@@ -67,6 +68,7 @@ sub crawl {
 					'wday' => $3,
 					'period' => $period,
 					'time' => $time,
+					'date' => $self->paramToTimePiece_($1, $2, $time),
 					'subject' => $5,
 					'teacher' => $6,
 					'campus' => $campus_name,
@@ -86,6 +88,7 @@ sub crawl {
 					'wday' => $6,
 					'period' => $period,
 					'time' => $time,
+					'date' => $self->paramToTimePiece_($4, $5, $time),
 					'campus' => $campus_name,
 					'room' => $8,
 				};
@@ -122,6 +125,33 @@ sub getMails_ {
 		push(@mail_bodies, Encode::decode_utf8($body));
 	}
 	return @mail_bodies;
+}
+
+sub paramToTimePiece_ {
+	my ($self, $month, $day, $time) = @_;
+	# [Precondition!] Less than 5 months (+/-) from current month.
+	
+	$self->log_("    * paramToTimePiece_ $month $day $time");
+	
+	my $current_t = Time::Piece::localtime();
+	my $current_year = $current_t->year;
+	my $next_year = $current_year + 1;
+	my $before_year = $current_year - 1;
+	my $current_month = $current_t->mon;
+	my $year;
+	
+	if(abs($month - $current_month) <= 5){
+		$year = $current_year;
+	}else{ # before year
+		if(($month - $current_month) < 0){
+			$year = $next_year;
+		}else{
+			$year = $before_year;
+		}
+	}
+	
+	$self->log_("        * $year $month $day $time");
+	return Time::Piece->strptime($year.'-'.$month.'-'.$day.' '.$time, '%Y-%m-%d %H:%M');
 }
 
 sub log_ {

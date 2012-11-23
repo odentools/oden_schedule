@@ -15,7 +15,8 @@ WriteMakefile(
 	'URI::Escape' => 0,
 	'JSON' => 0,
 	'LWP::UserAgent' => 0,
-	'Digest::SHA1' => 0
+	'Digest::SHA1' => 0,
+	'Time::Piece' => 0
   },
   test      => {TESTS => 't/*.t'}
 );

@@ -41,6 +41,12 @@ sub getCalendarList {
 	return $self->{gcal}->getCalendarList();
 }
 
+sub eventInsert {
+	my ($self, %param) = @_;
+	$self->initGcal_();
+	return $self->insertEvent(%param);
+}
+
 sub eventFindOrInsert {
 	my ($self, %param) = @_;
 	$self->initGcal_();

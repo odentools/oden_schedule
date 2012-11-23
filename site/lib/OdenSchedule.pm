@@ -9,6 +9,7 @@ use Net::OECUMail;
 use Net::OAuth2;
 use Net::OAuth2::Client;
 use Digest::SHA1;
+use Time::Piece ();
 
 use OdenSchedule::DBSchema;
 use OdenSchedule::Model::User;

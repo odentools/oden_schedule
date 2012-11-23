@@ -46,6 +46,7 @@ sub oecu_schedule {
 		}
 	}
 	
+	# Insert events to Database 
 	foreach my $item(@schedules){
 		my $hash_str;
 		foreach(keys %$item){
@@ -53,9 +54,12 @@ sub oecu_schedule {
 		}
 		my $hash_id = Digest::SHA1::sha1_base64(Encode::encode_utf8($hash_str));
 		my $db_item = $self->getScheduleObj('hash_id' => $hash_id);
-		unless($db_item->{isFound}){
+		if(! $db_item->{isFound}){ # not found on DB
+			# Set other values
 			$item->{user_id} = $user_id;
 			$item->{hash_id} = $hash_id;
+			
+			# Insert to DB
 			$db_item->set(%$item);
 		}
 	}
@@ -72,7 +76,19 @@ sub calendar {
 		return 1;
 	}
 	
-	#$self->redirect_to('/top');
+	my @schedules;
+	my $iter = $self->db->get(schedule => {where => ['user_id' => $self->ownUser->{id}]});
+	while(my $item = $iter->next){
+		push(@schedules, $item->{column_values});
+	}
+	foreach my $item(@schedules){
+		my $hash = {
+			start => ""
+		}; 
+		eventInsert();
+	}
+	
+	$self->redirect_to('/top');
 }
 
 1;
