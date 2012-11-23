@@ -28,6 +28,7 @@ sub oecu_schedule {
 	eval{
 		@schedules = $crawler->crawl();
 	}; 
+	$self->app->log->error("Crawler:".$crawler->{logs});
 	if($@){
 		# トークンの有効期限切れならば...
 		$self->app->plugin('OdenSchedule::Helper::Login');

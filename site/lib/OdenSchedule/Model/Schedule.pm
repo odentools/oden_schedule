@@ -23,7 +23,7 @@ sub new {
 	$self->{isFound} = undef;
 	
 	unless (!$hash){ # 検索条件ハッシュが指定されていれば...検索
-		$$log->debug("Model::Schedule - specified hash");
+		#$$log->debug("Model::Schedule - specified hash");
 		$self->find($hash);
 	}
 	
@@ -33,7 +33,7 @@ sub new {
 sub AUTOLOAD{
 	our $AUTOLOAD;
 	my ($self, $value) = @_;
-	$self->{log}->debug("Model::Schedule - AUTOLOAD(...)");
+	#$self->{log}->debug("Model::Schedule - AUTOLOAD(...)");
 	if($AUTOLOAD eq 'OdenSchedule::Model::Schedule::DESTROY'){	return; }
 	
 	my $key = $AUTOLOAD;
@@ -43,24 +43,24 @@ sub AUTOLOAD{
 
 sub find {
 	my ($self, $hash) = @_;
-	$self->{log}->debug("Model::Schedule - find(...)");
+	#$self->{log}->debug("Model::Schedule - find(...)");
 	my $key = "";
 	my $value = "";
 	foreach my $k(keys %$hash){
 		$key = $k;
 		$value = $hash->{$k};
 	}
-	$self->{log}->debug(" * $key = $value");
+	#$self->{log}->debug(" * $key = $value");
 	my $iter = $self->{db}->get(schedule => {where => [$key => $value]});
 	my $itemRow = $iter->next;
 	if(($itemRow)){
-		$self->{log}->debug(" * found schedule: ".$itemRow->id);
+		#$self->{log}->debug(" * found schedule: ".$itemRow->id);
 		$self->{itemRow} = $itemRow;
 		$self->{isFound} = 1;
 		$self->applyObject($itemRow->{column_values});
 		return $itemRow;
 	}else{
-		$self->{log}->debug(" * schedule not found");
+		#$self->{log}->debug(" * schedule not found");
 		$self->{itemRow} = undef;
 		$self->{isFound} = undef;
 		return undef;
@@ -69,8 +69,8 @@ sub find {
 
 sub set {
 	my ($self, %hash) = @_;
-	$self->{log}->debug("Model::Schedule - set(...)");
-	$self->{log}->debug(Mojo::JSON->encode(\%hash));
+	#$self->{log}->debug("Model::Schedule - set(...)");
+	#$self->{log}->debug(Mojo::JSON->encode(\%hash));
 	
 	my $itemRow = $self->{db}->set(schedule => \%hash);
 	$self->applyObject($itemRow->{column_values});
@@ -79,11 +79,11 @@ sub set {
 
 sub update {
 	my ($self) = shift;
-	$self->{log}->debug("Model::Schedule - update(...)");
+	#$self->{log}->debug("Model::Schedule - update(...)");
 	my $itemRow = $self->{itemRow};
 	my $hash = $itemRow->{column_values};
 	
-	$self->{log}->debug(Mojo::JSON->encode($hash));
+	#$self->{log}->debug(Mojo::JSON->encode($hash));
 	
 	# TODO update_directは実装されていないようなので不使用とする。
 	#$self->{db}->update(
@@ -99,8 +99,8 @@ sub update {
 
 sub column_update {
 	my ($self, $key, $value) = @_;
-	$self->{log}->debug("Model::Schedule - column_update(...)");
-	$self->{log}->debug(" * $key => $value");
+	#$self->{log}->debug("Model::Schedule - column_update(...)");
+	#$self->{log}->debug(" * $key => $value");
 	my $itemRow = $self->{itemRow};
 	my $hash = $itemRow->{column_values};
 	$hash->{$key} = $value;
@@ -111,7 +111,7 @@ sub column_update {
 
 sub delete {
 	my $self = shift;
-	$self->{log}->debug("Model::Schedule - delete(...)");
+	#$self->{log}->debug("Model::Schedule - delete(...)");
 	
 	if(defined($self->{itemRow})){
 		my $u = $self->{db}->get(schedule => {where => [_id => $self->{itemRow}->_id]})->next;
@@ -120,8 +120,8 @@ sub delete {
 
 sub applyObject {
 	my ($self, $h) = @_;
-	$self->{log}->debug("Model::Schedule - applyObject(...)");
-	$self->{log}->debug(Mojo::JSON->encode($h));
+	#$self->{log}->debug("Model::Schedule - applyObject(...)");
+	#$self->{log}->debug(Mojo::JSON->encode($h));
 	foreach my $k(keys %$h){
 		my $val = $h->{$k};
 		if($k eq "_id"){

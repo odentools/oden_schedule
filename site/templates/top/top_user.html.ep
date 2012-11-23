@@ -22,7 +22,7 @@
 	</div>
 </div>
 <div class="row-fluid">
-	<div class="span6">
+	<div class="span7">
 		<h3>最近の休講・補講情報</h3>
 		<p><small>OECUメールから取得した休講・補講情報です。
 		    <%= link_to '/updater/oecu_schedule' => begin %>今すぐ手動で更新<% end %></small>
@@ -34,6 +34,8 @@
 				<th>日付</th>
 				<th>科目</th>
 				<th>講師</th>
+                <th>教室</th>
+                <th>学舎</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -42,12 +44,15 @@
 			<th><%= $item->{type} %></th>
 			<td><%= $item->{month} %>/<%= $item->{day} %>(<%= $item->{wday} %>)</td>
 			<td><%= $item->{subject} %></td>
-			<td><%= $item->{teacher} %></td></li>
+			<td><%= $item->{teacher} %></td>
+            <td><%= $item->{room} %></td>
+            <td><%= $item->{campus} %></td>
+            </tr>
 		% }
 		</tbody>
 		</table>		
 	</div>
-	<div class="span6">
+	<div class="span5">
 		<h3>フィルタ設定</h3>
 		<p><small>未実装...</small></p>
 	</div>

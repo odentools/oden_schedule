@@ -11,7 +11,7 @@ install_model user => schema {
 
 install_model schedule => schema {
 	key 'id';
-	columns qw/ id hash_id user_id month day wday subject teacher gcal_id /;
+	columns qw/ id hash_id user_id month day wday subject teacher type room campus gcal_id /;
 };
 
 1;
