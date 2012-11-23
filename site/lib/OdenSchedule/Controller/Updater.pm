@@ -86,20 +86,24 @@ sub calendar {
 		'consumer_secret' => $self->config()->{social_google_secret},
 	);
 	
-	my @schedules;
+	my @schedule_rows;
 	my $iter = $self->db->get(schedule => {where => ['user_id' => $self->ownUser->{id}]});
-	while(my $item = $iter->next){
-		push(@schedules, $item->{column_values});
+	while(my $row = $iter->next){
+		push(@schedule_rows, $row);
 	}
 	
 	my $calendar_id = $self->ownUser->{calendar_id_gcal};
 	
-	foreach my $item(@schedules){
+	foreach my $row(@schedule_rows){
+		my $item = $row->{column_values};
+		if(defined($item->{gcal_id}) && $item->{gcal_id} ne ""){
+			next;
+		}
 		my %hash = (
 			calendarId => $calendar_id,
-			summary => "test",#$item->{subject}." [".$item->{title}."]",
-			#location => "大阪電気通信大学 ".$item->{campus}." ".$item->{room},
-			#description => "$item->{subject}\n$item->{teacher}\n$item->{date} $item->{type}",			
+			summary => Encode::encode_utf8($item->{subject}." [".$item->{type}."]"),
+			location => Encode::encode_utf8("大阪電気通信大学 ".$item->{campus}." ".$item->{room}),
+			description => Encode::encode_utf8("$item->{subject}\n$item->{teacher}\n$item->{date} $item->{type}\nby おでん助"),			
 			start => {
 				dateTime => $item->{date}->datetime,
 				timeZone => 'Asia/Tokyo'
@@ -108,9 +112,11 @@ sub calendar {
 				dateTime => $item->{date}->datetime,
 				timeZone => 'Asia/Tokyo'
 			}
-		); 
-		$calorg->insertEvent(%hash);
-		last;#TODO
+		);
+		$self->app->log->debug("insertEvent:".Mojo::JSON->encode(\%hash));
+		my $event_id = $calorg->insertEvent(%hash);
+		$row->gcal_id($event_id);
+		$row->update();
 	}
 	
 	$self->redirect_to('/top');
