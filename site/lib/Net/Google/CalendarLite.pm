@@ -118,7 +118,7 @@ sub getCalendarList {
 	if($res->is_success){
 		return $self->{json}->decode(Encode::decode_utf8($res->content))->{items};
 	}elsif($noRetry ne 1){
-		$self->refreshTokens_();
+		$self->refreshToken();
 		return $self->getCalendarList(1);
 	}else{
 		return undef;
@@ -141,7 +141,7 @@ sub insertEvent{
 	if($res->is_success){
 		return $self->{json}->decode(Encode::decode_utf8($res->content))->{id};
 	}elsif($noRetry ne 1){
-		$self->refreshTokens_();
+		$self->refreshToken();
 		$param{noRetry} = 1;
 		$param{calendarId} = $calendarId;
 		return $self->insertEvent(%param);
@@ -151,7 +151,7 @@ sub insertEvent{
 	}
 }
 
-sub refreshTokens_ {
+sub refreshToken {
 	my $self = shift;
 	my $oauth = Net::OAuth2::Client->new(
 		$self->{consumer_key},
@@ -163,6 +163,11 @@ sub refreshTokens_ {
 	my $access_token =  $oauth->get_access_token($self->{oauth_refresh_token} ,grant_type => "refresh_token");
 	$self->{oauth_access_token} = $access_token->{access_token};
 	return;
+}
+
+sub returnToken {
+	my $self = shift;
+	return $self->{oauth_access_token};
 }
 
 1;
