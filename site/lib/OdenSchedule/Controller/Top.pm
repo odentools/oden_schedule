@@ -40,24 +40,21 @@ sub top_user {
 	# カレンダーリスト
 	my $calorg = OdenSchedule::Model::CalendarOrganizer->new(
 		'db' => \($self->app->db),
-		'username' => $self->ownUser->{student_no},
-		'oauth_access_token' =>$self->ownUser->{google_token}, 
-		'oauth_refresh_token' =>$self->ownUser->{google_reftoken}, 
-		'api_key' => $self->config()->{social_google_apikey},
-		'consumer_key' => $self->config()->{social_google_key},
-		'consumer_secret' => $self->config()->{social_google_secret},
+		'own_user' => \($self->ownUser),
+		'logger' => \($self->app->log),
+		'config' => \($self->config),
 	);
-	my @calendars;
-	$self->stash( 'message_error', "");
-	eval{
-		@calendars = $calorg->getCalendarList();
-	}; $self->stash('message_error', $@) if($@);
-	$self->stash('calendars', @calendars);
 	
-	if($self->ownUser->{calendar_id_gcal} eq ""){
-		$self->ownUser->calendar_id_gcal($calendars[0][0]->{id});
-		$self->ownUser->update();
-	}
+	$self->stash('calendars', []);
+	eval{
+		my @calendars = $calorg->getCalendarList();
+		$self->stash('calendars', @calendars);
+		if($self->ownUser->{calendar_id_gcal} eq ""){
+			$self->ownUser->calendar_id_gcal($calendars[0][0]->{id});
+			$self->ownUser->update();
+		}
+	}; $self->stash('message_error', $@) if($@);
+	
 	$self->stash('selected_calendar_id', $self->ownUser->{calendar_id_gcal});
 	
 	$self->stash( 'isUser_google', 1 );

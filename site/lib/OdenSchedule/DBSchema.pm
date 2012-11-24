@@ -22,7 +22,7 @@ install_model user => schema {
 	index 'id';
 	index 'google_id';
 	index 'session_token';
-	columns qw/ name student_no type session_token google_id google_token google_reftoken calendar_id_gcal latest_auth_time latest_mail_id /;
+	columns qw/ name student_no type session_token google_id google_token google_reftoken calendar_id_gcal latest_batch_time latest_auth_time latest_mail_id /;
 	column 'user.id';
 };
 
@@ -30,7 +30,7 @@ install_model user => schema {
 install_model schedule => schema {
 	key 'id';
 	index 'user_id';
-	columns qw/ id hash_id month day time wday subject teacher period type room campus gcal_id /;
+	columns qw/ id hash_id month day time wday subject teacher period type room campus gcal_cid gcal_eid /;
 	column 'user.id';          # -> user_id
 	column 'schedule.date';    # -> date
 };

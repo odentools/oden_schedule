@@ -1,16 +1,20 @@
 package OdenSchedule::Model::ScheduleCrawler;
 ##################################################
-# OECUMail用スケジュールクローラー
+# OECU course schedule crawler (from OECUMail)
 ##################################################
 
 use strict;
 use warnings;
 use utf8;
 
-use Net::OECUMailOAuth;
+use Digest::SHA1;
 use Encode::IMAPUTF7;
 use Time::Piece;
 
+use Net::OECUMailOAuth;
+use Net::Google::CalendarLite; # for use only: refresh OAuth-token
+
+# Timetable (periods)
 our $PERIOD_TIME_TABLE_NEYAGAWA = {
 	'1' => "09:00",
 	'2' => "10:40",
@@ -33,16 +37,71 @@ our $PERIOD_TIME_TABLE_NAWATE = {
 sub new {
 	my ($class, %hash) = @_;
 	my $self = bless({}, $class);
-	$self->{username} = $hash{username} || die ('Not specified username.');
-	$self->{oauth_accessToken} = $hash{oauth_accessToken} || die ('Not specified oauth_accessToken.');
-	$self->{logs} = "";
+	
+	$self->{db}	= ${$hash{db}} || die ('Not specified db instance.');# Database instance
+	$self->{own_user} = ${$hash{own_user}} || die ('Not specified own_user.');# Current user instance
+	$self->{logger} = ${$hash{logger}} || die ('Not specified logger.');# Log(Mojo::Log) instance
+	$self->{config} = ${$hash{config}} || die ('Not specified config.');# Config(Mojo::Plugin::Config) instance
+	
+	# OAuth tokens
+	$self->{oauth_access_token} = $self->{own_user}->{google_token} || die ('Not specified oauth_access_token.');
+	$self->{oauth_refresh_token} = $self->{own_user}->{google_reftoken} || die ('Not specified oauth_refresh_token.');
+	
+	# App configurations
+	$self->{api_key} = $self->{config}->{social_google_apikey};
+	$self->{consumer_key} = $self->{config}->{social_google_key};
+	$self->{consumer_secret} = $self->{config}->{social_google_secret};
+	
+	# Member variable
+	$self->{username} = $self->{own_user}->{student_no};
+	
 	return $self;
+}
+
+sub upsertCrawlToDatabase {
+	my ($self, $isRetry) = @_;
+	my $user_id = $self->{own_user}->{id};
+	
+	# Crawl schedules from OECU Mail
+	my @schedules;
+	eval{
+		@schedules = $self->crawl();
+	}; if($@){
+		# if error (exam: Past expiration of access-token)
+		if(!defined($isRetry)){
+			$self->refreshToken_();
+			$self->upsertCrawlToDatabase(1);
+			return;
+		}
+	}
+	
+	# Insert events to Database
+	foreach my $item(@schedules){
+		my $hash_str;
+		foreach(keys %$item){
+			$hash_str .= $_."_".$item->{$_};
+		}
+		my $hash_id = Digest::SHA1::sha1_base64(Encode::encode_utf8($hash_str));
+		
+		my $db_iter = $self->{db}->get(schedule => {where => ['hash_id' => $hash_id]});
+		if(!defined($db_iter->next)){ # NOT found on DB ... insert
+			# Set other values
+			$item->{user_id} = $user_id;
+			$item->{hash_id} = $hash_id;
+			
+			# Insert to DB
+			my $itemRow = $self->{db}->set(schedule => $item);
+		}
+	}
+	
 }
 
 sub crawl {
 	my $self = shift;
-	$self->log_("crawl()...");
+	$self->log_debug_("crawl()...");
+	
 	my @mail_bodies = $self->getMails_();
+	
 	my @schedules = ();
 	foreach my $mail (@mail_bodies){
 		my $campus_name;
@@ -56,7 +115,7 @@ sub crawl {
 				$campus_timetable = $PERIOD_TIME_TABLE_NAWATE;
 			}
 			
-			$self->log_("* mail\n   * campus_name = $campus_name");
+			$self->log_debug_("* mail\n   * campus_name = $campus_name");
 			
 			if($mail =~ /(\d+)月(\d+)日 (.+)曜 (\d+)時限 (.*)\((.*)\) は休講です。/m){
 				my $period = $4; $period =~ tr/０-９/0-9/;
@@ -74,7 +133,7 @@ sub crawl {
 					'campus' => $campus_name,
 					'room' => ''
 				};
-				$self->log_("    * 休講");
+				$self->log_debug_("    * 休講");
 				push(@schedules, $hash);
 			}elsif($mail =~ /以下の日程で (.*)\((.*)\) の補講を行います。(\r\n|\n\r|\n|\r)(\d+)月(\d+)日 (.+)曜 (\d+)時限 (\S+)/m){
 				my $period = $7; $period =~ tr/０-９/0-9/;
@@ -92,10 +151,10 @@ sub crawl {
 					'campus' => $campus_name,
 					'room' => $8,
 				};
-				$self->log_("    * 補講");
+				$self->log_debug_("    * 補講");
 				push(@schedules, $hash);
 			}else{
-				$self->log_("    * その他\n${mail}\n");
+				$self->log_debug_("    * その他\n${mail}\n");
 			}
 		}
 	}
@@ -106,9 +165,9 @@ sub getMails_ {
 	my $self = shift;
 	my $oecu = Net::OECUMailOAuth->new(
 		'username'			=>	$self->{username},
-		'oauth_accessToken' =>	$self->{oauth_accessToken},
+		'oauth_accessToken' =>	$self->{oauth_access_token},
 	);
-	my @dirs = $oecu->getFolders();#配列？
+	my @dirs = $oecu->getFolders();
 	if(!$oecu->getIMAPObject()->select(Encode::encode('IMAP-UTF-7','[Gmail]/すべてのメール'))){
 		die("Can't select [Gmail]/すべてのメール");
 	}
@@ -131,7 +190,7 @@ sub paramToTimePiece_ {
 	my ($self, $month, $day, $time) = @_;
 	# [Precondition!] Less than 5 months (+/-) from current month.
 	
-	$self->log_("    * paramToTimePiece_ $month $day $time");
+	$self->log_debug_("    * paramToTimePiece_ $month $day $time");
 	
 	my $current_t = Time::Piece::localtime();
 	my $current_year = $current_t->year;
@@ -150,14 +209,28 @@ sub paramToTimePiece_ {
 		}
 	}
 	
-	$self->log_("        * $year $month $day $time");
+	$self->log_debug_("        * $year $month $day $time");
 	return Time::Piece->strptime($year.'-'.$month.'-'.$day.' '.$time.':00+0900', '%Y-%m-%d %T%z');
 }
 
-sub log_ {
+sub refreshToken_ {
 	my $self = shift;
-	my $text = shift;
-	$self->{logs} .= $text."\n";
+	my $gcal = Net::Google::CalendarLite->new(
+		'api_key' => $self->{api_key},
+		'consumer_key'	=> $self->{consumer_key},
+		'consumer_secret'	=>	$self->{consumer_secret},
+		'oauth_access_token'	=>	$self->{oauth_access_token},
+		'oauth_refresh_token'=>	$self->{oauth_refresh_token}
+	);
+	$gcal->refreshToken();
+	$self->{oauth_access_token} = $gcal->returnToken();
+	$self->{own_user}->google_token($self->{oauth_access_token});
+	$self->{own_user}->update();
+}
+
+sub log_debug_ {
+	my ($self, $text) = @_;
+	$self->{logger}->debug($text);
 }
 
 1;

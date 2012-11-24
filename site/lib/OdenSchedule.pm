@@ -1,5 +1,6 @@
 package OdenSchedule;
 use Mojo::Base 'Mojolicious';
+use Mojo::IOLoop;
 
 use MongoDB;
 use Data::Model;
@@ -14,6 +15,7 @@ use Time::Piece ();
 use OdenSchedule::DBSchema;
 use OdenSchedule::Model::User;
 use OdenSchedule::Model::Schedule;
+use OdenSchedule::Worker::Batch;
 
 # This method will run once at server start
 sub startup {
@@ -50,20 +52,16 @@ sub startup {
 	# データベースモデルのセット
 	$self->helper('getUserObj' => sub {
 		my ($self, %hash) = @_;
-		return OdenSchedule::Model::User->new(
-			\($self->app->db),
-			\($self->app->log),
-			\%hash
-		);
+		return OdenSchedule::Model::User->new( \($self->app->db), \($self->app->log), \%hash );
 	});
 	$self->helper('getScheduleObj' => sub {
 		my ($self, %hash) = @_;
-		return OdenSchedule::Model::Schedule->new(
-			\($self->app->db),
-			\($self->app->log),
-			\%hash
-		);
+		return OdenSchedule::Model::Schedule->new( \($self->app->db), \($self->app->log), \%hash );
 	});
+	
+	# バッチ処理用タイマー
+	Mojo::IOLoop->recurring(120 => sub {	return OdenSchedule::Worker::Batch->new(\($self->app),\($self->app->db)); });
+	Mojo::IOLoop->singleton->reactor->on(error => sub { my ($reactor, $err) = @_; $self->app->log->error($err); });
 	
 	# ユーザ情報ヘルパーのセット
 	$self->helper('ownUserId' => sub { return undef });
