@@ -47,9 +47,9 @@
 			<tr>
 			<th>
 			<% if($item->{type} eq "補講"){ %>
-			    <span class="label label-inverse">補講</span>
+			    <span class="label label-inverse" title="補講 (´・ω・｀)">補講</span>
 			<% }elsif($item->{type} eq "休講"){ %>
-                <span class="label label-success">休講</span>
+                <span class="label label-success" title="休講 ﾍ(ﾟ∀ﾟﾍ)">休講</span>
 			<% } %>
 			</th>
 			<td><span title="<%= $item->{date_str} %>">

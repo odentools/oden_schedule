@@ -1,5 +1,6 @@
 % layout 'default';
 % title 'About';
+<a href="https://github.com/odentools/oden_schedule"><img style="position: absolute; top: 40px; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
 <h1>おでん助について</h1>
 <div class="hero-unit">
 	<h3>名前の由来</h3>
@@ -19,6 +20,9 @@
 |[ソースを表示]| ┗(☋｀ )┓三 
 ( ◠‿◠ )☛ 　勘の良いやつだ。だが残念ながら、書いていないのだよ。
 ▂▅▇█▓▒░(’ω’)░▒▓█▇▅▂うわあああああああ	
+
+とかいう冗談はさておき、実は普通に書いてあったりもしますけれど(>ω<)
+(あなたの熱いフィードバックお待ちしています！！)
 
 	  --> </p>
 	<p> 調整中 </p>
