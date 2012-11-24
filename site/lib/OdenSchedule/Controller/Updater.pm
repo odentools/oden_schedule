@@ -38,6 +38,7 @@ sub oecu_schedule {
 		eval { 
 			my $access_token = $oauth->get_access_token($user->{google_reftoken}, grant_type => "refresh_token");
 			$user->google_token($access_token->{access_token});
+			$user->update();
 		};
 		if($@){
 			# リフレッシュトークンも無効ならば...

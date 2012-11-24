@@ -30,7 +30,7 @@ install_model user => schema {
 install_model schedule => schema {
 	key 'id';
 	index 'user_id';
-	columns qw/ id hash_id month day time wday subject teacher type room campus gcal_id /;
+	columns qw/ id hash_id month day time wday subject teacher period type room campus gcal_id /;
 	column 'user.id';          # -> user_id
 	column 'schedule.date';    # -> date
 };
