@@ -89,8 +89,8 @@ site/config/config.conf
 		social_google_key		=>	'GOOGLE_OAUTH_CONSUMER_KEY',
 		social_google_secret	=>	'GOOGLE_OAUTH_CONSUMER_SECRET',
 		social_google_apikey	=>	'GOOGLE_API_KEY',
-		session_expires 		=>	604800
-		# 604800 = 7day * 24hour * 60min * 60sec
+		session_expires 		=>	604800, # 604800 = 7day * 24hour * 60min * 60sec
+		batch_interval			=>	43200 # 43200 = 12hour * 60min * 60sec (MINIMUM: 120sec)
 	}
 
 ## License and Copyright
