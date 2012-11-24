@@ -84,6 +84,7 @@ use Carp;
 
 use Encode;
 use JSON;
+use Mojo::Util;
 use LWP::UserAgent;
 use Net::OAuth2::Client;
 use Net::OAuth2::AccessToken;
@@ -117,7 +118,7 @@ sub getCalendarList {
 	if($res->is_success){
 		return $self->{json}->decode(Encode::decode_utf8($res->content))->{items};
 	}elsif($noRetry ne 1){
-		$self->refreshTokens_();
+		$self->refreshToken();
 		return $self->getCalendarList(1);
 	}else{
 		return undef;
@@ -127,25 +128,30 @@ sub getCalendarList {
 # Insert event (return: eventId)
 # https://developers.google.com/google-apps/calendar/v3/reference/events/insert
 sub insertEvent{
-	my ($self, %param, $noRetry) = @_;
+	my ($self, %param) = @_;
 	my $calendarId = $param{calendarId};
+	my $noRetry = 0; if(defined($param{noRetry})){$noRetry = $param{noRetry}; delete($param{noRetry});}
 	delete($param{calendarId});
 	my $body = $self->{json}->encode(\%param);
 	my $res = $self->{ua}->post(
-		'https://www.googleapis.com/calendar/v3/calendars/ht11a018%40oecu.jp/events?key='.$self->{api_key},#'https://www.googleapis.com/calendar/v3/calendars/'.$param{calendarId}.'/events?key='.$self->{api_key},
-		'Content-Type' => 'application/json', Authorization => 'Bearer '. $self->{oauth_access_token}, Content => $body);
+		'https://www.googleapis.com/calendar/v3/calendars/'.$calendarId.'/events?key='.$self->{api_key},
+		'Content-Type' => 'application/json', Authorization => 'Bearer '. $self->{oauth_access_token}, Content => $body
+	);
 	
 	if($res->is_success){
-		return $self->{json}->decode(Encode::decode_utf8($res->content))->{eventId};
+		return $self->{json}->decode(Encode::decode_utf8($res->content))->{id};
 	}elsif($noRetry ne 1){
-		#$self->refreshTokens_();
-		#return $self->insertEvent(%param, 1);
+		$self->refreshToken();
+		$param{noRetry} = 1;
+		$param{calendarId} = $calendarId;
+		return $self->insertEvent(%param);
 	}else{
+		die("REQ:\n".$res->request->as_string."\nRES:\n".$res->as_string);
 		return undef;
 	}
 }
 
-sub refreshTokens_ {
+sub refreshToken {
 	my $self = shift;
 	my $oauth = Net::OAuth2::Client->new(
 		$self->{consumer_key},
@@ -157,6 +163,11 @@ sub refreshTokens_ {
 	my $access_token =  $oauth->get_access_token($self->{oauth_refresh_token} ,grant_type => "refresh_token");
 	$self->{oauth_access_token} = $access_token->{access_token};
 	return;
+}
+
+sub returnToken {
+	my $self = shift;
+	return $self->{oauth_access_token};
 }
 
 1;
