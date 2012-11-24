@@ -47,10 +47,4 @@ sub insertEvent {
 	return $self->{gcal}->insertEvent(%param);
 }
 
-sub eventFindOrInsert {
-	my ($self, %param) = @_;
-	$self->initGcal_();
-	$self->insertEvent(%param);
-}
-
 1;
