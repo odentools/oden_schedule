@@ -79,46 +79,11 @@ sub calendar {
 	
 	my $calorg = OdenSchedule::Model::CalendarOrganizer->new(
 		'db' => \($self->app->db),
-		'username' => $self->ownUser->{student_no},
-		'oauth_access_token' =>$self->ownUser->{google_token}, 
-		'oauth_refresh_token' =>$self->ownUser->{google_reftoken}, 
-		'api_key' => $self->config()->{social_google_apikey},
-		'consumer_key' => $self->config()->{social_google_key},
-		'consumer_secret' => $self->config()->{social_google_secret},
+		'own_user' => \($self->ownUser),
+		'logger' => \($self->app->log),
+		'config' => \($self->config),
 	);
-	
-	my @schedule_rows;
-	my $iter = $self->db->get(schedule => {where => ['user_id' => $self->ownUser->{id}]});
-	while(my $row = $iter->next){
-		push(@schedule_rows, $row);
-	}
-	
-	my $calendar_id = $self->ownUser->{calendar_id_gcal};
-	
-	foreach my $row(@schedule_rows){
-		my $item = $row->{column_values};
-		if(defined($item->{gcal_id}) && $item->{gcal_id} ne ""){
-			next;
-		}
-		my %hash = (
-			calendarId => $calendar_id,
-			summary => Encode::encode_utf8($item->{subject}." [".$item->{type}."]"),
-			location => Encode::encode_utf8("大阪電気通信大学 ".$item->{campus}." ".$item->{room}),
-			description => Encode::encode_utf8("$item->{subject}\n$item->{teacher}\n$item->{date} $item->{type}\nby おでん助"),			
-			start => {
-				dateTime => $item->{date}->datetime,
-				timeZone => 'Asia/Tokyo'
-			},
-			end => {
-				dateTime => $item->{date}->datetime,
-				timeZone => 'Asia/Tokyo'
-			}
-		);
-		$self->app->log->debug("insertEvent:".Mojo::JSON->encode(\%hash));
-		my $event_id = $calorg->insertEvent(%hash);
-		$row->gcal_id($event_id);
-		$row->update();
-	}
+	$calorg->upsertDatabaseToCalendar();
 	
 	$self->redirect_to('/top');
 }
