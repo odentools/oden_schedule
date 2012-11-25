@@ -32,7 +32,7 @@ sub oauth_google_callback {
 	};
 	if($@){
 		$self->flash('message_error','認証に失敗しました。再度ログインしてください。');
-		$self->redirect_to('/?token_invalid');
+		$self->redirect_to('/session/login/?token_invalid');
 		$self->app->log->debug("Login: token_invalid:".$@);
 		return;
 	}
@@ -45,9 +45,9 @@ sub oauth_google_callback {
 		my $profile = Mojo::JSON->decode($response->decoded_content());
 		my $user_id = $profile->{email};
 		# OECUメールアカウントであるかどうかを確認
-		if(! $user_id =~ /.*\@oecu.jp/){# OECUメールアカウントでなければ...
+		if($user_id !~ /.+\@oecu\.jp/){# OECUメールアカウントでなければ...
 			$self->flash("message_error", "一旦Googleからログアウトした後、OECUメールのアカウントでログインしてください。");
-			$self->redirect_to('/?account_not_oecu');
+			$self->redirect_to('/session/login/?account_not_oecu');
 			return;
 		}
 		
