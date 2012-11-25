@@ -85,7 +85,8 @@ site/config/config.conf
 
 	{
 		secret					=>	'COOKIE_SECRET',
-		base_url				=>	'http://hoge.com/',
+		base_url				=>	'http://hoge.com/oden_schedule',
+        base_path				=>	'/oden_schedule',
 		social_google_key		=>	'GOOGLE_OAUTH_CONSUMER_KEY',
 		social_google_secret	=>	'GOOGLE_OAUTH_CONSUMER_SECRET',
 		social_google_apikey	=>	'GOOGLE_API_KEY',
