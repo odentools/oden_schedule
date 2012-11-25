@@ -34,4 +34,6 @@
 	<p> 謹整串 </p>
 	<h3>調整中</h3>
 	<p> 調整中 </p>
+	<h3>利用規約</h3>
+	<p><%= link_to '/docs/agreement#agreement' => begin %>おでん助 利用規約文書<% end %></p>
 </div>

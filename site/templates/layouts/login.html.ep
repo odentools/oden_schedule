@@ -69,24 +69,35 @@
 					本サービスでは休講・補講情報の取得のために
 					<br>
 					OECUメールのアカウントを利用します。
+					<hr>
+					 <small>利用する情報について詳しくは<%= link_to '/docs/agreement' => begin %>利用規約ページ<% end %>を参照してください。
+                        尚、以下のログイン操作をもって<%= link_to '/docs/agreement#agreement' => begin %>利用規約<% end %>にご同意いただいたものとみなします。
+                    </small>
 				</p>
 				<p>
 					<%= link_to '/session/oauth_google_redirect' => class => "btn btn-large btn-primary" => begin %>ログイン<% end %>
 					<br style="clear:both;">
 				</p>
 				<p class="">
-					このボタンをクリックすると、Googleのログイン画面が表示されます。<br>
+					1. <u>上のボタンをクリック</u>すると、Googleの"ログイン画面"が表示されます。<br>
 					<dl style="margin-left: 10px;">
 						<dt>メール</dt>
 						<dl>学籍番号@oecu.jp (例: ht12a000@oecu.jp )</dl>
 						<dt>パスワード</dt>
 						<dl>OECUメールのパスワード</dl>
 					</dl>
-					&nbsp;を入力してログインし、<br>
-					<b>続いて</b>[ログインについて]をクリックします。<br>
-					<%= image '/img/howto_login0.png' %>
+					&nbsp;を入力して<u>ログインします</u>。<br>
+					2. <b>続いて</b><u>[ログインについて]をクリック</u>します。<br>
+					<%= image '/img/howto_login0.png' %><br>
+					<small>(もしこのとき、OECUメールのログイン画面が表示されたら、再度入力してログインして下さい。)</small><br>
+					3. <b>さらに</b>、"許可のリクエスト画面"が表示されますので、<u>[アクセスを許可]をクリック</u>します。<br>
+                    <%= image '/img/howto_login1.png' %>
 				</p>
 				<hr>
+				<p>
+				     本サービスで利用するデータおよび個人情報については、
+				     <%= link_to '/docs/agreement#agreement' => begin %>利用規約<% end %>をご覧ください。
+                </p>
 				<p>
 					<s><i class=" icon-lock"></i> サーバとの通信はSSLで暗号化されます。</s>
 				</p>
