@@ -65,6 +65,14 @@
 			
 			<form class="form-signin" method="post" action="?">
 				<h3 class="form-signin-heading">おでん助 - ログイン</h3>
+                <!-- for alert message -->
+                <% if(defined($self->stash('message_error'))){ %>
+                    <div class="alert alert-error">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <%= Mojo::ByteStream->new($self->stash('message_error')) %>
+                    </div>
+                <% } %>
+                <!-- _for alert message-->
 				<p>
 					本サービスでは休講・補講情報の取得のために
 					<br>
@@ -79,7 +87,7 @@
 					<br style="clear:both;">
 				</p>
 				<p class="">
-					1. <u>上のボタンをクリック</u>すると、Googleの"ログイン画面"が表示されます。<br>
+					[1]. <u>上のボタンをクリック</u>すると、Googleの"ログイン画面"が表示されます。<br>
 					<dl style="margin-left: 10px;">
 						<dt>メール</dt>
 						<dl>学籍番号@oecu.jp (例: ht12a000@oecu.jp )</dl>
@@ -87,10 +95,11 @@
 						<dl>OECUメールのパスワード</dl>
 					</dl>
 					&nbsp;を入力して<u>ログインします</u>。<br>
-					2. <b>続いて</b><u>[ログインについて]をクリック</u>します。<br>
+					<small>(現在Googleアカウントでログイン中の場合は、一度ログアウトする必要があります。)</small><br><br>
+					[2]. <u>[ログインについて]をクリック</u>します。<br>
 					<%= image '/img/howto_login0.png' %><br>
-					<small>(もしこのとき、OECUメールのログイン画面が表示されたら、再度入力してログインして下さい。)</small><br>
-					3. <b>さらに</b>、"許可のリクエスト画面"が表示されますので、<u>[アクセスを許可]をクリック</u>します。<br>
+					<small>(もしこのとき、OECUメールのログイン画面が表示されたら、再度入力してログインして下さい。)</small><br><br>
+					3. "許可のリクエスト画面"が表示されますので、<u>[アクセスを許可]をクリック</u>します。<br>
                     <%= image '/img/howto_login1.png' %>
 				</p>
 				<hr>

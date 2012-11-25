@@ -31,16 +31,27 @@ sub oauth_google_callback {
 		$access_token = $oauth->get_access_token($self->param('code'));
 	};
 	if($@){
+		$self->flash('message_error','認証に失敗しました。再度ログインしてください。');
 		$self->redirect_to('/?token_invalid');
 		$self->app->log->debug("Login: token_invalid:".$@);
 		return;
 	}
+	
+	# 
 	
 	# ユーザ情報を取得
 	my $response = $access_token->get('https://www.googleapis.com/oauth2/v1/userinfo');
 	if ($response->is_success) {
 		my $profile = Mojo::JSON->decode($response->decoded_content());
 		my $user_id = $profile->{email};
+		# OECUメールアカウントであるかどうかを確認
+		if(! $user_id =~ /.*\@oecu.jp/){# OECUメールアカウントでなければ...
+			$self->flash("message_error", "一旦Googleからログアウトした後、OECUメールのアカウントでログインしてください。");
+			$self->redirect_to('/?account_not_oecu');
+			return;
+		}
+		
+		# アクセストークン
 		my $token = $access_token->{access_token};
 		my $ref_token = $access_token->{refresh_token};
 		# ユーザを検索
@@ -66,18 +77,17 @@ sub oauth_google_callback {
 		$self->session('session_token', $token);
 		$self->redirect_to("/");	
 	} else {
-		$self->flash('message_error','認証に失敗しました。');
+		$self->flash('message_error','ユーザ情報の取得に失敗しました。再度ログインしてください。');
 		$self->redirect_to('/session/login');
 	}
 }
 
 sub login {
 	my $self = shift;
-	my $message = "";
-	if($self->flash("message_error") ne ""){
-		$message = $self->flash("message_error");
+	if(defined($self->flash("message_error"))){
+		$self->stash("message_error", $self->flash("message_error"));
 	}
-	$self->render( message => $message );
+	$self->render();
 }
 
 sub logout {
