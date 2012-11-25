@@ -36,4 +36,12 @@
 	<p> 調整中 </p>
 	<h3>利用規約</h3>
 	<p><%= link_to '/docs/agreement#agreement' => begin %>おでん助 利用規約文書<% end %></p>
+    <h3>お問い合わせ・ご意見・ご要望</h3>
+    <p>
+        皆さまからのフィードバック、お待ちしております m(_ _)m♪:<br>
+        <%= link_to 'https://docs.google.com/spreadsheet/viewform?hl=ja&key=0AiwyUbJjtOSmdEkzdTNTajQzVE9PSzF2RTVydVJMdVE' => target => "_blank" => begin %>OdenTools コンタクトフォーム<% end %>
+    </p>
+    <p>
+        <small>また、GitHubでのフィードバックも大歓迎ですよっ！</small>
+    </p>
 </div>
