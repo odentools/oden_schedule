@@ -21,22 +21,33 @@ use OdenSchedule::Worker::Batch;
 sub startup {
 	my $self = shift;
 	
-	# Documentation browser under "/perldoc"
-	$self->plugin('PODRenderer');
-	
-	# ルータの初期化
+	# Initialize router
 	my $r = $self->routes;
 	
-	# ネームスペースのセット
+	# Set namespace
 	$r->namespace('OdenSchedule::Controller');
 	
-	# 設定のロード
+	# Reading configuration
 	my $conf = $self->plugin('Config',{file => 'config/config.conf'});
 	
-	# Cookieの暗号化キーをセット
+	# Set cookie secret
 	$self->secret('odenschedule'.$conf->{secret});
 	
-	# データベースの準備
+	# Reverse proxy support
+	$ENV{MOJO_REVERSE_PROXY} = 1;
+	$self->hook('before_dispatch' => sub {
+		my $self = shift;
+		if ( $self->req->headers->header('X-Forwarded-Host') && defined($conf->{base_path})) {
+			# Set url base-path (directory path)
+			my @basepaths = split(/\//,$self->config->{base_path});	shift @basepaths;
+			foreach my $part(@basepaths){
+				if($part eq ${$self->req->url->path->parts}[0]){ push @{$self->req->url->base->path->parts}, shift @{$self->req->url->path->parts};	
+				} else { last; }
+			}
+		}
+	});
+	
+	# Prepare database
 	my $mongoDB = Data::Model::Driver::MongoDB->new( 
 		host => 'localhost',
 		port => 27017,
@@ -45,11 +56,11 @@ sub startup {
 	my $schema = OdenSchedule::DBSchema->new;
 	$schema->set_base_driver($mongoDB);
 	
-	# データベースヘルパーのセット
+	# Set database helper
 	$self->attr(db => sub { return $schema; });
 	$self->helper('db' => sub { shift->app->db });
 	
-	# データベースモデルのセット
+	# Set database models
 	$self->helper('getUserObj' => sub {
 		my ($self, %hash) = @_;
 		return OdenSchedule::Model::User->new( \($self->app->db), \($self->app->log), \%hash );
@@ -59,26 +70,26 @@ sub startup {
 		return OdenSchedule::Model::Schedule->new( \($self->app->db), \($self->app->log), \%hash );
 	});
 	
-	# バッチ処理用タイマー
+	# Set timer for batch process
 	Mojo::IOLoop->recurring(120 => sub {	return OdenSchedule::Worker::Batch->new(\($self->app),\($self->app->db)); });
 	Mojo::IOLoop->singleton->reactor->on(error => sub { my ($reactor, $err) = @_; $self->app->log->error($err); });
 	
-	# ユーザ情報ヘルパーのセット
+	# Set user object helper
 	$self->helper('ownUserId' => sub { return undef });
 	$self->helper('ownUser' => sub { return undef });
 	$self->stash(logined => 0);
 	
-	# ログヘルパーのセット
+	# Set log helper
 	$self->helper('log' => sub { shift->app-> log });
 	
-	# 認証用のルート
+	# Routes (for auth)
 	$r->route('/session/oauth_google_redirect')->to('session#oauth_google_redirect',);
 	$r->route('/session/oauth_google_callback')->to('session#oauth_google_callback',);
 	
-	# 前処理を行うブリッジ (認証セッションチェックなど)
+	# Bridge (for auth)
 	$r = $r->bridge->to('bridge#login_check');
 	
-	# 通常のルート
+	# Routes
 	$r->route('')->to('top#top_guest',);
 	$r->route('/top')->to('top#top_user',);
 	$r->route('/updater/oecu_schedule')->to('updater#oecu_schedule',);
