@@ -68,6 +68,7 @@ sub oauth_google_callback {
 			$user->update();
 			
 			# セッションはそのままリダイレクト
+			$self->flash('message_info', 'Googleアカウントを紐付けしました。');
 			$self->redirect_to("/top");
 			return;
 		}
@@ -125,6 +126,19 @@ sub login {
 
 sub logout {
 	my $self = shift;
+	
+	if(defined($self->ownUserId()) && defined($self->param('deactivate_google'))){ # Googleアカウントの認証解除モードならば
+		# Googleアカウントを対象ユーザから解除
+		my $user = $self->ownUser;
+		$user->google_id(undef);
+		$user->google_token(undef);
+		$user->google_reftoken(undef);
+		$user->update();
+		# リダイレクト
+		$self->flash('message_info', 'Googleアカウントの紐付けを解除しました。<br>続いて、Googleアカウント側での認証抹消を行う場合は、<u><a href="https://www.google.com/accounts/b/0/IssuedAuthSubTokens?hl=ja">Google アカウント情報ページ</a></u>から行えます。');
+		$self->redirect_to('/top');
+		return;
+	}
 	
 	# セッションをクリア
 	$self->session(expires => 1);

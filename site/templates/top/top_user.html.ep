@@ -9,11 +9,15 @@
 			<h4>Googleアカウント
     			<% if (defined($self->ownUser->{google_id})){ %>
     			  <i class="icon-ok"></i></h4>
-    	   		  <p>接続済み :)　　<%= $self->ownUser->{google_id} %></p>
+    	   		  <p>
+    	   		      接続済み :)　　<%= $self->ownUser->{google_id} %>
+    	   		       <small>(<%= link_to '/session/logout?deactivate_google=true' => begin %>解除<% end %>)</small>
+    	   		  </p>
     			<% } else { %>
     			  <i class="icon-warning-sign"></i></h4>
-                  <p>未接続　:(　　<%= link_to '/session/oauth_google_redirect' => class => "btn btn-primary" => begin %>接続する<% end %><br>
-                        <small>(ここでGoogleアカウントを接続すると、お使いのカレンダーに休講・補講の登録ができます。)</small>
+                  <p>
+                      未接続　:(　　<%= link_to '/session/oauth_google_redirect' => class => "btn btn-primary" => begin %>接続する<% end %><br>
+                        <small>(ここでGoogleアカウントを紐付けすると、お使いのカレンダーに休講・補講を登録できます。)</small>
                   </p>
 			<% } %>
 	</div>
