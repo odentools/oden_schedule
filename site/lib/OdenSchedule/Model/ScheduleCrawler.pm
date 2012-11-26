@@ -156,6 +156,8 @@ sub crawl {
 			}else{
 				$self->log_debug_("    * その他\n${mail}\n");
 			}
+		}else{
+			$self->log_debug_("* mail\n   campus_name = unknown\n${mail}");
 		}
 	}
 	return @schedules;
@@ -168,11 +170,14 @@ sub getMails_ {
 		'username'			=>	$self->{username},
 		'oauth_accessToken' =>	$self->{oauth_access_token},
 	);
+	$self->log_debug_("    * getFolders... ");
 	my @dirs = $oecu->getFolders();
 	if(!$oecu->getIMAPObject()->select(Encode::encode('IMAP-UTF-7','[Gmail]/すべてのメール'))){
+		$self->log_debug_("    * Can't select [Gmail]/すべてのメール ");
 		die("Can't select [Gmail]/すべてのメール");
 	}
 	#my @msgs = ();
+	$self->log_debug_("    * IMAP search... ");
 	my @msgs = $oecu->getIMAPObject()->search(
 		'FROM','dportsys@mc2.osakac.ac.jp',
 		'SENTSINCE',$oecu->getIMAPObject()->Rfc3501_date(time() - (60 * 60 * 24 * 31 * 2)) #条件: 2ヶ月前以降のメール
@@ -180,10 +185,13 @@ sub getMails_ {
 	
 	my @mail_bodies;
 	
+	$self->log_debug_("    * Iterate messages... ");
 	foreach my $msg (@msgs) {
 		my $body = $oecu->getIMAPObject()->body_string($msg) or die "Could not body_string: ", $self->{imap}->LastError;
 		push(@mail_bodies, Encode::decode_utf8($body));
 	}
+	
+	$self->log_debug_("    * getMails_ complete. ");
 	return @mail_bodies;
 }
 
