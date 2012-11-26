@@ -82,12 +82,12 @@ sub startup {
 	# Set log helper
 	$self->helper('log' => sub { shift->app-> log });
 	
+	# Bridge (for auth)
+	$r = $r->bridge->to('bridge#login_check');
+	
 	# Routes (for auth)
 	$r->route('/session/oauth_google_redirect')->to('session#oauth_google_redirect',);
 	$r->route('/session/oauth_google_callback')->to('session#oauth_google_callback',);
-	
-	# Bridge (for auth)
-	$r = $r->bridge->to('bridge#login_check');
 	
 	# Routes
 	$r->route('')->to('top#top_guest',);

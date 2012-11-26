@@ -46,8 +46,10 @@ sub oauth_google_callback {
 		# OECUメールアカウントからのログインであるかどうかを確認
 		my $is_login_oecu = 0;
 		if($user_id =~ /.+\@oecu\.jp/){# OECUメールアカウントならば
-			$self->app->log->fatal("DEBUG:Session - Sub-account login...".$user_id);
+			$self->app->log->fatal("DEBUG:Session - OECU-account login...".$user_id);
 			 $is_login_oecu = 1;
+		}else{
+			$self->app->log->fatal("DEBUG:Session - Not OECU-account login...".$user_id);
 		}
 		
 		# アクセストークン
