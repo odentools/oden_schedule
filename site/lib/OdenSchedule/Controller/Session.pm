@@ -69,6 +69,7 @@ sub oauth_google_callback {
 			
 			# セッションはそのままリダイレクト
 			$self->flash('message_info', 'Googleアカウントを紐付けしました。');
+			$self->flash('calendar_reselect', 'true');
 			$self->redirect_to("/top");
 			return;
 		}
@@ -136,6 +137,7 @@ sub logout {
 		$user->update();
 		# リダイレクト
 		$self->flash('message_info', 'Googleアカウントの紐付けを解除しました。<br>続いて、Googleアカウント側での認証抹消を行う場合は、<u><a href="https://www.google.com/accounts/b/0/IssuedAuthSubTokens?hl=ja">Google アカウント情報ページ</a></u>から行えます。');
+		$self->flash('calendar_reselect', 'true');
 		$self->redirect_to('/top');
 		return;
 	}

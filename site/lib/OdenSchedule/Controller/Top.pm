@@ -53,7 +53,7 @@ sub top_user {
 	eval{
 		my @calendars = $calorg->getCalendarList();
 		$self->stash('calendars', @calendars);
-		if($self->ownUser->{calendar_id_gcal} eq ""){
+		if($self->ownUser->{calendar_id_gcal} eq "" || defined($self->flash('calendar_reselect'))){
 			$self->ownUser->calendar_id_gcal($calendars[0][0]->{id});
 			$self->ownUser->update();
 		}
