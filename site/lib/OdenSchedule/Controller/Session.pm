@@ -76,7 +76,7 @@ sub oauth_google_callback {
 		
 		if($is_login_oecu eq 0){# 今がGoogleアカウントからのログインならば...
 			$self->app->log->fatal("DEBUG:Session - [saB] Google account block");
-			$self->flash("message_error", "<em>おでん助は、Googleアカウントではログインできません。</em><br>一旦、Googleからログアウトした後、OECUメールのアカウントでログインしなおしてください。");
+			$self->flash("message_error", "<em>おでん助は、Googleアカウントではログインできません。</em><br>一旦、<a href='https://accounts.google.com/o/logout' target='_blank'>Googleからログアウト</a>した後、OECUメールのアカウントでログインしなおしてください。");
 			$self->redirect_to('/session/login/?account_not_oecu');
 			return;
 		}
