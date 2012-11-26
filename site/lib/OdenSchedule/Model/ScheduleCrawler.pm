@@ -171,10 +171,17 @@ sub getMails_ {
 		'oauth_accessToken' =>	$self->{oauth_access_token},
 	);
 	$self->log_debug_("    * getFolders... ");
-	my @dirs = $oecu->getFolders();
-	if(!$oecu->getIMAPObject()->select(Encode::encode('IMAP-UTF-7','[Gmail]/すべてのメール'))){
-		$self->log_debug_("    * Can't select [Gmail]/すべてのメール ");
-		die("Can't select [Gmail]/すべてのメール");
+	my @dirs;
+	eval{
+		@dirs = $oecu->getFolders();
+		if(!$oecu->getIMAPObject()->select(Encode::encode('IMAP-UTF-7','[Gmail]/すべてのメール'))){
+			$self->log_debug_("    * Can't select [Gmail]/すべてのメール ");
+			die("Can't select [Gmail]/すべてのメール");	
+		}
+	};
+	if($@){
+		$self->log_debug_("    * getFolders... Error: ".$@);
+		die($@);
 	}
 	#my @msgs = ();
 	$self->log_debug_("    * IMAP search... ");
