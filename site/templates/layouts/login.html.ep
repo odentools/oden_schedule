@@ -108,7 +108,7 @@
 				     <%= link_to '/docs/agreement#agreement' => begin %>利用規約<% end %>をご覧ください。
                 </p>
 				<p>
-					<s><i class=" icon-lock"></i> サーバとの通信はSSLで暗号化されます。</s>
+					<i class=" icon-lock"></i> サーバとの通信はSSLで暗号化されます。
 				</p>
 				<%= link_to '/' => begin %>トップへ戻る<% end %>
 
