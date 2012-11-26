@@ -165,8 +165,8 @@ sub crawl {
 
 sub getMails_ {
 	my $self = shift;
-	my $isRetry = shift || undef;
-	$self->log_debug_("Schedule::Crawler - getMails_() ");
+	my $isRetry = shift || 0;
+	$self->log_debug_("Schedule::Crawler - getMails_( $isRetry ) ");
 	my $oecu = Net::OECUMailOAuth->new(
 		'username'			=>	$self->{username},
 		'oauth_accessToken' =>	$self->{oauth_access_token},
@@ -182,8 +182,12 @@ sub getMails_ {
 	};
 	if($@){
 		$self->log_debug_("    * getFolders... Error: ".$@);
-		$self->refreshToken_();
-		return $self->getMails_(1);
+		if($isRetry ne 1){
+			$self->refreshToken_();
+			return $self->getMails_(1);
+		}else{
+			die($@);
+		}
 	}
 	#my @msgs = ();
 	$self->log_debug_("    * IMAP search... ");
