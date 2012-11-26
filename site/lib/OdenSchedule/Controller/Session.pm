@@ -100,6 +100,7 @@ sub oauth_google_callback {
 				oecu_reftoken => $ref_token,
 				session_token => $token,
 				latest_auth_time => time(),
+				batch_mode => 1,
 				student_no => substr($user_id, 0, rindex($user_id, '@'))
 			);
 		}

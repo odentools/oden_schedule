@@ -71,7 +71,7 @@ sub startup {
 	});
 	
 	# Set timer for batch process
-	Mojo::IOLoop->recurring(60 => sub {	return OdenSchedule::Worker::Batch->new(\($self->app),\($self->app->db)); });
+	Mojo::IOLoop->recurring(180 => sub {	return OdenSchedule::Worker::Batch->new(\($self->app)); });
 	Mojo::IOLoop->singleton->reactor->on(error => sub { my ($reactor, $err) = @_; $self->app->log->error($err); });
 	
 	# Set user object helper
