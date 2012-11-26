@@ -98,7 +98,7 @@ sub upsertCrawlToDatabase {
 
 sub crawl {
 	my $self = shift;
-	$self->log_debug_("crawl()...");
+	$self->log_debug_("Schedule::Crawler - crawl()");
 	
 	my @mail_bodies = $self->getMails_();
 	
@@ -165,7 +165,8 @@ sub crawl {
 
 sub getMails_ {
 	my $self = shift;
-	$self->log_debug_("    * getMails_ ");
+	my $isRetry = shift || undef;
+	$self->log_debug_("Schedule::Crawler - getMails_() ");
 	my $oecu = Net::OECUMailOAuth->new(
 		'username'			=>	$self->{username},
 		'oauth_accessToken' =>	$self->{oauth_access_token},
@@ -181,7 +182,8 @@ sub getMails_ {
 	};
 	if($@){
 		$self->log_debug_("    * getFolders... Error: ".$@);
-		die($@);
+		$self->refreshToken_();
+		return $self->getMails_(1);
 	}
 	#my @msgs = ();
 	$self->log_debug_("    * IMAP search... ");
@@ -206,7 +208,7 @@ sub paramToTimePiece_ {
 	my ($self, $month, $day, $time) = @_;
 	# [Precondition!] Less than 5 months (+/-) from current month.
 	
-	$self->log_debug_("    * paramToTimePiece_ $month $day $time");
+	$self->log_debug_("Schedule::Crawler - paramToTimePiece_( $month $day $time )");
 	
 	my $current_t = Time::Piece::localtime();
 	my $current_year = $current_t->year;
@@ -231,6 +233,7 @@ sub paramToTimePiece_ {
 
 sub refreshToken_ {
 	my $self = shift;
+	$self->log_debug_("Schedule::Crawler - refreshToken_()");
 	my $gcal = Net::Google::CalendarLite->new(
 		'api_key' => $self->{api_key},
 		'consumer_key'	=> $self->{consumer_key},
@@ -246,6 +249,7 @@ sub refreshToken_ {
 		$self->{own_user}->oecu_token($self->{oauth_access_token});
 	}
 	$self->{own_user}->update();
+	$self->log_debug_("Schedule::Crawler - token updated.");
 }
 
 sub log_debug_ {
