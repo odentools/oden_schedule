@@ -5,11 +5,17 @@
 	<div class="span6 well">
 		<h3>あなたのアカウントとの接続状況</h3>
 			<h4>OECUメールアカウント <i class="icon-ok"></i></h4>
-			<p>接続済み :)　　<%= $self->ownUser->{google_id} %></p>
-			<h4>Googleアカウント <i class="icon-warning-sign"></i></h4>
-			<p>未接続　:(　　<%= link_to '/session/login' => class => "btn btn-primary" => begin %>接続する<% end %><br>
-				<small>(Googleアカウントを接続すると、普段お使いのカレンダーに休講・補講の自動登録ができます。)</small>
-			</p>
+			<p>接続済み :)　　<%= $self->ownUser->{oecu_id} %></p>
+			<h4>Googleアカウント
+    			<% if (defined($self->ownUser->{google_id})){ %>
+    			  <i class="icon-ok"></i></h4>
+    	   		  <p>接続済み :)　　<%= $self->ownUser->{google_id} %></p>
+    			<% } else { %>
+    			  <i class="icon-warning-sign"></i></h4>
+                  <p>未接続　:(　　<%= link_to '/session/oauth_google_redirect' => class => "btn btn-primary" => begin %>接続する<% end %><br>
+                        <small>(ここでGoogleアカウントを接続すると、お使いのカレンダーに休講・補講の登録ができます。)</small>
+                  </p>
+			<% } %>
 	</div>
 	<div class="span6 well">
 		<h3>休講・補講を自動登録するカレンダー</h2>

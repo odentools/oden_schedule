@@ -22,8 +22,13 @@ sub new {
 	$self->{config} = ${$hash{config}} || die ('Not specified config.');# Config(Mojo::Plugin::Config) instance
 	
 	# OAuth tokens
-	$self->{oauth_access_token} = $self->{own_user}->{google_token} || die ('Not specified oauth_accessToken.');
-	$self->{oauth_refresh_token} = $self->{own_user}->{google_reftoken} || die ('Not specified oauth_refresh_token.');
+	if(defined($self->{own_user}->{google_id})){
+		$self->{oauth_access_token} = $self->{own_user}->{google_token} || die ('Not specified oauth_accessToken.');
+		$self->{oauth_refresh_token} = $self->{own_user}->{google_reftoken} || die ('Not specified oauth_refresh_token.');
+	}else{
+		$self->{oauth_access_token} = $self->{own_user}->{oecu_token} || die ('Not specified oauth_accessToken.');
+		$self->{oauth_refresh_token} = $self->{own_user}->{oecu_reftoken} || die ('Not specified oauth_refresh_token.');
+	}
 	
 	# App configurations
 	$self->{api_key} = $self->{config}->{social_google_apikey};

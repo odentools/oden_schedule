@@ -44,8 +44,8 @@ sub new {
 	$self->{config} = ${$hash{config}} || die ('Not specified config.');# Config(Mojo::Plugin::Config) instance
 	
 	# OAuth tokens
-	$self->{oauth_access_token} = $self->{own_user}->{google_token} || die ('Not specified oauth_access_token.');
-	$self->{oauth_refresh_token} = $self->{own_user}->{google_reftoken} || die ('Not specified oauth_refresh_token.');
+	$self->{oauth_access_token} = $self->{own_user}->{oecu_token} || die ('Not specified oauth_access_token.');
+	$self->{oauth_refresh_token} = $self->{own_user}->{oecu_reftoken} || die ('Not specified oauth_refresh_token.');
 	
 	# App configurations
 	$self->{api_key} = $self->{config}->{social_google_apikey};
@@ -224,7 +224,11 @@ sub refreshToken_ {
 	);
 	$gcal->refreshToken();
 	$self->{oauth_access_token} = $gcal->returnToken();
-	$self->{own_user}->google_token($self->{oauth_access_token});
+	if(defined($self->{own_google_id})){ # if user has OECU-mail and Google-account ...
+		$self->{own_user}->google_token($self->{oauth_access_token});
+	}else{
+		$self->{own_user}->oecu_token($self->{oauth_access_token});
+	}
 	$self->{own_user}->update();
 }
 

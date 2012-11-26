@@ -37,46 +37,69 @@ sub oauth_google_callback {
 		return;
 	}
 	
-	# 
-	
 	# ユーザ情報を取得
 	my $response = $access_token->get('https://www.googleapis.com/oauth2/v1/userinfo');
 	if ($response->is_success) {
 		my $profile = Mojo::JSON->decode($response->decoded_content());
 		my $user_id = $profile->{email};
-		# OECUメールアカウントであるかどうかを確認
-		if($user_id !~ /.+\@oecu\.jp/){# OECUメールアカウントでなければ...
-			$self->flash("message_error", "一旦Googleからログアウトした後、OECUメールのアカウントでログインしてください。");
-			$self->redirect_to('/session/login/?account_not_oecu');
-			return;
+		
+		# OECUメールアカウントからのログインであるかどうかを確認
+		my $is_login_oecu = 0;
+		if($user_id =~ /.+\@oecu\.jp/){# OECUメールアカウントならば
+			 $is_login_oecu = 1;
 		}
 		
 		# アクセストークン
 		my $token = $access_token->{access_token};
 		my $ref_token = $access_token->{refresh_token};
-		# ユーザを検索
-		my $user = $self->getUserObj('google_id' => $user_id);
-		if($user->{isFound}){# 既存ユーザであれば...
+		
+		if(defined($self->ownUserId()) && $is_login_oecu eq 0){ # すでにログイン中 && 今がGoogleアカウントからのログインならば...
+			# サブアカウント(Googleアカウント)追加のためのログイン処理 -----
+			
+			my $user = $self->ownUser;
+			$user->google_id($user_id);
 			$user->google_token($token);
-			$user->session_token($token);
 			$user->google_reftoken($ref_token);
+			$user->latest_auth_time(time());
+			$user->update();
+			
+			# セッションはそのままリダイレクト
+			$self->redirect_to("/top");
+			return;
+		}
+		
+		# 通常のログイン処理 -----
+		
+		if($is_login_oecu eq 0){# 今がGoogleアカウントからのログインならば...
+			$self->flash("message_error", "<em>おでん助は、Googleアカウントではログインできません。</em><br>一旦、Googleからログアウトした後、OECUメールのアカウントでログインしなおしてください。");
+			$self->redirect_to('/session/login/?account_not_oecu');
+			return;
+		}
+		
+		# ユーザを検索
+		my $user = $self->getUserObj('oecu_id' => $user_id);
+		if($user->{isFound}){# 既存ユーザであれば...
+			$user->oecu_token($token);
+			$user->oecu_reftoken($ref_token);
+			$user->session_token($token);
 			$user->latest_auth_time(time());
 			$user->update();
 		} else {# 新規ユーザであれば...
 			$user->set(
 				name => $user_id,
-				google_id => $user_id,
-				google_token => $token,
+				oecu_id => $user_id,
+				oecu_token => $token,
+				oecu_reftoken => $ref_token,
 				session_token => $token,
-				google_reftoken => $ref_token,
 				latest_auth_time => time(),
 				student_no => substr($user_id, 0, rindex($user_id, '@'))
 			);
 		}
 		# セッションを保存してリダイレクト
 		$self->session('session_token', $token);
-		$self->redirect_to("/");	
-	} else {
+		$self->redirect_to("/");
+		
+	} else { # ユーザ情報が取得できなければ...
 		$self->flash('message_error','ユーザ情報の取得に失敗しました。再度ログインしてください。');
 		$self->redirect_to('/session/login');
 	}
