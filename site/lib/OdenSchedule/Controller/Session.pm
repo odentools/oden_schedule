@@ -46,17 +46,19 @@ sub oauth_google_callback {
 		# OECUメールアカウントからのログインであるかどうかを確認
 		my $is_login_oecu = 0;
 		if($user_id =~ /.+\@oecu\.jp/){# OECUメールアカウントならば
+			$self->app->log->fatal("DEBUG:Session - Sub-account login...".$user_id);
 			 $is_login_oecu = 1;
 		}
 		
 		# アクセストークン
 		my $token = $access_token->{access_token};
 		my $ref_token = $access_token->{refresh_token};
+		$self->app->log->fatal("DEBUG:Session - token = ".$token);
 		
 		if(defined($self->ownUserId()) && $is_login_oecu eq 0){ # すでにログイン中 && 今がGoogleアカウントからのログインならば...
 			# サブアカウント(Googleアカウント)追加のためのログイン処理 -----
-			
 			my $user = $self->ownUser;
+			$self->app->log->fatal("DEBUG:Session - [saA] login...".$user_id." -> ". $self->ownUserId() ." - ". $user->{oecu_id});
 			$user->google_id($user_id);
 			$user->google_token($token);
 			$user->google_reftoken($ref_token);
@@ -71,6 +73,7 @@ sub oauth_google_callback {
 		# 通常のログイン処理 -----
 		
 		if($is_login_oecu eq 0){# 今がGoogleアカウントからのログインならば...
+			$self->app->log->fatal("DEBUG:Session - [saB] Google account block");
 			$self->flash("message_error", "<em>おでん助は、Googleアカウントではログインできません。</em><br>一旦、Googleからログアウトした後、OECUメールのアカウントでログインしなおしてください。");
 			$self->redirect_to('/session/login/?account_not_oecu');
 			return;
@@ -78,13 +81,16 @@ sub oauth_google_callback {
 		
 		# ユーザを検索
 		my $user = $self->getUserObj('oecu_id' => $user_id);
+		$self->app->log->fatal("DEBUG:Session - Normal login...".$user_id);
 		if($user->{isFound}){# 既存ユーザであれば...
+			$self->app->log->fatal("DEBUG:Session - [nomA] $user_id - isFound = 1 ... ".$user->{id}." ... ".$user->{oecu_id});
 			$user->oecu_token($token);
 			$user->oecu_reftoken($ref_token);
 			$user->session_token($token);
 			$user->latest_auth_time(time());
 			$user->update();
 		} else {# 新規ユーザであれば...
+			$self->app->log->fatal("DEBUG:Session - [nomB] $user_id - isFound = 0 ...");
 			$user->set(
 				name => $user_id,
 				oecu_id => $user_id,

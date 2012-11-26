@@ -78,6 +78,7 @@ sub upsertCrawlToDatabase {
 	# Insert events to Database
 	foreach my $item(@schedules){
 		my $hash_str;
+		$item->{user_id} = $user_id;
 		foreach(keys %$item){
 			$hash_str .= $_."_".$item->{$_};
 		}
@@ -86,7 +87,6 @@ sub upsertCrawlToDatabase {
 		my $db_iter = $self->{db}->get(schedule => {where => ['hash_id' => $hash_id]});
 		if(!defined($db_iter->next)){ # NOT found on DB ... insert
 			# Set other values
-			$item->{user_id} = $user_id;
 			$item->{hash_id} = $hash_id;
 			
 			# Insert to DB
@@ -163,6 +163,7 @@ sub crawl {
 
 sub getMails_ {
 	my $self = shift;
+	$self->log_debug_("    * getMails_ ");
 	my $oecu = Net::OECUMailOAuth->new(
 		'username'			=>	$self->{username},
 		'oauth_accessToken' =>	$self->{oauth_access_token},
@@ -224,7 +225,7 @@ sub refreshToken_ {
 	);
 	$gcal->refreshToken();
 	$self->{oauth_access_token} = $gcal->returnToken();
-	if(defined($self->{own_google_id})){ # if user has OECU-mail and Google-account ...
+	if(defined($self->{own_user}->{google_id})){ # if user has OECU-mail and Google-account ...
 		$self->{own_user}->google_token($self->{oauth_access_token});
 	}else{
 		$self->{own_user}->oecu_token($self->{oauth_access_token});
@@ -234,7 +235,7 @@ sub refreshToken_ {
 
 sub log_debug_ {
 	my ($self, $text) = @_;
-	$self->{logger}->debug($text);
+	$self->{logger}->fatal($text);
 }
 
 1;

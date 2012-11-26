@@ -19,7 +19,7 @@ sub new {
 	
 	$self->{app}->log->debug("-----Worker::Batch-----");
 	
-	$self->runBatch();
+	#$self->runBatch();
 	
 	return $self;
 }
