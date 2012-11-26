@@ -126,6 +126,14 @@
                 </div>
             <% } %>
             <!-- _for alert message-->
+            <!-- for info message -->
+            <% if(defined($self->stash('message_info'))){ %>
+                <div class="alert alert-info">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <%= Mojo::ByteStream->new($self->stash('message_info')) %>
+                </div>
+            <% } %>
+            <!-- _for info message-->
 			<%= content %>
 
 			<hr>

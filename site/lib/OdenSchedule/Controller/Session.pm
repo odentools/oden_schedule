@@ -103,10 +103,11 @@ sub oauth_google_callback {
 				batch_mode => 1,
 				student_no => substr($user_id, 0, rindex($user_id, '@'))
 			);
+			$self->flash('message_info','<b>おでん助へようこそ。</b><br>休講・補講情報は、数分以内に<u>自動取得</u>してカレンダーに自動登録されます。<br>もし、ご質問、不具合・ご意見などがありましたらお気軽にお寄せください m(_ _)m');
 		}
 		# セッションを保存してリダイレクト
 		$self->session('session_token', $token);
-		$self->redirect_to("/");
+		$self->redirect_to("/top");
 		
 	} else { # ユーザ情報が取得できなければ...
 		$self->flash('message_error','ユーザ情報の取得に失敗しました。再度ログインしてください。');

@@ -20,6 +20,10 @@ sub top_guest {
 sub top_user {
 	my $self = shift;
 	
+	if(defined($self->flash("message_info"))){
+		$self->stash("message_info", $self->flash("message_info"));
+	}
+	
 	if(defined($self->param('set_calendar_id'))){
 		$self->ownUser->calendar_id_gcal($self->param('set_calendar_id'));
 		$self->ownUser->update();
