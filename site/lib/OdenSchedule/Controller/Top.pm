@@ -34,12 +34,15 @@ sub top_user {
 	
 	# Event list
 	my @schedules;
-	my $iter = $self->db->get(schedule => {where => ['user_id' => $self->ownUser->{id}]});
+	my $iter = $self->db->get(schedule => {
+		where => ['user_id' => $self->ownUser->{id}]
+	});
 	while(my $item = $iter->next){
 		my $hash = $item->{column_values};
 		$hash->{date_str} = $hash->{date};
 		push(@schedules, $hash);
 	}
+	@schedules = sort { $a->{date} <=> $b->{date} } @schedules;
 	$self->stash('schedules', \@schedules);
 	
 	# Calendars list
