@@ -87,19 +87,23 @@
 					<br style="clear:both;">
 				</p>
 				<p class="">
-					[1]. <u>上のボタンをクリック</u>すると、Googleの"ログイン画面"が表示されます。<br>
+					[1]. <u>上のボタンをクリック</u>すると、<b>"Googleのログイン画面"</b>が表示されます。<br>
 					<dl style="margin-left: 10px;">
 						<dt>メール</dt>
 						<dl>学籍番号@oecu.jp (例: ht12a000@oecu.jp )</dl>
 						<dt>パスワード</dt>
-						<dl>OECUメールのパスワード</dl>
+						<dl>＜このときは入力しないでください＞</dl>
 					</dl>
 					&nbsp;を入力して<u>ログインします</u>。<br>
 					<small>(現在Googleアカウントでログイン中の場合は、一度ログアウトする必要があります。)</small><br><br>
-					[2]. <u>[ログインについて]をクリック</u>します。<br>
-					<%= image '/img/howto_login0.png' %><br>
-					<small>(もしこのとき、OECUメールのログイン画面が表示されたら、再度入力してログインして下さい。)</small><br><br>
-					3. "許可のリクエスト画面"が表示されますので、<u>[アクセスを許可]をクリック</u>します。<br>
+					[2]. 続いてもし、<b>"OECUメールのログイン画面"</b>が表示されたら、
+					   <dl style="margin-left: 10px;">
+                        <dt>メール</dt>
+                        <dl>学籍番号@oecu.jp (例: ht12a000@oecu.jp )</dl>
+                        <dt>パスワード</dt>
+                        <dl>OECUメールのパスワード</dl>
+                    </dl>&nbsp;を入力して、<u>いつも通りにログイン</u>します。<br><br>
+					[3]. <b>"許可のリクエスト画面"</b>が表示されますので、<u>[アクセスを許可]をクリック</u>します。<br>
                     <%= image '/img/howto_login1.png' %>
 				</p>
 				<hr>
