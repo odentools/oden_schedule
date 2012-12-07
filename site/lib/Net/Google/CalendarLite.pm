@@ -116,7 +116,14 @@ sub getCalendarList {
 	my $noRetry = shift || 0;
 	my $res = $self->{ua}->get('https://www.googleapis.com/calendar/v3/users/me/calendarList?minAccessRole=writer&key='.$self->{api_key}, Authorization => 'Bearer '. $self->{oauth_access_token});
 	if($res->is_success){
-		return $self->{json}->decode(Encode::decode_utf8($res->content))->{items};
+		my @a = $self->{json}->decode(Encode::decode_utf8($res->content))->{items};
+		my @arr = ();
+		foreach my $i ($a[0]){
+			foreach my $i_(@$i[0]){
+				push(@arr, $i_);
+			}
+		}
+		return @arr;
 	}elsif($noRetry ne 1){
 		$self->refreshToken();
 		return $self->getCalendarList(1);

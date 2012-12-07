@@ -32,7 +32,7 @@ sub top_user {
 		return;
 	}
 	
-	# 休講・補講情報
+	# Event list
 	my @schedules;
 	my $iter = $self->db->get(schedule => {where => ['user_id' => $self->ownUser->{id}]});
 	while(my $item = $iter->next){
@@ -42,7 +42,7 @@ sub top_user {
 	}
 	$self->stash('schedules', \@schedules);
 	
-	# カレンダーリスト
+	# Calendars list
 	my $calorg = OdenSchedule::Model::CalendarOrganizer->new(
 		'db' => \($self->app->db),
 		'own_user' => \($self->ownUser),
@@ -52,11 +52,26 @@ sub top_user {
 	
 	$self->stash('calendars', []);
 	eval{
+		# Fetch the calendars list with oauth-account
 		my @calendars = $calorg->getCalendarList();
-		$self->stash('calendars', @calendars);
+		$self->stash('calendars', \@calendars);
+		
 		if($self->ownUser->{calendar_id_gcal} eq "" || defined($self->flash('calendar_reselect'))){
-			$self->ownUser->calendar_id_gcal($calendars[0][0]->{id});
+			# Automatic re-select the calendar
+			$self->ownUser->calendar_id_gcal($calendars[0]->{id});
 			$self->ownUser->update();
+			
+		}else{
+			# Check selected-calendar is available
+			my $flg_found_calendar = 0;
+			foreach my $cal(@calendars){
+				if($self->ownUser->{calendar_id_gcal} eq $cal->{id}){ $flg_found_calendar = 1; last; }
+			}
+			if($flg_found_calendar eq 0){ # If must do re-selection of calendar...
+				$self->flash('calendar_reselect','true');
+				$self->flash('message_info', "自動登録先のカレンダーが自動的に再選択されました。 ");
+				$self->redirect_to('/top');
+			}
 		}
 	}; $self->stash('message_error', $@) if($@);
 	
