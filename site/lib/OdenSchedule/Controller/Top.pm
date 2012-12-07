@@ -37,10 +37,13 @@ sub top_user {
 	my $iter = $self->db->get(schedule => {
 		where => ['user_id' => $self->ownUser->{id}]
 	});
+	my $time_now = time();
 	while(my $item = $iter->next){
 		my $hash = $item->{column_values};
-		$hash->{date_str} = $hash->{date};
-		push(@schedules, $hash);
+		if($time_now < $hash->{date}){ # If future event...
+			$hash->{date_str} = $hash->{date};
+			push(@schedules, $hash);
+		}
 	}
 	@schedules = sort { $a->{date} <=> $b->{date} } @schedules;
 	$self->stash('schedules', \@schedules);
