@@ -7,6 +7,7 @@ use Net::OECUMailOAuth;
 use OdenSchedule::Model::ScheduleCrawler;
 use OdenSchedule::Model::CalendarOrganizer;
 use Net::Google::CalendarLite;
+use Time::Piece;
 
 sub top_guest {
 	my $self = shift;
@@ -61,7 +62,10 @@ sub top_user {
 	
 	$self->stash('selected_calendar_id', $self->ownUser->{calendar_id_gcal});
 	
-	$self->stash( 'isUser_google', 1 );
+	$self->stash('isUser_google', 1);
+	
+	$self->stash('batch_nextdatestr', Time::Piece->new($self->app->config->{batch_interval} + $self->ownUser->{latest_batch_time})->strftime("%Y-%m-%d %H:%M"));
+	
 	$self->render();
 }
 
