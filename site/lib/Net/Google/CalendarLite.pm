@@ -119,7 +119,7 @@ sub getCalendarList {
 		my @a = $self->{json}->decode(Encode::decode_utf8($res->content))->{items};
 		my @arr = ();
 		foreach my $i ($a[0]){
-			foreach my $i_(@$i[0]){
+			foreach my $i_(@$i){
 				push(@arr, $i_);
 			}
 		}
