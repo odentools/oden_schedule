@@ -49,9 +49,9 @@ sub startup {
 	
 	# Prepare database
 	my $mongoDB = Data::Model::Driver::MongoDB->new( 
-		host => 'localhost',
-		port => 27017,
-		db => 'odenschedule',
+		host => $self->config->{db_host} || 'localhost',
+		port => $self->config->{db_port} || '27017',
+		db => $self->config->{db_name} || 'odenschedule',
 	);
 	my $schema = OdenSchedule::DBSchema->new;
 	$schema->set_base_driver($mongoDB);
