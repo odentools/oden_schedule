@@ -86,21 +86,30 @@ sub oauth_google_callback {
 		# ユーザを検索
 		my $user = $self->getUserObj('oecu_id' => $user_id);
 		$self->app->log->fatal("DEBUG:Session - Normal login...".$user_id);
+
+		my $session_token = "";
+
 		if($user->{isFound}){# 既存ユーザであれば...
 			$self->app->log->fatal("DEBUG:Session - [nomA] $user_id - isFound = 1 ... ".$user->{id}." ... ".$user->{oecu_id});
+
+			$session_token = $self->make_session_key($user->{id}); # ヘルパーメソッドでセッションキー生成
+
 			$user->oecu_token($token);
 			$user->oecu_reftoken($ref_token);
-			$user->session_token( $self->make_session_key($user_id.$token) ); # ヘルパーメソッドでセッションキー生成
+			$user->session_token($session_token); 
 			$user->latest_auth_time(time());
 			$user->update();
 		} else {# 新規ユーザであれば...
 			$self->app->log->fatal("DEBUG:Session - [nomB] $user_id - isFound = 0 ...");
+
+			$session_token = $self->make_session_key($user_id . $token); # ヘルパーメソッドでセッションキー生成
+
 			$user->set(
 				name => $user_id,
 				oecu_id => $user_id,
 				oecu_token => $token,
 				oecu_reftoken => $ref_token,
-				session_token => $self->make_session_key($user_id.$token), # ヘルパーメソッドでセッションキー生成
+				session_token => $session_token,
 				latest_auth_time => time(),
 				batch_mode => 1,
 				student_no => substr($user_id, 0, rindex($user_id, '@'))
@@ -108,7 +117,7 @@ sub oauth_google_callback {
 			$self->flash('message_info','<b>おでん助へようこそ。</b><br>休講・補講情報は、数分以内に<u>自動取得</u>してカレンダーに自動登録されます。<br>もし、ご質問、不具合・ご意見などがありましたらお気軽にお寄せください m(_ _)m');
 		}
 		# セッションを保存してリダイレクト
-		$self->session('session_token', $token);
+		$self->session('session_token', $session_token);
 		$self->redirect_to("/top");
 		
 	} else { # ユーザ情報が取得できなければ...
