@@ -31,7 +31,8 @@ sub startup {
 	my $conf = $self->plugin('Config',{file => 'config/config.conf'});
 	
 	# Set cookie secret
-	$self->secret('odenschedule'.$conf->{secret});
+	$self->app->sessions->cookie_name($conf->{session_name} || 'odenschedule');
+	$self->secret('odenschedule'.$conf->{session_secret});
 	
 	# Reverse proxy support
 	$ENV{MOJO_REVERSE_PROXY} = 1;

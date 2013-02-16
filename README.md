@@ -93,13 +93,13 @@ http://glyphicons.com/
 site/config/config.conf
 
 	{
-		secret					=>	'COOKIE_SECRET',
 		base_url				=>	'http://hoge.com/oden_schedule',
         base_path				=>	'/oden_schedule',
 		social_google_key		=>	'GOOGLE_OAUTH_CONSUMER_KEY',
 		social_google_secret	=>	'GOOGLE_OAUTH_CONSUMER_SECRET',
 		social_google_apikey	=>	'GOOGLE_API_KEY',
 		session_name			=>	'odenschedule',
+		session_secret		=>	'COOKIE_SIGNATURE_KEY',
 		session_expires 		=>	604800, # 604800 = 7day * 24hour * 60min * 60sec
 		batch_interval			=>	43200, # 43200 = 12hour * 60min * 60sec (MINIMUM: 120sec)
 		db_host	=>	'localhost', # MongoDB host
