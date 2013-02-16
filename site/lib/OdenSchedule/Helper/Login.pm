@@ -4,11 +4,12 @@ use strict;
 use warnings;
 
 use base 'Mojolicious::Plugin';
+use Mojo::Util;
 
 sub register {
 	my ($self, $app) = @_;
 	
-	# OAuth Client for Google
+	# OAuth クライアント for Google
 	$app->helper( oauth_client_google =>
 		sub {
 			return Net::OAuth2::Client->new(
@@ -24,7 +25,7 @@ sub register {
 		}
 	);
 	
-	# OAuth Refresh Client for Google
+	# OAuth リフレッシュ用クライアント for Google
 	$app->helper( oauth_client_google_refresh =>
 		sub {
 			my $refresh_token = shift;
@@ -39,6 +40,23 @@ sub register {
 				approval_prompt	=> 'auto',
 				scope	=>	'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/calendar https://mail.google.com/'
 			)->web_server(access_type => 'offline');
+		}
+	);
+
+	# セッションキーの生成
+	$app->helper( make_session_key => 
+		sub {
+			my $seed_id = shift;
+
+			my $time_num = time();
+			my $rand_num = int(rand(99999999999999999));
+
+			my $key = $seed_id;
+			for(my $i=0;$i<10;$i++){
+				$key = Mojo::Util::hmac_sha1_sum($key, $time_num + $rand_num);
+			}
+			$key = Mojo::Util::b64_encode($key.$time_num);
+			return($key);
 		}
 	);
 }

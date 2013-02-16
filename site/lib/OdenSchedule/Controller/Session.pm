@@ -74,7 +74,7 @@ sub oauth_google_callback {
 			return;
 		}
 		
-		# 通常のログイン処理 -----
+		# OECUアカウントによる通常のログイン処理 -----
 		
 		if($is_login_oecu eq 0){# 今がGoogleアカウントからのログインならば...
 			$self->app->log->fatal("DEBUG:Session - [saB] Google account block");
@@ -90,7 +90,7 @@ sub oauth_google_callback {
 			$self->app->log->fatal("DEBUG:Session - [nomA] $user_id - isFound = 1 ... ".$user->{id}." ... ".$user->{oecu_id});
 			$user->oecu_token($token);
 			$user->oecu_reftoken($ref_token);
-			$user->session_token($token);
+			$user->session_token( $self->make_session_key($user_id.$token) ); # ヘルパーメソッドでセッションキー生成
 			$user->latest_auth_time(time());
 			$user->update();
 		} else {# 新規ユーザであれば...
@@ -100,7 +100,7 @@ sub oauth_google_callback {
 				oecu_id => $user_id,
 				oecu_token => $token,
 				oecu_reftoken => $ref_token,
-				session_token => $token,
+				session_token => $self->make_session_key($user_id.$token), # ヘルパーメソッドでセッションキー生成
 				latest_auth_time => time(),
 				batch_mode => 1,
 				student_no => substr($user_id, 0, rindex($user_id, '@'))
