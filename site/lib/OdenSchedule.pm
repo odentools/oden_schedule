@@ -25,7 +25,7 @@ sub startup {
 	my $r = $self->routes;
 	
 	# Set namespace
-	$r->namespace('OdenSchedule::Controller');
+	$r = $r->namespaces(['OdenSchedule::Controller']);
 	
 	# Reading configuration
 	my $conf = $self->plugin('Config',{file => 'config/config.conf'});
