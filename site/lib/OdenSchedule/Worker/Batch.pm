@@ -20,9 +20,9 @@ sub new {
 	
 	# Prepare database
 	my $mongoDB = Data::Model::Driver::MongoDB->new(
-		host => $app->config->{db_host} || 'localhost',
-		port => $app->config->{db_port} || '27017',
-		db => $app->config->{db_name} || 'odenschedule',
+		host => $self->{app}->config->{db_host} || 'localhost',
+		port => $self->{app}->config->{db_port} || '27017',
+		db => $self->{app}->config->{db_name} || 'odenschedule',
 	);
 	$self->{db}	= OdenSchedule::DBSchema->new;
 	$self->{db}->set_base_driver($mongoDB);
