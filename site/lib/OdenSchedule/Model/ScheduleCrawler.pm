@@ -193,7 +193,7 @@ sub getMails_ {
 	#my @msgs = ();
 	$self->log_debug_("    * IMAP search... ");
 	my @msgs = $oecu->getIMAPObject()->search(
-		'FROM','dportsys@mc2.osakac.ac.jp',
+		'FROM','mypage-support@mc2.osakac.ac.jp',
 		'SENTSINCE',$oecu->getIMAPObject()->Rfc3501_date(time() - (60 * 60 * 24 * 31 * 2)) #条件: 2ヶ月前以降のメール
 	);
 
